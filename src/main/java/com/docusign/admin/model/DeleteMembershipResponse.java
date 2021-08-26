@@ -1,0 +1,102 @@
+package com.docusign.admin.model;
+
+import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.ErrorDetails;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+/**
+ * DeleteMembershipResponse
+ */
+
+public class DeleteMembershipResponse {
+  @JsonProperty("id")
+  private java.util.UUID id = null;
+
+  @JsonProperty("error_details")
+  private ErrorDetails errorDetails = null;
+
+  public DeleteMembershipResponse id(java.util.UUID id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Get id
+   * @return id
+  **/
+  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
+  public java.util.UUID getId() {
+    return id;
+  }
+
+  public void setId(java.util.UUID id) {
+    this.id = id;
+  }
+
+  public DeleteMembershipResponse errorDetails(ErrorDetails errorDetails) {
+    this.errorDetails = errorDetails;
+    return this;
+  }
+
+   /**
+   * Get errorDetails
+   * @return errorDetails
+  **/
+  @ApiModelProperty(value = "")
+  public ErrorDetails getErrorDetails() {
+    return errorDetails;
+  }
+
+  public void setErrorDetails(ErrorDetails errorDetails) {
+    this.errorDetails = errorDetails;
+  }
+
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    DeleteMembershipResponse deleteMembershipResponse = (DeleteMembershipResponse) o;
+    return Objects.equals(this.id, deleteMembershipResponse.id) &&
+        Objects.equals(this.errorDetails, deleteMembershipResponse.errorDetails);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, errorDetails);
+  }
+
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class DeleteMembershipResponse {\n");
+    
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    errorDetails: ").append(toIndentedString(errorDetails)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+
+}
+

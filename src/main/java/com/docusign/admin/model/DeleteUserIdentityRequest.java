@@ -1,0 +1,84 @@
+package com.docusign.admin.model;
+
+import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.UserIdentityRequest;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+/**
+ * DeleteUserIdentityRequest
+ */
+
+public class DeleteUserIdentityRequest {
+  @JsonProperty("identities")
+  private java.util.List<UserIdentityRequest> identities = new java.util.ArrayList<UserIdentityRequest>();
+
+  public DeleteUserIdentityRequest identities(java.util.List<UserIdentityRequest> identities) {
+    this.identities = identities;
+    return this;
+  }
+
+  public DeleteUserIdentityRequest addIdentitiesItem(UserIdentityRequest identitiesItem) {
+    this.identities.add(identitiesItem);
+    return this;
+  }
+
+   /**
+   * Get identities
+   * @return identities
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public java.util.List<UserIdentityRequest> getIdentities() {
+    return identities;
+  }
+
+  public void setIdentities(java.util.List<UserIdentityRequest> identities) {
+    this.identities = identities;
+  }
+
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    DeleteUserIdentityRequest deleteUserIdentityRequest = (DeleteUserIdentityRequest) o;
+    return Objects.equals(this.identities, deleteUserIdentityRequest.identities);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(identities);
+  }
+
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class DeleteUserIdentityRequest {\n");
+    
+    sb.append("    identities: ").append(toIndentedString(identities)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+
+}
+
