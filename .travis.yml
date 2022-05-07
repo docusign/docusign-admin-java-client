@@ -24,3 +24,6 @@ script: mvn -X clean test
 
 after_failure: "cat /home/travis/build/docusign/docusign-admin-java-client/target/surefire-reports/SdkUnitTests.txt && cat /home/travis/build/docusign/docusign-admin-java-client/target/surefire-reports/TEST-SdkUnitTests.xml"
 
+cache:
+  directories:
+  - $HOME/.m2
