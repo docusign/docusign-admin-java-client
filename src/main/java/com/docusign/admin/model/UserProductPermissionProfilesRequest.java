@@ -4,18 +4,46 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
-/** ProductPermissionProfilesRequest. */
-public class ProductPermissionProfilesRequest {
+/** UserProductPermissionProfilesRequest. */
+public class UserProductPermissionProfilesRequest {
+  @JsonProperty("email")
+  private String email = null;
+
   @JsonProperty("product_permission_profiles")
   private java.util.List<ProductPermissionProfileRequest> productPermissionProfiles =
       new java.util.ArrayList<>();
 
   /**
+   * email.
+   *
+   * @return UserProductPermissionProfilesRequest
+   */
+  public UserProductPermissionProfilesRequest email(String email) {
+    this.email = email;
+    return this;
+  }
+
+  /**
+   * Get email.
+   *
+   * @return email
+   */
+  @ApiModelProperty(required = true, value = "")
+  public String getEmail() {
+    return email;
+  }
+
+  /** setEmail. */
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  /**
    * productPermissionProfiles.
    *
-   * @return ProductPermissionProfilesRequest
+   * @return UserProductPermissionProfilesRequest
    */
-  public ProductPermissionProfilesRequest productPermissionProfiles(
+  public UserProductPermissionProfilesRequest productPermissionProfiles(
       java.util.List<ProductPermissionProfileRequest> productPermissionProfiles) {
     this.productPermissionProfiles = productPermissionProfiles;
     return this;
@@ -24,9 +52,9 @@ public class ProductPermissionProfilesRequest {
   /**
    * addProductPermissionProfilesItem.
    *
-   * @return ProductPermissionProfilesRequest
+   * @return UserProductPermissionProfilesRequest
    */
-  public ProductPermissionProfilesRequest addProductPermissionProfilesItem(
+  public UserProductPermissionProfilesRequest addProductPermissionProfilesItem(
       ProductPermissionProfileRequest productPermissionProfilesItem) {
     this.productPermissionProfiles.add(productPermissionProfilesItem);
     return this;
@@ -61,24 +89,27 @@ public class ProductPermissionProfilesRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProductPermissionProfilesRequest productPermissionProfilesRequest =
-        (ProductPermissionProfilesRequest) o;
-    return Objects.equals(
-        this.productPermissionProfiles, productPermissionProfilesRequest.productPermissionProfiles);
+    UserProductPermissionProfilesRequest userProductPermissionProfilesRequest =
+        (UserProductPermissionProfilesRequest) o;
+    return Objects.equals(this.email, userProductPermissionProfilesRequest.email)
+        && Objects.equals(
+            this.productPermissionProfiles,
+            userProductPermissionProfilesRequest.productPermissionProfiles);
   }
 
   /** Returns the HashCode. */
   @Override
   public int hashCode() {
-    return Objects.hash(productPermissionProfiles);
+    return Objects.hash(email, productPermissionProfiles);
   }
 
   /** Converts the given object to string. */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProductPermissionProfilesRequest {\n");
+    sb.append("class UserProductPermissionProfilesRequest {\n");
 
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    productPermissionProfiles: ")
         .append(toIndentedString(productPermissionProfiles))
         .append("\n");

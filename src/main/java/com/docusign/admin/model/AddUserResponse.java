@@ -1,18 +1,10 @@
 package com.docusign.admin.model;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.docusign.admin.model.AddUserResponseAccountProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Objects;
 
-/**
- * AddUserResponse
- */
-
+/** AddUserResponse. */
 public class AddUserResponse {
   @JsonProperty("id")
   private java.util.UUID id = null;
@@ -41,160 +33,221 @@ public class AddUserResponse {
   @JsonProperty("accounts")
   private java.util.List<AddUserResponseAccountProperties> accounts = null;
 
+  /**
+   * id.
+   *
+   * @return AddUserResponse
+   */
   public AddUserResponse id(java.util.UUID id) {
     this.id = id;
     return this;
   }
 
-   /**
-   * Get id
+  /**
+   * Get id.
+   *
    * @return id
-  **/
+   */
   @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
   public java.util.UUID getId() {
     return id;
   }
 
+  /** setId. */
   public void setId(java.util.UUID id) {
     this.id = id;
   }
 
+  /**
+   * siteId.
+   *
+   * @return AddUserResponse
+   */
   public AddUserResponse siteId(Integer siteId) {
     this.siteId = siteId;
     return this;
   }
 
-   /**
-   * Get siteId
+  /**
+   * Get siteId.
+   *
    * @return siteId
-  **/
+   */
   @ApiModelProperty(value = "")
   public Integer getSiteId() {
     return siteId;
   }
 
+  /** setSiteId. */
   public void setSiteId(Integer siteId) {
     this.siteId = siteId;
   }
 
+  /**
+   * userName.
+   *
+   * @return AddUserResponse
+   */
   public AddUserResponse userName(String userName) {
     this.userName = userName;
     return this;
   }
 
-   /**
-   * Get userName
+  /**
+   * Get userName.
+   *
    * @return userName
-  **/
+   */
   @ApiModelProperty(value = "")
   public String getUserName() {
     return userName;
   }
 
+  /** setUserName. */
   public void setUserName(String userName) {
     this.userName = userName;
   }
 
+  /**
+   * firstName.
+   *
+   * @return AddUserResponse
+   */
   public AddUserResponse firstName(String firstName) {
     this.firstName = firstName;
     return this;
   }
 
-   /**
-   * Get firstName
+  /**
+   * Get firstName.
+   *
    * @return firstName
-  **/
+   */
   @ApiModelProperty(value = "")
   public String getFirstName() {
     return firstName;
   }
 
+  /** setFirstName. */
   public void setFirstName(String firstName) {
     this.firstName = firstName;
   }
 
+  /**
+   * lastName.
+   *
+   * @return AddUserResponse
+   */
   public AddUserResponse lastName(String lastName) {
     this.lastName = lastName;
     return this;
   }
 
-   /**
-   * Get lastName
+  /**
+   * Get lastName.
+   *
    * @return lastName
-  **/
+   */
   @ApiModelProperty(value = "")
   public String getLastName() {
     return lastName;
   }
 
+  /** setLastName. */
   public void setLastName(String lastName) {
     this.lastName = lastName;
   }
 
+  /**
+   * email.
+   *
+   * @return AddUserResponse
+   */
   public AddUserResponse email(String email) {
     this.email = email;
     return this;
   }
 
-   /**
-   * Get email
+  /**
+   * Get email.
+   *
    * @return email
-  **/
+   */
   @ApiModelProperty(value = "")
   public String getEmail() {
     return email;
   }
 
+  /** setEmail. */
   public void setEmail(String email) {
     this.email = email;
   }
 
+  /**
+   * languageCulture.
+   *
+   * @return AddUserResponse
+   */
   public AddUserResponse languageCulture(String languageCulture) {
     this.languageCulture = languageCulture;
     return this;
   }
 
-   /**
-   * Get languageCulture
+  /**
+   * Get languageCulture.
+   *
    * @return languageCulture
-  **/
+   */
   @ApiModelProperty(value = "")
   public String getLanguageCulture() {
     return languageCulture;
   }
 
+  /** setLanguageCulture. */
   public void setLanguageCulture(String languageCulture) {
     this.languageCulture = languageCulture;
   }
 
+  /**
+   * federatedStatus.
+   *
+   * @return AddUserResponse
+   */
   public AddUserResponse federatedStatus(String federatedStatus) {
     this.federatedStatus = federatedStatus;
     return this;
   }
 
-   /**
-   * Get federatedStatus
+  /**
+   * Get federatedStatus.
+   *
    * @return federatedStatus
-  **/
+   */
   @ApiModelProperty(value = "")
   public String getFederatedStatus() {
     return federatedStatus;
   }
 
+  /** setFederatedStatus. */
   public void setFederatedStatus(String federatedStatus) {
     this.federatedStatus = federatedStatus;
   }
 
-   /**
-   * Get accounts
+  /**
+   * Get accounts.
+   *
    * @return accounts
-  **/
+   */
   @ApiModelProperty(value = "")
   public java.util.List<AddUserResponseAccountProperties> getAccounts() {
     return accounts;
   }
 
-
+  /**
+   * Compares objects.
+   *
+   * @return true or false depending on comparison result.
+   */
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -204,28 +257,38 @@ public class AddUserResponse {
       return false;
     }
     AddUserResponse addUserResponse = (AddUserResponse) o;
-    return Objects.equals(this.id, addUserResponse.id) &&
-        Objects.equals(this.siteId, addUserResponse.siteId) &&
-        Objects.equals(this.userName, addUserResponse.userName) &&
-        Objects.equals(this.firstName, addUserResponse.firstName) &&
-        Objects.equals(this.lastName, addUserResponse.lastName) &&
-        Objects.equals(this.email, addUserResponse.email) &&
-        Objects.equals(this.languageCulture, addUserResponse.languageCulture) &&
-        Objects.equals(this.federatedStatus, addUserResponse.federatedStatus) &&
-        Objects.equals(this.accounts, addUserResponse.accounts);
+    return Objects.equals(this.id, addUserResponse.id)
+        && Objects.equals(this.siteId, addUserResponse.siteId)
+        && Objects.equals(this.userName, addUserResponse.userName)
+        && Objects.equals(this.firstName, addUserResponse.firstName)
+        && Objects.equals(this.lastName, addUserResponse.lastName)
+        && Objects.equals(this.email, addUserResponse.email)
+        && Objects.equals(this.languageCulture, addUserResponse.languageCulture)
+        && Objects.equals(this.federatedStatus, addUserResponse.federatedStatus)
+        && Objects.equals(this.accounts, addUserResponse.accounts);
   }
 
+  /** Returns the HashCode. */
   @Override
   public int hashCode() {
-    return Objects.hash(id, siteId, userName, firstName, lastName, email, languageCulture, federatedStatus, accounts);
+    return Objects.hash(
+        id,
+        siteId,
+        userName,
+        firstName,
+        lastName,
+        email,
+        languageCulture,
+        federatedStatus,
+        accounts);
   }
 
-
+  /** Converts the given object to string. */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AddUserResponse {\n");
-    
+
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
     sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
@@ -240,8 +303,7 @@ public class AddUserResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -249,6 +311,4 @@ public class AddUserResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
-

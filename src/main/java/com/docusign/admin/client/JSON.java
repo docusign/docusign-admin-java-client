@@ -2,16 +2,15 @@ package com.docusign.admin.client;
 
 import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.*;
-import com.fasterxml.jackson.datatype.joda.JodaModule;
-
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import java.text.DateFormat;
-
 import javax.ws.rs.ext.ContextResolver;
 
-
+/** JSON Class. */
 public class JSON implements ContextResolver<ObjectMapper> {
   private ObjectMapper mapper;
 
+  /** JSON Class constructor doc. */
   public JSON() {
     mapper = new ObjectMapper();
     mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
@@ -21,15 +20,15 @@ public class JSON implements ContextResolver<ObjectMapper> {
     mapper.enable(SerializationFeature.WRITE_ENUMS_USING_TO_STRING);
     mapper.enable(DeserializationFeature.READ_ENUMS_USING_TO_STRING);
     mapper.setDateFormat(new RFC3339DateFormat());
-    mapper.registerModule(new JodaModule());
+    mapper.registerModule(new JavaTimeModule());
   }
 
   /**
    * Returns the current object mapper used for JSON serialization/deserialization.
-   * <p>
-   * Note: If you make changes to the object mapper, remember to set it back via
-   * <code>setObjectMapper</code> in order to trigger HTTP client rebuilding.
-   * </p>
+   *
+   * <p>Note: If you make changes to the object mapper, remember to set it back via <code>
+   * setObjectMapper</code> in order to trigger HTTP client rebuilding.
+   *
    * @return Object mapper
    */
   public ObjectMapper getObjectMapper() {
@@ -43,6 +42,7 @@ public class JSON implements ContextResolver<ObjectMapper> {
 
   /**
    * Set the date format for JSON (de)serialization with Date properties.
+   *
    * @param dateFormat Date format
    */
   public void setDateFormat(DateFormat dateFormat) {
