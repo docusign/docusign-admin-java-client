@@ -1,17 +1,10 @@
 package com.docusign.admin.model;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Objects;
 
-/**
- * OETRErrorDetails
- */
-
+/** OETRErrorDetails. */
 public class OETRErrorDetails {
   @JsonProperty("error")
   private String error = null;
@@ -19,43 +12,61 @@ public class OETRErrorDetails {
   @JsonProperty("error_description")
   private String errorDescription = null;
 
+  /**
+   * error.
+   *
+   * @return OETRErrorDetails
+   */
   public OETRErrorDetails error(String error) {
     this.error = error;
     return this;
   }
 
-   /**
-   * Get error
+  /**
+   * Get error.
+   *
    * @return error
-  **/
+   */
   @ApiModelProperty(value = "")
   public String getError() {
     return error;
   }
 
+  /** setError. */
   public void setError(String error) {
     this.error = error;
   }
 
+  /**
+   * errorDescription.
+   *
+   * @return OETRErrorDetails
+   */
   public OETRErrorDetails errorDescription(String errorDescription) {
     this.errorDescription = errorDescription;
     return this;
   }
 
-   /**
-   * Get errorDescription
+  /**
+   * Get errorDescription.
+   *
    * @return errorDescription
-  **/
+   */
   @ApiModelProperty(value = "")
   public String getErrorDescription() {
     return errorDescription;
   }
 
+  /** setErrorDescription. */
   public void setErrorDescription(String errorDescription) {
     this.errorDescription = errorDescription;
   }
 
-
+  /**
+   * Compares objects.
+   *
+   * @return true or false depending on comparison result.
+   */
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -65,21 +76,22 @@ public class OETRErrorDetails {
       return false;
     }
     OETRErrorDetails oeTRErrorDetails = (OETRErrorDetails) o;
-    return Objects.equals(this.error, oeTRErrorDetails.error) &&
-        Objects.equals(this.errorDescription, oeTRErrorDetails.errorDescription);
+    return Objects.equals(this.error, oeTRErrorDetails.error)
+        && Objects.equals(this.errorDescription, oeTRErrorDetails.errorDescription);
   }
 
+  /** Returns the HashCode. */
   @Override
   public int hashCode() {
     return Objects.hash(error, errorDescription);
   }
 
-
+  /** Converts the given object to string. */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OETRErrorDetails {\n");
-    
+
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("    errorDescription: ").append(toIndentedString(errorDescription)).append("\n");
     sb.append("}");
@@ -87,8 +99,7 @@ public class OETRErrorDetails {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -96,6 +107,4 @@ public class OETRErrorDetails {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
-

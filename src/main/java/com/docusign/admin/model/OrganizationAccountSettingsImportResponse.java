@@ -1,32 +1,23 @@
 package com.docusign.admin.model;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.docusign.admin.model.OrganizationAccountSettingsImportRequestorResponse;
-import com.docusign.admin.model.OrganizationAccountSettingsImportResultResponse;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.joda.time.DateTime;
+import java.time.LocalDateTime;
+import java.util.Objects;
 
-/**
- * OrganizationAccountSettingsImportResponse
- */
-
+/** OrganizationAccountSettingsImportResponse. */
 public class OrganizationAccountSettingsImportResponse {
   @JsonProperty("created")
-  private DateTime created = null;
+  private LocalDateTime created = null;
 
   @JsonProperty("last_modified")
-  private DateTime lastModified = null;
+  private LocalDateTime lastModified = null;
 
   @JsonProperty("completed")
-  private DateTime completed = null;
+  private LocalDateTime completed = null;
 
   @JsonProperty("expires")
-  private DateTime expires = null;
+  private LocalDateTime expires = null;
 
   @JsonProperty("percent_completed")
   private Integer percentCompleted = null;
@@ -61,293 +52,420 @@ public class OrganizationAccountSettingsImportResponse {
   @JsonProperty("requestor")
   private OrganizationAccountSettingsImportRequestorResponse requestor = null;
 
-  public OrganizationAccountSettingsImportResponse created(DateTime created) {
+  /**
+   * created.
+   *
+   * @return OrganizationAccountSettingsImportResponse
+   */
+  public OrganizationAccountSettingsImportResponse created(LocalDateTime created) {
     this.created = created;
     return this;
   }
 
-   /**
-   * Get created
+  /**
+   * Get created.
+   *
    * @return created
-  **/
+   */
   @ApiModelProperty(value = "")
-  public DateTime getCreated() {
+  public LocalDateTime getCreated() {
     return created;
   }
 
-  public void setCreated(DateTime created) {
+  /** setCreated. */
+  public void setCreated(LocalDateTime created) {
     this.created = created;
   }
 
-  public OrganizationAccountSettingsImportResponse lastModified(DateTime lastModified) {
+  /**
+   * lastModified.
+   *
+   * @return OrganizationAccountSettingsImportResponse
+   */
+  public OrganizationAccountSettingsImportResponse lastModified(LocalDateTime lastModified) {
     this.lastModified = lastModified;
     return this;
   }
 
-   /**
-   * Get lastModified
+  /**
+   * Get lastModified.
+   *
    * @return lastModified
-  **/
+   */
   @ApiModelProperty(value = "")
-  public DateTime getLastModified() {
+  public LocalDateTime getLastModified() {
     return lastModified;
   }
 
-  public void setLastModified(DateTime lastModified) {
+  /** setLastModified. */
+  public void setLastModified(LocalDateTime lastModified) {
     this.lastModified = lastModified;
   }
 
-  public OrganizationAccountSettingsImportResponse completed(DateTime completed) {
+  /**
+   * completed.
+   *
+   * @return OrganizationAccountSettingsImportResponse
+   */
+  public OrganizationAccountSettingsImportResponse completed(LocalDateTime completed) {
     this.completed = completed;
     return this;
   }
 
-   /**
-   * Get completed
+  /**
+   * Get completed.
+   *
    * @return completed
-  **/
+   */
   @ApiModelProperty(value = "")
-  public DateTime getCompleted() {
+  public LocalDateTime getCompleted() {
     return completed;
   }
 
-  public void setCompleted(DateTime completed) {
+  /** setCompleted. */
+  public void setCompleted(LocalDateTime completed) {
     this.completed = completed;
   }
 
-  public OrganizationAccountSettingsImportResponse expires(DateTime expires) {
+  /**
+   * expires.
+   *
+   * @return OrganizationAccountSettingsImportResponse
+   */
+  public OrganizationAccountSettingsImportResponse expires(LocalDateTime expires) {
     this.expires = expires;
     return this;
   }
 
-   /**
-   * Get expires
+  /**
+   * Get expires.
+   *
    * @return expires
-  **/
+   */
   @ApiModelProperty(value = "")
-  public DateTime getExpires() {
+  public LocalDateTime getExpires() {
     return expires;
   }
 
-  public void setExpires(DateTime expires) {
+  /** setExpires. */
+  public void setExpires(LocalDateTime expires) {
     this.expires = expires;
   }
 
+  /**
+   * percentCompleted.
+   *
+   * @return OrganizationAccountSettingsImportResponse
+   */
   public OrganizationAccountSettingsImportResponse percentCompleted(Integer percentCompleted) {
     this.percentCompleted = percentCompleted;
     return this;
   }
 
-   /**
-   * Get percentCompleted
+  /**
+   * Get percentCompleted.
+   *
    * @return percentCompleted
-  **/
+   */
   @ApiModelProperty(value = "")
   public Integer getPercentCompleted() {
     return percentCompleted;
   }
 
+  /** setPercentCompleted. */
   public void setPercentCompleted(Integer percentCompleted) {
     this.percentCompleted = percentCompleted;
   }
 
-  public OrganizationAccountSettingsImportResponse numberProcessedAccounts(Long numberProcessedAccounts) {
+  /**
+   * numberProcessedAccounts.
+   *
+   * @return OrganizationAccountSettingsImportResponse
+   */
+  public OrganizationAccountSettingsImportResponse numberProcessedAccounts(
+      Long numberProcessedAccounts) {
     this.numberProcessedAccounts = numberProcessedAccounts;
     return this;
   }
 
-   /**
-   * Get numberProcessedAccounts
+  /**
+   * Get numberProcessedAccounts.
+   *
    * @return numberProcessedAccounts
-  **/
+   */
   @ApiModelProperty(value = "")
   public Long getNumberProcessedAccounts() {
     return numberProcessedAccounts;
   }
 
+  /** setNumberProcessedAccounts. */
   public void setNumberProcessedAccounts(Long numberProcessedAccounts) {
     this.numberProcessedAccounts = numberProcessedAccounts;
   }
 
-  public OrganizationAccountSettingsImportResponse numberUnprocessedAccounts(Long numberUnprocessedAccounts) {
+  /**
+   * numberUnprocessedAccounts.
+   *
+   * @return OrganizationAccountSettingsImportResponse
+   */
+  public OrganizationAccountSettingsImportResponse numberUnprocessedAccounts(
+      Long numberUnprocessedAccounts) {
     this.numberUnprocessedAccounts = numberUnprocessedAccounts;
     return this;
   }
 
-   /**
-   * Get numberUnprocessedAccounts
+  /**
+   * Get numberUnprocessedAccounts.
+   *
    * @return numberUnprocessedAccounts
-  **/
+   */
   @ApiModelProperty(value = "")
   public Long getNumberUnprocessedAccounts() {
     return numberUnprocessedAccounts;
   }
 
+  /** setNumberUnprocessedAccounts. */
   public void setNumberUnprocessedAccounts(Long numberUnprocessedAccounts) {
     this.numberUnprocessedAccounts = numberUnprocessedAccounts;
   }
 
-  public OrganizationAccountSettingsImportResponse results(java.util.List<OrganizationAccountSettingsImportResultResponse> results) {
+  /**
+   * results.
+   *
+   * @return OrganizationAccountSettingsImportResponse
+   */
+  public OrganizationAccountSettingsImportResponse results(
+      java.util.List<OrganizationAccountSettingsImportResultResponse> results) {
     this.results = results;
     return this;
   }
 
-  public OrganizationAccountSettingsImportResponse addResultsItem(OrganizationAccountSettingsImportResultResponse resultsItem) {
+  /**
+   * addResultsItem.
+   *
+   * @return OrganizationAccountSettingsImportResponse
+   */
+  public OrganizationAccountSettingsImportResponse addResultsItem(
+      OrganizationAccountSettingsImportResultResponse resultsItem) {
     if (this.results == null) {
-      this.results = new java.util.ArrayList<OrganizationAccountSettingsImportResultResponse>();
+      this.results = new java.util.ArrayList<>();
     }
     this.results.add(resultsItem);
     return this;
   }
 
-   /**
-   * Get results
+  /**
+   * Get results.
+   *
    * @return results
-  **/
+   */
   @ApiModelProperty(value = "")
   public java.util.List<OrganizationAccountSettingsImportResultResponse> getResults() {
     return results;
   }
 
+  /** setResults. */
   public void setResults(java.util.List<OrganizationAccountSettingsImportResultResponse> results) {
     this.results = results;
   }
 
+  /**
+   * success.
+   *
+   * @return OrganizationAccountSettingsImportResponse
+   */
   public OrganizationAccountSettingsImportResponse success(Boolean success) {
     this.success = success;
     return this;
   }
 
-   /**
-   * Get success
+  /**
+   * Get success.
+   *
    * @return success
-  **/
+   */
   @ApiModelProperty(value = "")
   public Boolean isSuccess() {
     return success;
   }
 
+  /** setSuccess. */
   public void setSuccess(Boolean success) {
     this.success = success;
   }
 
-  public OrganizationAccountSettingsImportResponse skippedSettingsByAccount(java.util.Map<String, java.util.List<String>> skippedSettingsByAccount) {
+  /**
+   * skippedSettingsByAccount.
+   *
+   * @return OrganizationAccountSettingsImportResponse
+   */
+  public OrganizationAccountSettingsImportResponse skippedSettingsByAccount(
+      java.util.Map<String, java.util.List<String>> skippedSettingsByAccount) {
     this.skippedSettingsByAccount = skippedSettingsByAccount;
     return this;
   }
 
-  public OrganizationAccountSettingsImportResponse putSkippedSettingsByAccountItem(String key, java.util.List<String> skippedSettingsByAccountItem) {
+  /**
+   * putSkippedSettingsByAccountItem.
+   *
+   * @return OrganizationAccountSettingsImportResponse
+   */
+  public OrganizationAccountSettingsImportResponse putSkippedSettingsByAccountItem(
+      String key, java.util.List<String> skippedSettingsByAccountItem) {
     if (this.skippedSettingsByAccount == null) {
-      this.skippedSettingsByAccount = new java.util.HashMap<String, java.util.List<String>>();
+      this.skippedSettingsByAccount = new java.util.HashMap<>();
     }
     this.skippedSettingsByAccount.put(key, skippedSettingsByAccountItem);
     return this;
   }
 
-   /**
-   * Get skippedSettingsByAccount
+  /**
+   * Get skippedSettingsByAccount.
+   *
    * @return skippedSettingsByAccount
-  **/
+   */
   @ApiModelProperty(value = "")
   public java.util.Map<String, java.util.List<String>> getSkippedSettingsByAccount() {
     return skippedSettingsByAccount;
   }
 
-  public void setSkippedSettingsByAccount(java.util.Map<String, java.util.List<String>> skippedSettingsByAccount) {
+  /** setSkippedSettingsByAccount. */
+  public void setSkippedSettingsByAccount(
+      java.util.Map<String, java.util.List<String>> skippedSettingsByAccount) {
     this.skippedSettingsByAccount = skippedSettingsByAccount;
   }
 
+  /**
+   * id.
+   *
+   * @return OrganizationAccountSettingsImportResponse
+   */
   public OrganizationAccountSettingsImportResponse id(String id) {
     this.id = id;
     return this;
   }
 
-   /**
-   * Get id
+  /**
+   * Get id.
+   *
    * @return id
-  **/
+   */
   @ApiModelProperty(value = "")
   public String getId() {
     return id;
   }
 
+  /** setId. */
   public void setId(String id) {
     this.id = id;
   }
 
+  /**
+   * organizationId.
+   *
+   * @return OrganizationAccountSettingsImportResponse
+   */
   public OrganizationAccountSettingsImportResponse organizationId(String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
 
-   /**
-   * Get organizationId
+  /**
+   * Get organizationId.
+   *
    * @return organizationId
-  **/
+   */
   @ApiModelProperty(value = "")
   public String getOrganizationId() {
     return organizationId;
   }
 
+  /** setOrganizationId. */
   public void setOrganizationId(String organizationId) {
     this.organizationId = organizationId;
   }
 
+  /**
+   * status.
+   *
+   * @return OrganizationAccountSettingsImportResponse
+   */
   public OrganizationAccountSettingsImportResponse status(String status) {
     this.status = status;
     return this;
   }
 
-   /**
-   * Get status
+  /**
+   * Get status.
+   *
    * @return status
-  **/
+   */
   @ApiModelProperty(value = "")
   public String getStatus() {
     return status;
   }
 
+  /** setStatus. */
   public void setStatus(String status) {
     this.status = status;
   }
 
+  /**
+   * type.
+   *
+   * @return OrganizationAccountSettingsImportResponse
+   */
   public OrganizationAccountSettingsImportResponse type(String type) {
     this.type = type;
     return this;
   }
 
-   /**
-   * Get type
+  /**
+   * Get type.
+   *
    * @return type
-  **/
+   */
   @ApiModelProperty(value = "")
   public String getType() {
     return type;
   }
 
+  /** setType. */
   public void setType(String type) {
     this.type = type;
   }
 
-  public OrganizationAccountSettingsImportResponse requestor(OrganizationAccountSettingsImportRequestorResponse requestor) {
+  /**
+   * requestor.
+   *
+   * @return OrganizationAccountSettingsImportResponse
+   */
+  public OrganizationAccountSettingsImportResponse requestor(
+      OrganizationAccountSettingsImportRequestorResponse requestor) {
     this.requestor = requestor;
     return this;
   }
 
-   /**
-   * Get requestor
+  /**
+   * Get requestor.
+   *
    * @return requestor
-  **/
+   */
   @ApiModelProperty(value = "")
   public OrganizationAccountSettingsImportRequestorResponse getRequestor() {
     return requestor;
   }
 
+  /** setRequestor. */
   public void setRequestor(OrganizationAccountSettingsImportRequestorResponse requestor) {
     this.requestor = requestor;
   }
 
-
+  /**
+   * Compares objects.
+   *
+   * @return true or false depending on comparison result.
+   */
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -356,45 +474,76 @@ public class OrganizationAccountSettingsImportResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrganizationAccountSettingsImportResponse organizationAccountSettingsImportResponse = (OrganizationAccountSettingsImportResponse) o;
-    return Objects.equals(this.created, organizationAccountSettingsImportResponse.created) &&
-        Objects.equals(this.lastModified, organizationAccountSettingsImportResponse.lastModified) &&
-        Objects.equals(this.completed, organizationAccountSettingsImportResponse.completed) &&
-        Objects.equals(this.expires, organizationAccountSettingsImportResponse.expires) &&
-        Objects.equals(this.percentCompleted, organizationAccountSettingsImportResponse.percentCompleted) &&
-        Objects.equals(this.numberProcessedAccounts, organizationAccountSettingsImportResponse.numberProcessedAccounts) &&
-        Objects.equals(this.numberUnprocessedAccounts, organizationAccountSettingsImportResponse.numberUnprocessedAccounts) &&
-        Objects.equals(this.results, organizationAccountSettingsImportResponse.results) &&
-        Objects.equals(this.success, organizationAccountSettingsImportResponse.success) &&
-        Objects.equals(this.skippedSettingsByAccount, organizationAccountSettingsImportResponse.skippedSettingsByAccount) &&
-        Objects.equals(this.id, organizationAccountSettingsImportResponse.id) &&
-        Objects.equals(this.organizationId, organizationAccountSettingsImportResponse.organizationId) &&
-        Objects.equals(this.status, organizationAccountSettingsImportResponse.status) &&
-        Objects.equals(this.type, organizationAccountSettingsImportResponse.type) &&
-        Objects.equals(this.requestor, organizationAccountSettingsImportResponse.requestor);
+    OrganizationAccountSettingsImportResponse organizationAccountSettingsImportResponse =
+        (OrganizationAccountSettingsImportResponse) o;
+    return Objects.equals(this.created, organizationAccountSettingsImportResponse.created)
+        && Objects.equals(this.lastModified, organizationAccountSettingsImportResponse.lastModified)
+        && Objects.equals(this.completed, organizationAccountSettingsImportResponse.completed)
+        && Objects.equals(this.expires, organizationAccountSettingsImportResponse.expires)
+        && Objects.equals(
+            this.percentCompleted, organizationAccountSettingsImportResponse.percentCompleted)
+        && Objects.equals(
+            this.numberProcessedAccounts,
+            organizationAccountSettingsImportResponse.numberProcessedAccounts)
+        && Objects.equals(
+            this.numberUnprocessedAccounts,
+            organizationAccountSettingsImportResponse.numberUnprocessedAccounts)
+        && Objects.equals(this.results, organizationAccountSettingsImportResponse.results)
+        && Objects.equals(this.success, organizationAccountSettingsImportResponse.success)
+        && Objects.equals(
+            this.skippedSettingsByAccount,
+            organizationAccountSettingsImportResponse.skippedSettingsByAccount)
+        && Objects.equals(this.id, organizationAccountSettingsImportResponse.id)
+        && Objects.equals(
+            this.organizationId, organizationAccountSettingsImportResponse.organizationId)
+        && Objects.equals(this.status, organizationAccountSettingsImportResponse.status)
+        && Objects.equals(this.type, organizationAccountSettingsImportResponse.type)
+        && Objects.equals(this.requestor, organizationAccountSettingsImportResponse.requestor);
   }
 
+  /** Returns the HashCode. */
   @Override
   public int hashCode() {
-    return Objects.hash(created, lastModified, completed, expires, percentCompleted, numberProcessedAccounts, numberUnprocessedAccounts, results, success, skippedSettingsByAccount, id, organizationId, status, type, requestor);
+    return Objects.hash(
+        created,
+        lastModified,
+        completed,
+        expires,
+        percentCompleted,
+        numberProcessedAccounts,
+        numberUnprocessedAccounts,
+        results,
+        success,
+        skippedSettingsByAccount,
+        id,
+        organizationId,
+        status,
+        type,
+        requestor);
   }
 
-
+  /** Converts the given object to string. */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrganizationAccountSettingsImportResponse {\n");
-    
+
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
     sb.append("    completed: ").append(toIndentedString(completed)).append("\n");
     sb.append("    expires: ").append(toIndentedString(expires)).append("\n");
     sb.append("    percentCompleted: ").append(toIndentedString(percentCompleted)).append("\n");
-    sb.append("    numberProcessedAccounts: ").append(toIndentedString(numberProcessedAccounts)).append("\n");
-    sb.append("    numberUnprocessedAccounts: ").append(toIndentedString(numberUnprocessedAccounts)).append("\n");
+    sb.append("    numberProcessedAccounts: ")
+        .append(toIndentedString(numberProcessedAccounts))
+        .append("\n");
+    sb.append("    numberUnprocessedAccounts: ")
+        .append(toIndentedString(numberUnprocessedAccounts))
+        .append("\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("    success: ").append(toIndentedString(success)).append("\n");
-    sb.append("    skippedSettingsByAccount: ").append(toIndentedString(skippedSettingsByAccount)).append("\n");
+    sb.append("    skippedSettingsByAccount: ")
+        .append(toIndentedString(skippedSettingsByAccount))
+        .append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
@@ -405,8 +554,7 @@ public class OrganizationAccountSettingsImportResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -414,6 +562,4 @@ public class OrganizationAccountSettingsImportResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }
-

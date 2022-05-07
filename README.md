@@ -35,7 +35,7 @@ Note: DocuSign uses **Eclipse** with **Maven** for testing purposes.
 <dependency>
   <groupId>com.docusign</groupId>
   <artifactId>docusign-admin-java</artifactId>
-  <version>1.0.0-BETA</version>
+  <version>1.1.0</version>
 </dependency>
 ```
 
@@ -52,8 +52,6 @@ This client has the following external dependencies:
 - com.fasterxml.jackson.core:jackson-core:jar:2.10.1
 - com.fasterxml.jackson.core:jackson-annotations:jar:2.10.1
 - com.fasterxml.jackson.core:jackson-databind:2.10.1
-- com.fasterxml.jackson.datatype:jackson-datatype-joda:jar:2.10.1
-- com.brsanthu:migbase64:2.2
 - junit:junit:jar:4.12
 - com.apache.oltu.oauth2:org.apache.oltu.oauth2.client:1.0.2
 - com.auth0:java-jwt:3.4.1
