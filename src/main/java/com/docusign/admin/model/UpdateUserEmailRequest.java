@@ -1,10 +1,18 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
-/** UpdateUserEmailRequest. */
+/**
+ * UpdateUserEmailRequest.
+ *
+ */
+
 public class UpdateUserEmailRequest {
   @JsonProperty("id")
   private java.util.UUID id = null;
@@ -15,11 +23,12 @@ public class UpdateUserEmailRequest {
   @JsonProperty("email")
   private String email = null;
 
+
   /**
    * id.
    *
    * @return UpdateUserEmailRequest
-   */
+   **/
   public UpdateUserEmailRequest id(java.util.UUID id) {
     this.id = id;
     return this;
@@ -27,24 +36,26 @@ public class UpdateUserEmailRequest {
 
   /**
    * Get id.
-   *
    * @return id
-   */
+   **/
   @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", required = true, value = "")
   public java.util.UUID getId() {
     return id;
   }
 
-  /** setId. */
+  /**
+   * setId.
+   **/
   public void setId(java.util.UUID id) {
     this.id = id;
   }
+
 
   /**
    * siteId.
    *
    * @return UpdateUserEmailRequest
-   */
+   **/
   public UpdateUserEmailRequest siteId(Integer siteId) {
     this.siteId = siteId;
     return this;
@@ -52,24 +63,26 @@ public class UpdateUserEmailRequest {
 
   /**
    * Get siteId.
-   *
    * @return siteId
-   */
+   **/
   @ApiModelProperty(required = true, value = "")
   public Integer getSiteId() {
     return siteId;
   }
 
-  /** setSiteId. */
+  /**
+   * setSiteId.
+   **/
   public void setSiteId(Integer siteId) {
     this.siteId = siteId;
   }
+
 
   /**
    * email.
    *
    * @return UpdateUserEmailRequest
-   */
+   **/
   public UpdateUserEmailRequest email(String email) {
     this.email = email;
     return this;
@@ -77,18 +90,20 @@ public class UpdateUserEmailRequest {
 
   /**
    * Get email.
-   *
    * @return email
-   */
+   **/
   @ApiModelProperty(required = true, value = "")
   public String getEmail() {
     return email;
   }
 
-  /** setEmail. */
+  /**
+   * setEmail.
+   **/
   public void setEmail(String email) {
     this.email = email;
   }
+
 
   /**
    * Compares objects.
@@ -104,23 +119,28 @@ public class UpdateUserEmailRequest {
       return false;
     }
     UpdateUserEmailRequest updateUserEmailRequest = (UpdateUserEmailRequest) o;
-    return Objects.equals(this.id, updateUserEmailRequest.id)
-        && Objects.equals(this.siteId, updateUserEmailRequest.siteId)
-        && Objects.equals(this.email, updateUserEmailRequest.email);
+    return Objects.equals(this.id, updateUserEmailRequest.id) &&
+        Objects.equals(this.siteId, updateUserEmailRequest.siteId) &&
+        Objects.equals(this.email, updateUserEmailRequest.email);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(id, siteId, email);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateUserEmailRequest {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
@@ -129,7 +149,8 @@ public class UpdateUserEmailRequest {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -137,4 +158,6 @@ public class UpdateUserEmailRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

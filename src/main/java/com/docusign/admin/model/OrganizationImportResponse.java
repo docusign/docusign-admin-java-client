@@ -1,11 +1,22 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
-import java.time.LocalDateTime;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.OrganizationImportResponseErrorRollup;
+import com.docusign.admin.model.OrganizationImportResponseRequestor;
+import com.docusign.admin.model.OrganizationImportResponseWarningRollup;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.time.OffsetDateTime;
 
-/** OrganizationImportResponse. */
+/**
+ * OrganizationImportResponse.
+ *
+ */
+
 public class OrganizationImportResponse {
   @JsonProperty("id")
   private java.util.UUID id = null;
@@ -17,10 +28,10 @@ public class OrganizationImportResponse {
   private OrganizationImportResponseRequestor requestor = null;
 
   @JsonProperty("created")
-  private LocalDateTime created = null;
+  private OffsetDateTime created = null;
 
   @JsonProperty("last_modified")
-  private LocalDateTime lastModified = null;
+  private OffsetDateTime lastModified = null;
 
   @JsonProperty("status")
   private String status = null;
@@ -85,11 +96,12 @@ public class OrganizationImportResponse {
   @JsonProperty("results_uri")
   private String resultsUri = null;
 
+
   /**
    * id.
    *
    * @return OrganizationImportResponse
-   */
+   **/
   public OrganizationImportResponse id(java.util.UUID id) {
     this.id = id;
     return this;
@@ -97,24 +109,26 @@ public class OrganizationImportResponse {
 
   /**
    * Get id.
-   *
    * @return id
-   */
+   **/
   @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
   public java.util.UUID getId() {
     return id;
   }
 
-  /** setId. */
+  /**
+   * setId.
+   **/
   public void setId(java.util.UUID id) {
     this.id = id;
   }
+
 
   /**
    * type.
    *
    * @return OrganizationImportResponse
-   */
+   **/
   public OrganizationImportResponse type(String type) {
     this.type = type;
     return this;
@@ -122,24 +136,26 @@ public class OrganizationImportResponse {
 
   /**
    * Get type.
-   *
    * @return type
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getType() {
     return type;
   }
 
-  /** setType. */
+  /**
+   * setType.
+   **/
   public void setType(String type) {
     this.type = type;
   }
+
 
   /**
    * requestor.
    *
    * @return OrganizationImportResponse
-   */
+   **/
   public OrganizationImportResponse requestor(OrganizationImportResponseRequestor requestor) {
     this.requestor = requestor;
     return this;
@@ -147,74 +163,80 @@ public class OrganizationImportResponse {
 
   /**
    * Get requestor.
-   *
    * @return requestor
-   */
+   **/
   @ApiModelProperty(value = "")
   public OrganizationImportResponseRequestor getRequestor() {
     return requestor;
   }
 
-  /** setRequestor. */
+  /**
+   * setRequestor.
+   **/
   public void setRequestor(OrganizationImportResponseRequestor requestor) {
     this.requestor = requestor;
   }
+
 
   /**
    * created.
    *
    * @return OrganizationImportResponse
-   */
-  public OrganizationImportResponse created(LocalDateTime created) {
+   **/
+  public OrganizationImportResponse created(OffsetDateTime created) {
     this.created = created;
     return this;
   }
 
   /**
    * Get created.
-   *
    * @return created
-   */
+   **/
   @ApiModelProperty(value = "")
-  public LocalDateTime getCreated() {
+  public OffsetDateTime getCreated() {
     return created;
   }
 
-  /** setCreated. */
-  public void setCreated(LocalDateTime created) {
+  /**
+   * setCreated.
+   **/
+  public void setCreated(OffsetDateTime created) {
     this.created = created;
   }
+
 
   /**
    * lastModified.
    *
    * @return OrganizationImportResponse
-   */
-  public OrganizationImportResponse lastModified(LocalDateTime lastModified) {
+   **/
+  public OrganizationImportResponse lastModified(OffsetDateTime lastModified) {
     this.lastModified = lastModified;
     return this;
   }
 
   /**
    * Get lastModified.
-   *
    * @return lastModified
-   */
+   **/
   @ApiModelProperty(value = "")
-  public LocalDateTime getLastModified() {
+  public OffsetDateTime getLastModified() {
     return lastModified;
   }
 
-  /** setLastModified. */
-  public void setLastModified(LocalDateTime lastModified) {
+  /**
+   * setLastModified.
+   **/
+  public void setLastModified(OffsetDateTime lastModified) {
     this.lastModified = lastModified;
   }
+
 
   /**
    * status.
    *
    * @return OrganizationImportResponse
-   */
+   **/
   public OrganizationImportResponse status(String status) {
     this.status = status;
     return this;
@@ -222,24 +244,26 @@ public class OrganizationImportResponse {
 
   /**
    * Get status.
-   *
    * @return status
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getStatus() {
     return status;
   }
 
-  /** setStatus. */
+  /**
+   * setStatus.
+   **/
   public void setStatus(String status) {
     this.status = status;
   }
+
 
   /**
    * userCount.
    *
    * @return OrganizationImportResponse
-   */
+   **/
   public OrganizationImportResponse userCount(Integer userCount) {
     this.userCount = userCount;
     return this;
@@ -247,24 +271,26 @@ public class OrganizationImportResponse {
 
   /**
    * Get userCount.
-   *
    * @return userCount
-   */
+   **/
   @ApiModelProperty(value = "")
   public Integer getUserCount() {
     return userCount;
   }
 
-  /** setUserCount. */
+  /**
+   * setUserCount.
+   **/
   public void setUserCount(Integer userCount) {
     this.userCount = userCount;
   }
+
 
   /**
    * processedUserCount.
    *
    * @return OrganizationImportResponse
-   */
+   **/
   public OrganizationImportResponse processedUserCount(Integer processedUserCount) {
     this.processedUserCount = processedUserCount;
     return this;
@@ -272,24 +298,26 @@ public class OrganizationImportResponse {
 
   /**
    * Get processedUserCount.
-   *
    * @return processedUserCount
-   */
+   **/
   @ApiModelProperty(value = "")
   public Integer getProcessedUserCount() {
     return processedUserCount;
   }
 
-  /** setProcessedUserCount. */
+  /**
+   * setProcessedUserCount.
+   **/
   public void setProcessedUserCount(Integer processedUserCount) {
     this.processedUserCount = processedUserCount;
   }
+
 
   /**
    * addedUserCount.
    *
    * @return OrganizationImportResponse
-   */
+   **/
   public OrganizationImportResponse addedUserCount(Integer addedUserCount) {
     this.addedUserCount = addedUserCount;
     return this;
@@ -297,24 +325,26 @@ public class OrganizationImportResponse {
 
   /**
    * Get addedUserCount.
-   *
    * @return addedUserCount
-   */
+   **/
   @ApiModelProperty(value = "")
   public Integer getAddedUserCount() {
     return addedUserCount;
   }
 
-  /** setAddedUserCount. */
+  /**
+   * setAddedUserCount.
+   **/
   public void setAddedUserCount(Integer addedUserCount) {
     this.addedUserCount = addedUserCount;
   }
+
 
   /**
    * updatedUserCount.
    *
    * @return OrganizationImportResponse
-   */
+   **/
   public OrganizationImportResponse updatedUserCount(Integer updatedUserCount) {
     this.updatedUserCount = updatedUserCount;
     return this;
@@ -322,24 +352,26 @@ public class OrganizationImportResponse {
 
   /**
    * Get updatedUserCount.
-   *
    * @return updatedUserCount
-   */
+   **/
   @ApiModelProperty(value = "")
   public Integer getUpdatedUserCount() {
     return updatedUserCount;
   }
 
-  /** setUpdatedUserCount. */
+  /**
+   * setUpdatedUserCount.
+   **/
   public void setUpdatedUserCount(Integer updatedUserCount) {
     this.updatedUserCount = updatedUserCount;
   }
+
 
   /**
    * closedUserCount.
    *
    * @return OrganizationImportResponse
-   */
+   **/
   public OrganizationImportResponse closedUserCount(Integer closedUserCount) {
     this.closedUserCount = closedUserCount;
     return this;
@@ -347,24 +379,26 @@ public class OrganizationImportResponse {
 
   /**
    * Get closedUserCount.
-   *
    * @return closedUserCount
-   */
+   **/
   @ApiModelProperty(value = "")
   public Integer getClosedUserCount() {
     return closedUserCount;
   }
 
-  /** setClosedUserCount. */
+  /**
+   * setClosedUserCount.
+   **/
   public void setClosedUserCount(Integer closedUserCount) {
     this.closedUserCount = closedUserCount;
   }
+
 
   /**
    * noActionRequiredUserCount.
    *
    * @return OrganizationImportResponse
-   */
+   **/
   public OrganizationImportResponse noActionRequiredUserCount(Integer noActionRequiredUserCount) {
     this.noActionRequiredUserCount = noActionRequiredUserCount;
     return this;
@@ -372,24 +406,26 @@ public class OrganizationImportResponse {
 
   /**
    * Get noActionRequiredUserCount.
-   *
    * @return noActionRequiredUserCount
-   */
+   **/
   @ApiModelProperty(value = "")
   public Integer getNoActionRequiredUserCount() {
     return noActionRequiredUserCount;
   }
 
-  /** setNoActionRequiredUserCount. */
+  /**
+   * setNoActionRequiredUserCount.
+   **/
   public void setNoActionRequiredUserCount(Integer noActionRequiredUserCount) {
     this.noActionRequiredUserCount = noActionRequiredUserCount;
   }
+
 
   /**
    * errorCount.
    *
    * @return OrganizationImportResponse
-   */
+   **/
   public OrganizationImportResponse errorCount(Integer errorCount) {
     this.errorCount = errorCount;
     return this;
@@ -397,24 +433,26 @@ public class OrganizationImportResponse {
 
   /**
    * Get errorCount.
-   *
    * @return errorCount
-   */
+   **/
   @ApiModelProperty(value = "")
   public Integer getErrorCount() {
     return errorCount;
   }
 
-  /** setErrorCount. */
+  /**
+   * setErrorCount.
+   **/
   public void setErrorCount(Integer errorCount) {
     this.errorCount = errorCount;
   }
+
 
   /**
    * warningCount.
    *
    * @return OrganizationImportResponse
-   */
+   **/
   public OrganizationImportResponse warningCount(Integer warningCount) {
     this.warningCount = warningCount;
     return this;
@@ -422,24 +460,26 @@ public class OrganizationImportResponse {
 
   /**
    * Get warningCount.
-   *
    * @return warningCount
-   */
+   **/
   @ApiModelProperty(value = "")
   public Integer getWarningCount() {
     return warningCount;
   }
 
-  /** setWarningCount. */
+  /**
+   * setWarningCount.
+   **/
   public void setWarningCount(Integer warningCount) {
     this.warningCount = warningCount;
   }
+
 
   /**
    * invalidColumnHeaders.
    *
    * @return OrganizationImportResponse
-   */
+   **/
   public OrganizationImportResponse invalidColumnHeaders(String invalidColumnHeaders) {
     this.invalidColumnHeaders = invalidColumnHeaders;
     return this;
@@ -447,51 +487,53 @@ public class OrganizationImportResponse {
 
   /**
    * Get invalidColumnHeaders.
-   *
    * @return invalidColumnHeaders
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getInvalidColumnHeaders() {
     return invalidColumnHeaders;
   }
 
-  /** setInvalidColumnHeaders. */
+  /**
+   * setInvalidColumnHeaders.
+   **/
   public void setInvalidColumnHeaders(String invalidColumnHeaders) {
     this.invalidColumnHeaders = invalidColumnHeaders;
   }
+
 
   /**
    * importsNotFoundOrNotAvailableForAccounts.
    *
    * @return OrganizationImportResponse
-   */
-  public OrganizationImportResponse importsNotFoundOrNotAvailableForAccounts(
-      String importsNotFoundOrNotAvailableForAccounts) {
+   **/
+  public OrganizationImportResponse importsNotFoundOrNotAvailableForAccounts(String importsNotFoundOrNotAvailableForAccounts) {
     this.importsNotFoundOrNotAvailableForAccounts = importsNotFoundOrNotAvailableForAccounts;
     return this;
   }
 
   /**
    * Get importsNotFoundOrNotAvailableForAccounts.
-   *
    * @return importsNotFoundOrNotAvailableForAccounts
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getImportsNotFoundOrNotAvailableForAccounts() {
     return importsNotFoundOrNotAvailableForAccounts;
   }
 
-  /** setImportsNotFoundOrNotAvailableForAccounts. */
-  public void setImportsNotFoundOrNotAvailableForAccounts(
-      String importsNotFoundOrNotAvailableForAccounts) {
+  /**
+   * setImportsNotFoundOrNotAvailableForAccounts.
+   **/
+  public void setImportsNotFoundOrNotAvailableForAccounts(String importsNotFoundOrNotAvailableForAccounts) {
     this.importsNotFoundOrNotAvailableForAccounts = importsNotFoundOrNotAvailableForAccounts;
   }
+
 
   /**
    * importsFailedForAccounts.
    *
    * @return OrganizationImportResponse
-   */
+   **/
   public OrganizationImportResponse importsFailedForAccounts(String importsFailedForAccounts) {
     this.importsFailedForAccounts = importsFailedForAccounts;
     return this;
@@ -499,24 +541,26 @@ public class OrganizationImportResponse {
 
   /**
    * Get importsFailedForAccounts.
-   *
    * @return importsFailedForAccounts
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getImportsFailedForAccounts() {
     return importsFailedForAccounts;
   }
 
-  /** setImportsFailedForAccounts. */
+  /**
+   * setImportsFailedForAccounts.
+   **/
   public void setImportsFailedForAccounts(String importsFailedForAccounts) {
     this.importsFailedForAccounts = importsFailedForAccounts;
   }
+
 
   /**
    * importsTimedOutForAccounts.
    *
    * @return OrganizationImportResponse
-   */
+   **/
   public OrganizationImportResponse importsTimedOutForAccounts(String importsTimedOutForAccounts) {
     this.importsTimedOutForAccounts = importsTimedOutForAccounts;
     return this;
@@ -524,51 +568,53 @@ public class OrganizationImportResponse {
 
   /**
    * Get importsTimedOutForAccounts.
-   *
    * @return importsTimedOutForAccounts
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getImportsTimedOutForAccounts() {
     return importsTimedOutForAccounts;
   }
 
-  /** setImportsTimedOutForAccounts. */
+  /**
+   * setImportsTimedOutForAccounts.
+   **/
   public void setImportsTimedOutForAccounts(String importsTimedOutForAccounts) {
     this.importsTimedOutForAccounts = importsTimedOutForAccounts;
   }
+
 
   /**
    * importsNotFoundOrNotAvailableForSites.
    *
    * @return OrganizationImportResponse
-   */
-  public OrganizationImportResponse importsNotFoundOrNotAvailableForSites(
-      String importsNotFoundOrNotAvailableForSites) {
+   **/
+  public OrganizationImportResponse importsNotFoundOrNotAvailableForSites(String importsNotFoundOrNotAvailableForSites) {
     this.importsNotFoundOrNotAvailableForSites = importsNotFoundOrNotAvailableForSites;
     return this;
   }
 
   /**
    * Get importsNotFoundOrNotAvailableForSites.
-   *
    * @return importsNotFoundOrNotAvailableForSites
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getImportsNotFoundOrNotAvailableForSites() {
     return importsNotFoundOrNotAvailableForSites;
   }
 
-  /** setImportsNotFoundOrNotAvailableForSites. */
-  public void setImportsNotFoundOrNotAvailableForSites(
-      String importsNotFoundOrNotAvailableForSites) {
+  /**
+   * setImportsNotFoundOrNotAvailableForSites.
+   **/
+  public void setImportsNotFoundOrNotAvailableForSites(String importsNotFoundOrNotAvailableForSites) {
     this.importsNotFoundOrNotAvailableForSites = importsNotFoundOrNotAvailableForSites;
   }
+
 
   /**
    * importsFailedForSites.
    *
    * @return OrganizationImportResponse
-   */
+   **/
   public OrganizationImportResponse importsFailedForSites(String importsFailedForSites) {
     this.importsFailedForSites = importsFailedForSites;
     return this;
@@ -576,24 +622,26 @@ public class OrganizationImportResponse {
 
   /**
    * Get importsFailedForSites.
-   *
    * @return importsFailedForSites
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getImportsFailedForSites() {
     return importsFailedForSites;
   }
 
-  /** setImportsFailedForSites. */
+  /**
+   * setImportsFailedForSites.
+   **/
   public void setImportsFailedForSites(String importsFailedForSites) {
     this.importsFailedForSites = importsFailedForSites;
   }
+
 
   /**
    * importsTimedOutForSites.
    *
    * @return OrganizationImportResponse
-   */
+   **/
   public OrganizationImportResponse importsTimedOutForSites(String importsTimedOutForSites) {
     this.importsTimedOutForSites = importsTimedOutForSites;
     return this;
@@ -601,37 +649,37 @@ public class OrganizationImportResponse {
 
   /**
    * Get importsTimedOutForSites.
-   *
    * @return importsTimedOutForSites
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getImportsTimedOutForSites() {
     return importsTimedOutForSites;
   }
 
-  /** setImportsTimedOutForSites. */
+  /**
+   * setImportsTimedOutForSites.
+   **/
   public void setImportsTimedOutForSites(String importsTimedOutForSites) {
     this.importsTimedOutForSites = importsTimedOutForSites;
   }
+
 
   /**
    * fileLevelErrorRollups.
    *
    * @return OrganizationImportResponse
-   */
-  public OrganizationImportResponse fileLevelErrorRollups(
-      java.util.List<OrganizationImportResponseErrorRollup> fileLevelErrorRollups) {
+   **/
+  public OrganizationImportResponse fileLevelErrorRollups(java.util.List<OrganizationImportResponseErrorRollup> fileLevelErrorRollups) {
     this.fileLevelErrorRollups = fileLevelErrorRollups;
     return this;
   }
-
+  
   /**
    * addFileLevelErrorRollupsItem.
    *
    * @return OrganizationImportResponse
-   */
-  public OrganizationImportResponse addFileLevelErrorRollupsItem(
-      OrganizationImportResponseErrorRollup fileLevelErrorRollupsItem) {
+   **/
+  public OrganizationImportResponse addFileLevelErrorRollupsItem(OrganizationImportResponseErrorRollup fileLevelErrorRollupsItem) {
     if (this.fileLevelErrorRollups == null) {
       this.fileLevelErrorRollups = new java.util.ArrayList<>();
     }
@@ -641,38 +689,37 @@ public class OrganizationImportResponse {
 
   /**
    * Get fileLevelErrorRollups.
-   *
    * @return fileLevelErrorRollups
-   */
+   **/
   @ApiModelProperty(value = "")
   public java.util.List<OrganizationImportResponseErrorRollup> getFileLevelErrorRollups() {
     return fileLevelErrorRollups;
   }
 
-  /** setFileLevelErrorRollups. */
-  public void setFileLevelErrorRollups(
-      java.util.List<OrganizationImportResponseErrorRollup> fileLevelErrorRollups) {
+  /**
+   * setFileLevelErrorRollups.
+   **/
+  public void setFileLevelErrorRollups(java.util.List<OrganizationImportResponseErrorRollup> fileLevelErrorRollups) {
     this.fileLevelErrorRollups = fileLevelErrorRollups;
   }
+
 
   /**
    * userLevelErrorRollups.
    *
    * @return OrganizationImportResponse
-   */
-  public OrganizationImportResponse userLevelErrorRollups(
-      java.util.List<OrganizationImportResponseErrorRollup> userLevelErrorRollups) {
+   **/
+  public OrganizationImportResponse userLevelErrorRollups(java.util.List<OrganizationImportResponseErrorRollup> userLevelErrorRollups) {
     this.userLevelErrorRollups = userLevelErrorRollups;
     return this;
   }
-
+  
   /**
    * addUserLevelErrorRollupsItem.
    *
    * @return OrganizationImportResponse
-   */
-  public OrganizationImportResponse addUserLevelErrorRollupsItem(
-      OrganizationImportResponseErrorRollup userLevelErrorRollupsItem) {
+   **/
+  public OrganizationImportResponse addUserLevelErrorRollupsItem(OrganizationImportResponseErrorRollup userLevelErrorRollupsItem) {
     if (this.userLevelErrorRollups == null) {
       this.userLevelErrorRollups = new java.util.ArrayList<>();
     }
@@ -682,38 +729,37 @@ public class OrganizationImportResponse {
 
   /**
    * Get userLevelErrorRollups.
-   *
    * @return userLevelErrorRollups
-   */
+   **/
   @ApiModelProperty(value = "")
   public java.util.List<OrganizationImportResponseErrorRollup> getUserLevelErrorRollups() {
     return userLevelErrorRollups;
   }
 
-  /** setUserLevelErrorRollups. */
-  public void setUserLevelErrorRollups(
-      java.util.List<OrganizationImportResponseErrorRollup> userLevelErrorRollups) {
+  /**
+   * setUserLevelErrorRollups.
+   **/
+  public void setUserLevelErrorRollups(java.util.List<OrganizationImportResponseErrorRollup> userLevelErrorRollups) {
     this.userLevelErrorRollups = userLevelErrorRollups;
   }
+
 
   /**
    * userLevelWarningRollups.
    *
    * @return OrganizationImportResponse
-   */
-  public OrganizationImportResponse userLevelWarningRollups(
-      java.util.List<OrganizationImportResponseWarningRollup> userLevelWarningRollups) {
+   **/
+  public OrganizationImportResponse userLevelWarningRollups(java.util.List<OrganizationImportResponseWarningRollup> userLevelWarningRollups) {
     this.userLevelWarningRollups = userLevelWarningRollups;
     return this;
   }
-
+  
   /**
    * addUserLevelWarningRollupsItem.
    *
    * @return OrganizationImportResponse
-   */
-  public OrganizationImportResponse addUserLevelWarningRollupsItem(
-      OrganizationImportResponseWarningRollup userLevelWarningRollupsItem) {
+   **/
+  public OrganizationImportResponse addUserLevelWarningRollupsItem(OrganizationImportResponseWarningRollup userLevelWarningRollupsItem) {
     if (this.userLevelWarningRollups == null) {
       this.userLevelWarningRollups = new java.util.ArrayList<>();
     }
@@ -723,25 +769,26 @@ public class OrganizationImportResponse {
 
   /**
    * Get userLevelWarningRollups.
-   *
    * @return userLevelWarningRollups
-   */
+   **/
   @ApiModelProperty(value = "")
   public java.util.List<OrganizationImportResponseWarningRollup> getUserLevelWarningRollups() {
     return userLevelWarningRollups;
   }
 
-  /** setUserLevelWarningRollups. */
-  public void setUserLevelWarningRollups(
-      java.util.List<OrganizationImportResponseWarningRollup> userLevelWarningRollups) {
+  /**
+   * setUserLevelWarningRollups.
+   **/
+  public void setUserLevelWarningRollups(java.util.List<OrganizationImportResponseWarningRollup> userLevelWarningRollups) {
     this.userLevelWarningRollups = userLevelWarningRollups;
   }
+
 
   /**
    * hasCsvResults.
    *
    * @return OrganizationImportResponse
-   */
+   **/
   public OrganizationImportResponse hasCsvResults(Boolean hasCsvResults) {
     this.hasCsvResults = hasCsvResults;
     return this;
@@ -749,24 +796,26 @@ public class OrganizationImportResponse {
 
   /**
    * Get hasCsvResults.
-   *
    * @return hasCsvResults
-   */
+   **/
   @ApiModelProperty(value = "")
   public Boolean isHasCsvResults() {
     return hasCsvResults;
   }
 
-  /** setHasCsvResults. */
+  /**
+   * setHasCsvResults.
+   **/
   public void setHasCsvResults(Boolean hasCsvResults) {
     this.hasCsvResults = hasCsvResults;
   }
+
 
   /**
    * resultsUri.
    *
    * @return OrganizationImportResponse
-   */
+   **/
   public OrganizationImportResponse resultsUri(String resultsUri) {
     this.resultsUri = resultsUri;
     return this;
@@ -774,18 +823,20 @@ public class OrganizationImportResponse {
 
   /**
    * Get resultsUri.
-   *
    * @return resultsUri
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getResultsUri() {
     return resultsUri;
   }
 
-  /** setResultsUri. */
+  /**
+   * setResultsUri.
+   **/
   public void setResultsUri(String resultsUri) {
     this.resultsUri = resultsUri;
   }
+
 
   /**
    * Compares objects.
@@ -801,85 +852,51 @@ public class OrganizationImportResponse {
       return false;
     }
     OrganizationImportResponse organizationImportResponse = (OrganizationImportResponse) o;
-    return Objects.equals(this.id, organizationImportResponse.id)
-        && Objects.equals(this.type, organizationImportResponse.type)
-        && Objects.equals(this.requestor, organizationImportResponse.requestor)
-        && Objects.equals(this.created, organizationImportResponse.created)
-        && Objects.equals(this.lastModified, organizationImportResponse.lastModified)
-        && Objects.equals(this.status, organizationImportResponse.status)
-        && Objects.equals(this.userCount, organizationImportResponse.userCount)
-        && Objects.equals(this.processedUserCount, organizationImportResponse.processedUserCount)
-        && Objects.equals(this.addedUserCount, organizationImportResponse.addedUserCount)
-        && Objects.equals(this.updatedUserCount, organizationImportResponse.updatedUserCount)
-        && Objects.equals(this.closedUserCount, organizationImportResponse.closedUserCount)
-        && Objects.equals(
-            this.noActionRequiredUserCount, organizationImportResponse.noActionRequiredUserCount)
-        && Objects.equals(this.errorCount, organizationImportResponse.errorCount)
-        && Objects.equals(this.warningCount, organizationImportResponse.warningCount)
-        && Objects.equals(
-            this.invalidColumnHeaders, organizationImportResponse.invalidColumnHeaders)
-        && Objects.equals(
-            this.importsNotFoundOrNotAvailableForAccounts,
-            organizationImportResponse.importsNotFoundOrNotAvailableForAccounts)
-        && Objects.equals(
-            this.importsFailedForAccounts, organizationImportResponse.importsFailedForAccounts)
-        && Objects.equals(
-            this.importsTimedOutForAccounts, organizationImportResponse.importsTimedOutForAccounts)
-        && Objects.equals(
-            this.importsNotFoundOrNotAvailableForSites,
-            organizationImportResponse.importsNotFoundOrNotAvailableForSites)
-        && Objects.equals(
-            this.importsFailedForSites, organizationImportResponse.importsFailedForSites)
-        && Objects.equals(
-            this.importsTimedOutForSites, organizationImportResponse.importsTimedOutForSites)
-        && Objects.equals(
-            this.fileLevelErrorRollups, organizationImportResponse.fileLevelErrorRollups)
-        && Objects.equals(
-            this.userLevelErrorRollups, organizationImportResponse.userLevelErrorRollups)
-        && Objects.equals(
-            this.userLevelWarningRollups, organizationImportResponse.userLevelWarningRollups)
-        && Objects.equals(this.hasCsvResults, organizationImportResponse.hasCsvResults)
-        && Objects.equals(this.resultsUri, organizationImportResponse.resultsUri);
+    return Objects.equals(this.id, organizationImportResponse.id) &&
+        Objects.equals(this.type, organizationImportResponse.type) &&
+        Objects.equals(this.requestor, organizationImportResponse.requestor) &&
+        Objects.equals(this.created, organizationImportResponse.created) &&
+        Objects.equals(this.lastModified, organizationImportResponse.lastModified) &&
+        Objects.equals(this.status, organizationImportResponse.status) &&
+        Objects.equals(this.userCount, organizationImportResponse.userCount) &&
+        Objects.equals(this.processedUserCount, organizationImportResponse.processedUserCount) &&
+        Objects.equals(this.addedUserCount, organizationImportResponse.addedUserCount) &&
+        Objects.equals(this.updatedUserCount, organizationImportResponse.updatedUserCount) &&
+        Objects.equals(this.closedUserCount, organizationImportResponse.closedUserCount) &&
+        Objects.equals(this.noActionRequiredUserCount, organizationImportResponse.noActionRequiredUserCount) &&
+        Objects.equals(this.errorCount, organizationImportResponse.errorCount) &&
+        Objects.equals(this.warningCount, organizationImportResponse.warningCount) &&
+        Objects.equals(this.invalidColumnHeaders, organizationImportResponse.invalidColumnHeaders) &&
+        Objects.equals(this.importsNotFoundOrNotAvailableForAccounts, organizationImportResponse.importsNotFoundOrNotAvailableForAccounts) &&
+        Objects.equals(this.importsFailedForAccounts, organizationImportResponse.importsFailedForAccounts) &&
+        Objects.equals(this.importsTimedOutForAccounts, organizationImportResponse.importsTimedOutForAccounts) &&
+        Objects.equals(this.importsNotFoundOrNotAvailableForSites, organizationImportResponse.importsNotFoundOrNotAvailableForSites) &&
+        Objects.equals(this.importsFailedForSites, organizationImportResponse.importsFailedForSites) &&
+        Objects.equals(this.importsTimedOutForSites, organizationImportResponse.importsTimedOutForSites) &&
+        Objects.equals(this.fileLevelErrorRollups, organizationImportResponse.fileLevelErrorRollups) &&
+        Objects.equals(this.userLevelErrorRollups, organizationImportResponse.userLevelErrorRollups) &&
+        Objects.equals(this.userLevelWarningRollups, organizationImportResponse.userLevelWarningRollups) &&
+        Objects.equals(this.hasCsvResults, organizationImportResponse.hasCsvResults) &&
+        Objects.equals(this.resultsUri, organizationImportResponse.resultsUri);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
-    return Objects.hash(
-        id,
-        type,
-        requestor,
-        created,
-        lastModified,
-        status,
-        userCount,
-        processedUserCount,
-        addedUserCount,
-        updatedUserCount,
-        closedUserCount,
-        noActionRequiredUserCount,
-        errorCount,
-        warningCount,
-        invalidColumnHeaders,
-        importsNotFoundOrNotAvailableForAccounts,
-        importsFailedForAccounts,
-        importsTimedOutForAccounts,
-        importsNotFoundOrNotAvailableForSites,
-        importsFailedForSites,
-        importsTimedOutForSites,
-        fileLevelErrorRollups,
-        userLevelErrorRollups,
-        userLevelWarningRollups,
-        hasCsvResults,
-        resultsUri);
+    return Objects.hash(id, type, requestor, created, lastModified, status, userCount, processedUserCount, addedUserCount, updatedUserCount, closedUserCount, noActionRequiredUserCount, errorCount, warningCount, invalidColumnHeaders, importsNotFoundOrNotAvailableForAccounts, importsFailedForAccounts, importsTimedOutForAccounts, importsNotFoundOrNotAvailableForSites, importsFailedForSites, importsTimedOutForSites, fileLevelErrorRollups, userLevelErrorRollups, userLevelWarningRollups, hasCsvResults, resultsUri);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrganizationImportResponse {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    requestor: ").append(toIndentedString(requestor)).append("\n");
@@ -891,41 +908,19 @@ public class OrganizationImportResponse {
     sb.append("    addedUserCount: ").append(toIndentedString(addedUserCount)).append("\n");
     sb.append("    updatedUserCount: ").append(toIndentedString(updatedUserCount)).append("\n");
     sb.append("    closedUserCount: ").append(toIndentedString(closedUserCount)).append("\n");
-    sb.append("    noActionRequiredUserCount: ")
-        .append(toIndentedString(noActionRequiredUserCount))
-        .append("\n");
+    sb.append("    noActionRequiredUserCount: ").append(toIndentedString(noActionRequiredUserCount)).append("\n");
     sb.append("    errorCount: ").append(toIndentedString(errorCount)).append("\n");
     sb.append("    warningCount: ").append(toIndentedString(warningCount)).append("\n");
-    sb.append("    invalidColumnHeaders: ")
-        .append(toIndentedString(invalidColumnHeaders))
-        .append("\n");
-    sb.append("    importsNotFoundOrNotAvailableForAccounts: ")
-        .append(toIndentedString(importsNotFoundOrNotAvailableForAccounts))
-        .append("\n");
-    sb.append("    importsFailedForAccounts: ")
-        .append(toIndentedString(importsFailedForAccounts))
-        .append("\n");
-    sb.append("    importsTimedOutForAccounts: ")
-        .append(toIndentedString(importsTimedOutForAccounts))
-        .append("\n");
-    sb.append("    importsNotFoundOrNotAvailableForSites: ")
-        .append(toIndentedString(importsNotFoundOrNotAvailableForSites))
-        .append("\n");
-    sb.append("    importsFailedForSites: ")
-        .append(toIndentedString(importsFailedForSites))
-        .append("\n");
-    sb.append("    importsTimedOutForSites: ")
-        .append(toIndentedString(importsTimedOutForSites))
-        .append("\n");
-    sb.append("    fileLevelErrorRollups: ")
-        .append(toIndentedString(fileLevelErrorRollups))
-        .append("\n");
-    sb.append("    userLevelErrorRollups: ")
-        .append(toIndentedString(userLevelErrorRollups))
-        .append("\n");
-    sb.append("    userLevelWarningRollups: ")
-        .append(toIndentedString(userLevelWarningRollups))
-        .append("\n");
+    sb.append("    invalidColumnHeaders: ").append(toIndentedString(invalidColumnHeaders)).append("\n");
+    sb.append("    importsNotFoundOrNotAvailableForAccounts: ").append(toIndentedString(importsNotFoundOrNotAvailableForAccounts)).append("\n");
+    sb.append("    importsFailedForAccounts: ").append(toIndentedString(importsFailedForAccounts)).append("\n");
+    sb.append("    importsTimedOutForAccounts: ").append(toIndentedString(importsTimedOutForAccounts)).append("\n");
+    sb.append("    importsNotFoundOrNotAvailableForSites: ").append(toIndentedString(importsNotFoundOrNotAvailableForSites)).append("\n");
+    sb.append("    importsFailedForSites: ").append(toIndentedString(importsFailedForSites)).append("\n");
+    sb.append("    importsTimedOutForSites: ").append(toIndentedString(importsTimedOutForSites)).append("\n");
+    sb.append("    fileLevelErrorRollups: ").append(toIndentedString(fileLevelErrorRollups)).append("\n");
+    sb.append("    userLevelErrorRollups: ").append(toIndentedString(userLevelErrorRollups)).append("\n");
+    sb.append("    userLevelWarningRollups: ").append(toIndentedString(userLevelWarningRollups)).append("\n");
     sb.append("    hasCsvResults: ").append(toIndentedString(hasCsvResults)).append("\n");
     sb.append("    resultsUri: ").append(toIndentedString(resultsUri)).append("\n");
     sb.append("}");
@@ -933,7 +928,8 @@ public class OrganizationImportResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -941,4 +937,6 @@ public class OrganizationImportResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

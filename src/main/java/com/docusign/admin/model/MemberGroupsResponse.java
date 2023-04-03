@@ -1,10 +1,20 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.MemberGroupResponse;
+import com.docusign.admin.model.PagingResponseProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
-/** MemberGroupsResponse. */
+/**
+ * MemberGroupsResponse.
+ *
+ */
+
 public class MemberGroupsResponse {
   @JsonProperty("groups")
   private java.util.List<MemberGroupResponse> groups = null;
@@ -12,21 +22,22 @@ public class MemberGroupsResponse {
   @JsonProperty("paging")
   private PagingResponseProperties paging = null;
 
+
   /**
    * groups.
    *
    * @return MemberGroupsResponse
-   */
+   **/
   public MemberGroupsResponse groups(java.util.List<MemberGroupResponse> groups) {
     this.groups = groups;
     return this;
   }
-
+  
   /**
    * addGroupsItem.
    *
    * @return MemberGroupsResponse
-   */
+   **/
   public MemberGroupsResponse addGroupsItem(MemberGroupResponse groupsItem) {
     if (this.groups == null) {
       this.groups = new java.util.ArrayList<>();
@@ -37,24 +48,26 @@ public class MemberGroupsResponse {
 
   /**
    * Get groups.
-   *
    * @return groups
-   */
+   **/
   @ApiModelProperty(value = "")
   public java.util.List<MemberGroupResponse> getGroups() {
     return groups;
   }
 
-  /** setGroups. */
+  /**
+   * setGroups.
+   **/
   public void setGroups(java.util.List<MemberGroupResponse> groups) {
     this.groups = groups;
   }
+
 
   /**
    * paging.
    *
    * @return MemberGroupsResponse
-   */
+   **/
   public MemberGroupsResponse paging(PagingResponseProperties paging) {
     this.paging = paging;
     return this;
@@ -62,18 +75,20 @@ public class MemberGroupsResponse {
 
   /**
    * Get paging.
-   *
    * @return paging
-   */
+   **/
   @ApiModelProperty(value = "")
   public PagingResponseProperties getPaging() {
     return paging;
   }
 
-  /** setPaging. */
+  /**
+   * setPaging.
+   **/
   public void setPaging(PagingResponseProperties paging) {
     this.paging = paging;
   }
+
 
   /**
    * Compares objects.
@@ -89,22 +104,27 @@ public class MemberGroupsResponse {
       return false;
     }
     MemberGroupsResponse memberGroupsResponse = (MemberGroupsResponse) o;
-    return Objects.equals(this.groups, memberGroupsResponse.groups)
-        && Objects.equals(this.paging, memberGroupsResponse.paging);
+    return Objects.equals(this.groups, memberGroupsResponse.groups) &&
+        Objects.equals(this.paging, memberGroupsResponse.paging);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(groups, paging);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class MemberGroupsResponse {\n");
-
+    
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("    paging: ").append(toIndentedString(paging)).append("\n");
     sb.append("}");
@@ -112,7 +132,8 @@ public class MemberGroupsResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -120,4 +141,6 @@ public class MemberGroupsResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

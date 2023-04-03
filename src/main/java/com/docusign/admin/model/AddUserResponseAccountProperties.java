@@ -1,10 +1,20 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.DSGroupResponse;
+import com.docusign.admin.model.ProductPermissionProfileResponse;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
-/** AddUserResponseAccountProperties. */
+/**
+ * AddUserResponseAccountProperties.
+ *
+ */
+
 public class AddUserResponseAccountProperties {
   @JsonProperty("id")
   private java.util.UUID id = null;
@@ -24,11 +34,12 @@ public class AddUserResponseAccountProperties {
   @JsonProperty("job_title")
   private String jobTitle = null;
 
+
   /**
    * id.
    *
    * @return AddUserResponseAccountProperties
-   */
+   **/
   public AddUserResponseAccountProperties id(java.util.UUID id) {
     this.id = id;
     return this;
@@ -36,24 +47,26 @@ public class AddUserResponseAccountProperties {
 
   /**
    * Get id.
-   *
    * @return id
-   */
+   **/
   @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
   public java.util.UUID getId() {
     return id;
   }
 
-  /** setId. */
+  /**
+   * setId.
+   **/
   public void setId(java.util.UUID id) {
     this.id = id;
   }
+
 
   /**
    * siteId.
    *
    * @return AddUserResponseAccountProperties
-   */
+   **/
   public AddUserResponseAccountProperties siteId(Integer siteId) {
     this.siteId = siteId;
     return this;
@@ -61,24 +74,24 @@ public class AddUserResponseAccountProperties {
 
   /**
    * Get siteId.
-   *
    * @return siteId
-   */
+   **/
   @ApiModelProperty(value = "")
   public Integer getSiteId() {
     return siteId;
   }
 
-  /** setSiteId. */
+  /**
+   * setSiteId.
+   **/
   public void setSiteId(Integer siteId) {
     this.siteId = siteId;
   }
 
   /**
    * Get productPermissionProfiles.
-   *
    * @return productPermissionProfiles
-   */
+   **/
   @ApiModelProperty(value = "")
   public java.util.List<ProductPermissionProfileResponse> getProductPermissionProfiles() {
     return productPermissionProfiles;
@@ -86,19 +99,19 @@ public class AddUserResponseAccountProperties {
 
   /**
    * Get dsGroups.
-   *
    * @return dsGroups
-   */
+   **/
   @ApiModelProperty(value = "")
   public java.util.List<DSGroupResponse> getDsGroups() {
     return dsGroups;
   }
 
+
   /**
    * companyName.
    *
    * @return AddUserResponseAccountProperties
-   */
+   **/
   public AddUserResponseAccountProperties companyName(String companyName) {
     this.companyName = companyName;
     return this;
@@ -106,24 +119,26 @@ public class AddUserResponseAccountProperties {
 
   /**
    * Get companyName.
-   *
    * @return companyName
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getCompanyName() {
     return companyName;
   }
 
-  /** setCompanyName. */
+  /**
+   * setCompanyName.
+   **/
   public void setCompanyName(String companyName) {
     this.companyName = companyName;
   }
+
 
   /**
    * jobTitle.
    *
    * @return AddUserResponseAccountProperties
-   */
+   **/
   public AddUserResponseAccountProperties jobTitle(String jobTitle) {
     this.jobTitle = jobTitle;
     return this;
@@ -131,18 +146,20 @@ public class AddUserResponseAccountProperties {
 
   /**
    * Get jobTitle.
-   *
    * @return jobTitle
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getJobTitle() {
     return jobTitle;
   }
 
-  /** setJobTitle. */
+  /**
+   * setJobTitle.
+   **/
   public void setJobTitle(String jobTitle) {
     this.jobTitle = jobTitle;
   }
+
 
   /**
    * Compares objects.
@@ -157,35 +174,35 @@ public class AddUserResponseAccountProperties {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AddUserResponseAccountProperties addUserResponseAccountProperties =
-        (AddUserResponseAccountProperties) o;
-    return Objects.equals(this.id, addUserResponseAccountProperties.id)
-        && Objects.equals(this.siteId, addUserResponseAccountProperties.siteId)
-        && Objects.equals(
-            this.productPermissionProfiles,
-            addUserResponseAccountProperties.productPermissionProfiles)
-        && Objects.equals(this.dsGroups, addUserResponseAccountProperties.dsGroups)
-        && Objects.equals(this.companyName, addUserResponseAccountProperties.companyName)
-        && Objects.equals(this.jobTitle, addUserResponseAccountProperties.jobTitle);
+    AddUserResponseAccountProperties addUserResponseAccountProperties = (AddUserResponseAccountProperties) o;
+    return Objects.equals(this.id, addUserResponseAccountProperties.id) &&
+        Objects.equals(this.siteId, addUserResponseAccountProperties.siteId) &&
+        Objects.equals(this.productPermissionProfiles, addUserResponseAccountProperties.productPermissionProfiles) &&
+        Objects.equals(this.dsGroups, addUserResponseAccountProperties.dsGroups) &&
+        Objects.equals(this.companyName, addUserResponseAccountProperties.companyName) &&
+        Objects.equals(this.jobTitle, addUserResponseAccountProperties.jobTitle);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(id, siteId, productPermissionProfiles, dsGroups, companyName, jobTitle);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AddUserResponseAccountProperties {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
-    sb.append("    productPermissionProfiles: ")
-        .append(toIndentedString(productPermissionProfiles))
-        .append("\n");
+    sb.append("    productPermissionProfiles: ").append(toIndentedString(productPermissionProfiles)).append("\n");
     sb.append("    dsGroups: ").append(toIndentedString(dsGroups)).append("\n");
     sb.append("    companyName: ").append(toIndentedString(companyName)).append("\n");
     sb.append("    jobTitle: ").append(toIndentedString(jobTitle)).append("\n");
@@ -194,7 +211,8 @@ public class AddUserResponseAccountProperties {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -202,4 +220,6 @@ public class AddUserResponseAccountProperties {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

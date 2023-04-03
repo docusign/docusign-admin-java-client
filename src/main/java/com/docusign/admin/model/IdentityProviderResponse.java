@@ -1,10 +1,20 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.LinkResponse;
+import com.docusign.admin.model.Saml2IdentityProviderResponse;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
-/** IdentityProviderResponse. */
+/**
+ * IdentityProviderResponse.
+ *
+ */
+
 public class IdentityProviderResponse {
   @JsonProperty("id")
   private java.util.UUID id = null;
@@ -24,11 +34,12 @@ public class IdentityProviderResponse {
   @JsonProperty("links")
   private java.util.List<LinkResponse> links = null;
 
+
   /**
    * id.
    *
    * @return IdentityProviderResponse
-   */
+   **/
   public IdentityProviderResponse id(java.util.UUID id) {
     this.id = id;
     return this;
@@ -36,24 +47,26 @@ public class IdentityProviderResponse {
 
   /**
    * Get id.
-   *
    * @return id
-   */
+   **/
   @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
   public java.util.UUID getId() {
     return id;
   }
 
-  /** setId. */
+  /**
+   * setId.
+   **/
   public void setId(java.util.UUID id) {
     this.id = id;
   }
+
 
   /**
    * friendlyName.
    *
    * @return IdentityProviderResponse
-   */
+   **/
   public IdentityProviderResponse friendlyName(String friendlyName) {
     this.friendlyName = friendlyName;
     return this;
@@ -61,24 +74,26 @@ public class IdentityProviderResponse {
 
   /**
    * Get friendlyName.
-   *
    * @return friendlyName
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getFriendlyName() {
     return friendlyName;
   }
 
-  /** setFriendlyName. */
+  /**
+   * setFriendlyName.
+   **/
   public void setFriendlyName(String friendlyName) {
     this.friendlyName = friendlyName;
   }
+
 
   /**
    * autoProvisionUsers.
    *
    * @return IdentityProviderResponse
-   */
+   **/
   public IdentityProviderResponse autoProvisionUsers(Boolean autoProvisionUsers) {
     this.autoProvisionUsers = autoProvisionUsers;
     return this;
@@ -86,24 +101,26 @@ public class IdentityProviderResponse {
 
   /**
    * Get autoProvisionUsers.
-   *
    * @return autoProvisionUsers
-   */
+   **/
   @ApiModelProperty(value = "")
   public Boolean isAutoProvisionUsers() {
     return autoProvisionUsers;
   }
 
-  /** setAutoProvisionUsers. */
+  /**
+   * setAutoProvisionUsers.
+   **/
   public void setAutoProvisionUsers(Boolean autoProvisionUsers) {
     this.autoProvisionUsers = autoProvisionUsers;
   }
+
 
   /**
    * type.
    *
    * @return IdentityProviderResponse
-   */
+   **/
   public IdentityProviderResponse type(String type) {
     this.type = type;
     return this;
@@ -111,24 +128,26 @@ public class IdentityProviderResponse {
 
   /**
    * Get type.
-   *
    * @return type
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getType() {
     return type;
   }
 
-  /** setType. */
+  /**
+   * setType.
+   **/
   public void setType(String type) {
     this.type = type;
   }
+
 
   /**
    * saml20.
    *
    * @return IdentityProviderResponse
-   */
+   **/
   public IdentityProviderResponse saml20(Saml2IdentityProviderResponse saml20) {
     this.saml20 = saml20;
     return this;
@@ -136,34 +155,36 @@ public class IdentityProviderResponse {
 
   /**
    * Get saml20.
-   *
    * @return saml20
-   */
+   **/
   @ApiModelProperty(value = "")
   public Saml2IdentityProviderResponse getSaml20() {
     return saml20;
   }
 
-  /** setSaml20. */
+  /**
+   * setSaml20.
+   **/
   public void setSaml20(Saml2IdentityProviderResponse saml20) {
     this.saml20 = saml20;
   }
+
 
   /**
    * links.
    *
    * @return IdentityProviderResponse
-   */
+   **/
   public IdentityProviderResponse links(java.util.List<LinkResponse> links) {
     this.links = links;
     return this;
   }
-
+  
   /**
    * addLinksItem.
    *
    * @return IdentityProviderResponse
-   */
+   **/
   public IdentityProviderResponse addLinksItem(LinkResponse linksItem) {
     if (this.links == null) {
       this.links = new java.util.ArrayList<>();
@@ -174,18 +195,20 @@ public class IdentityProviderResponse {
 
   /**
    * Get links.
-   *
    * @return links
-   */
+   **/
   @ApiModelProperty(value = "")
   public java.util.List<LinkResponse> getLinks() {
     return links;
   }
 
-  /** setLinks. */
+  /**
+   * setLinks.
+   **/
   public void setLinks(java.util.List<LinkResponse> links) {
     this.links = links;
   }
+
 
   /**
    * Compares objects.
@@ -201,26 +224,31 @@ public class IdentityProviderResponse {
       return false;
     }
     IdentityProviderResponse identityProviderResponse = (IdentityProviderResponse) o;
-    return Objects.equals(this.id, identityProviderResponse.id)
-        && Objects.equals(this.friendlyName, identityProviderResponse.friendlyName)
-        && Objects.equals(this.autoProvisionUsers, identityProviderResponse.autoProvisionUsers)
-        && Objects.equals(this.type, identityProviderResponse.type)
-        && Objects.equals(this.saml20, identityProviderResponse.saml20)
-        && Objects.equals(this.links, identityProviderResponse.links);
+    return Objects.equals(this.id, identityProviderResponse.id) &&
+        Objects.equals(this.friendlyName, identityProviderResponse.friendlyName) &&
+        Objects.equals(this.autoProvisionUsers, identityProviderResponse.autoProvisionUsers) &&
+        Objects.equals(this.type, identityProviderResponse.type) &&
+        Objects.equals(this.saml20, identityProviderResponse.saml20) &&
+        Objects.equals(this.links, identityProviderResponse.links);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(id, friendlyName, autoProvisionUsers, type, saml20, links);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IdentityProviderResponse {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    friendlyName: ").append(toIndentedString(friendlyName)).append("\n");
     sb.append("    autoProvisionUsers: ").append(toIndentedString(autoProvisionUsers)).append("\n");
@@ -232,7 +260,8 @@ public class IdentityProviderResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -240,4 +269,6 @@ public class IdentityProviderResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

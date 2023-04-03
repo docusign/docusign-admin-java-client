@@ -1,10 +1,19 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.OETRErrorDetails;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
-/** OrganizationExportTaskResponse. */
+/**
+ * OrganizationExportTaskResponse.
+ *
+ */
+
 public class OrganizationExportTaskResponse {
   @JsonProperty("id")
   private java.util.UUID id = null;
@@ -24,11 +33,12 @@ public class OrganizationExportTaskResponse {
   @JsonProperty("error_details")
   private OETRErrorDetails errorDetails = null;
 
+
   /**
    * id.
    *
    * @return OrganizationExportTaskResponse
-   */
+   **/
   public OrganizationExportTaskResponse id(java.util.UUID id) {
     this.id = id;
     return this;
@@ -36,24 +46,26 @@ public class OrganizationExportTaskResponse {
 
   /**
    * Get id.
-   *
    * @return id
-   */
+   **/
   @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
   public java.util.UUID getId() {
     return id;
   }
 
-  /** setId. */
+  /**
+   * setId.
+   **/
   public void setId(java.util.UUID id) {
     this.id = id;
   }
+
 
   /**
    * siteId.
    *
    * @return OrganizationExportTaskResponse
-   */
+   **/
   public OrganizationExportTaskResponse siteId(Integer siteId) {
     this.siteId = siteId;
     return this;
@@ -61,24 +73,26 @@ public class OrganizationExportTaskResponse {
 
   /**
    * Get siteId.
-   *
    * @return siteId
-   */
+   **/
   @ApiModelProperty(value = "")
   public Integer getSiteId() {
     return siteId;
   }
 
-  /** setSiteId. */
+  /**
+   * setSiteId.
+   **/
   public void setSiteId(Integer siteId) {
     this.siteId = siteId;
   }
+
 
   /**
    * url.
    *
    * @return OrganizationExportTaskResponse
-   */
+   **/
   public OrganizationExportTaskResponse url(String url) {
     this.url = url;
     return this;
@@ -86,24 +100,26 @@ public class OrganizationExportTaskResponse {
 
   /**
    * Get url.
-   *
    * @return url
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getUrl() {
     return url;
   }
 
-  /** setUrl. */
+  /**
+   * setUrl.
+   **/
   public void setUrl(String url) {
     this.url = url;
   }
+
 
   /**
    * numberRows.
    *
    * @return OrganizationExportTaskResponse
-   */
+   **/
   public OrganizationExportTaskResponse numberRows(Long numberRows) {
     this.numberRows = numberRows;
     return this;
@@ -111,24 +127,26 @@ public class OrganizationExportTaskResponse {
 
   /**
    * Get numberRows.
-   *
    * @return numberRows
-   */
+   **/
   @ApiModelProperty(value = "")
   public Long getNumberRows() {
     return numberRows;
   }
 
-  /** setNumberRows. */
+  /**
+   * setNumberRows.
+   **/
   public void setNumberRows(Long numberRows) {
     this.numberRows = numberRows;
   }
+
 
   /**
    * sizeBytes.
    *
    * @return OrganizationExportTaskResponse
-   */
+   **/
   public OrganizationExportTaskResponse sizeBytes(Long sizeBytes) {
     this.sizeBytes = sizeBytes;
     return this;
@@ -136,24 +154,26 @@ public class OrganizationExportTaskResponse {
 
   /**
    * Get sizeBytes.
-   *
    * @return sizeBytes
-   */
+   **/
   @ApiModelProperty(value = "")
   public Long getSizeBytes() {
     return sizeBytes;
   }
 
-  /** setSizeBytes. */
+  /**
+   * setSizeBytes.
+   **/
   public void setSizeBytes(Long sizeBytes) {
     this.sizeBytes = sizeBytes;
   }
+
 
   /**
    * errorDetails.
    *
    * @return OrganizationExportTaskResponse
-   */
+   **/
   public OrganizationExportTaskResponse errorDetails(OETRErrorDetails errorDetails) {
     this.errorDetails = errorDetails;
     return this;
@@ -161,18 +181,20 @@ public class OrganizationExportTaskResponse {
 
   /**
    * Get errorDetails.
-   *
    * @return errorDetails
-   */
+   **/
   @ApiModelProperty(value = "")
   public OETRErrorDetails getErrorDetails() {
     return errorDetails;
   }
 
-  /** setErrorDetails. */
+  /**
+   * setErrorDetails.
+   **/
   public void setErrorDetails(OETRErrorDetails errorDetails) {
     this.errorDetails = errorDetails;
   }
+
 
   /**
    * Compares objects.
@@ -187,28 +209,32 @@ public class OrganizationExportTaskResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrganizationExportTaskResponse organizationExportTaskResponse =
-        (OrganizationExportTaskResponse) o;
-    return Objects.equals(this.id, organizationExportTaskResponse.id)
-        && Objects.equals(this.siteId, organizationExportTaskResponse.siteId)
-        && Objects.equals(this.url, organizationExportTaskResponse.url)
-        && Objects.equals(this.numberRows, organizationExportTaskResponse.numberRows)
-        && Objects.equals(this.sizeBytes, organizationExportTaskResponse.sizeBytes)
-        && Objects.equals(this.errorDetails, organizationExportTaskResponse.errorDetails);
+    OrganizationExportTaskResponse organizationExportTaskResponse = (OrganizationExportTaskResponse) o;
+    return Objects.equals(this.id, organizationExportTaskResponse.id) &&
+        Objects.equals(this.siteId, organizationExportTaskResponse.siteId) &&
+        Objects.equals(this.url, organizationExportTaskResponse.url) &&
+        Objects.equals(this.numberRows, organizationExportTaskResponse.numberRows) &&
+        Objects.equals(this.sizeBytes, organizationExportTaskResponse.sizeBytes) &&
+        Objects.equals(this.errorDetails, organizationExportTaskResponse.errorDetails);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(id, siteId, url, numberRows, sizeBytes, errorDetails);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrganizationExportTaskResponse {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
@@ -220,7 +246,8 @@ public class OrganizationExportTaskResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -228,4 +255,6 @@ public class OrganizationExportTaskResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

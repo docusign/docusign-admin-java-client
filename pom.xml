@@ -5,7 +5,7 @@
     <artifactId>docusign-admin-java</artifactId>
     <packaging>jar</packaging>
     <name>docusign-admin-java</name>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
     <url>https://developers.docusign.com</url>
     <description>The DocuSign Admin API enables you to automate user management with your existing systems while ensuring governance and compliance.</description>
 
@@ -259,6 +259,16 @@
                         <exclude>org.hamcrest:hamcrest-core:jar</exclude>
                       </excludes>
                     </artifactSet>
+                    <filters>
+                        <filter>
+                            <artifact>*:*</artifact>
+                            <excludes>
+                                <exclude>META-INF/*.SF</exclude>
+                                <exclude>META-INF/*.DSA</exclude>
+                                <exclude>META-INF/*.RSA</exclude>
+                            </excludes>
+                        </filter>
+                    </filters>
                   </configuration>
                   </execution>
               </executions>
