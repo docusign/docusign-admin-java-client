@@ -1,11 +1,19 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
-import java.time.LocalDateTime;
 import java.util.Objects;
+import java.util.Arrays;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.time.OffsetDateTime;
 
-/** DSGroupResponse. */
+/**
+ * DSGroupResponse.
+ *
+ */
+
 public class DSGroupResponse {
   @JsonProperty("ds_group_id")
   private java.util.UUID dsGroupId = null;
@@ -29,7 +37,7 @@ public class DSGroupResponse {
   private Boolean isAdmin = null;
 
   @JsonProperty("last_modified_on")
-  private LocalDateTime lastModifiedOn = null;
+  private OffsetDateTime lastModifiedOn = null;
 
   @JsonProperty("user_count")
   private Integer userCount = null;
@@ -40,11 +48,12 @@ public class DSGroupResponse {
   @JsonProperty("account_name")
   private String accountName = null;
 
+
   /**
    * dsGroupId.
    *
    * @return DSGroupResponse
-   */
+   **/
   public DSGroupResponse dsGroupId(java.util.UUID dsGroupId) {
     this.dsGroupId = dsGroupId;
     return this;
@@ -52,24 +61,26 @@ public class DSGroupResponse {
 
   /**
    * Get dsGroupId.
-   *
    * @return dsGroupId
-   */
+   **/
   @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
   public java.util.UUID getDsGroupId() {
     return dsGroupId;
   }
 
-  /** setDsGroupId. */
+  /**
+   * setDsGroupId.
+   **/
   public void setDsGroupId(java.util.UUID dsGroupId) {
     this.dsGroupId = dsGroupId;
   }
+
 
   /**
    * accountId.
    *
    * @return DSGroupResponse
-   */
+   **/
   public DSGroupResponse accountId(java.util.UUID accountId) {
     this.accountId = accountId;
     return this;
@@ -77,24 +88,26 @@ public class DSGroupResponse {
 
   /**
    * Get accountId.
-   *
    * @return accountId
-   */
+   **/
   @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
   public java.util.UUID getAccountId() {
     return accountId;
   }
 
-  /** setAccountId. */
+  /**
+   * setAccountId.
+   **/
   public void setAccountId(java.util.UUID accountId) {
     this.accountId = accountId;
   }
+
 
   /**
    * sourceProductName.
    *
    * @return DSGroupResponse
-   */
+   **/
   public DSGroupResponse sourceProductName(String sourceProductName) {
     this.sourceProductName = sourceProductName;
     return this;
@@ -102,24 +115,26 @@ public class DSGroupResponse {
 
   /**
    * Get sourceProductName.
-   *
    * @return sourceProductName
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getSourceProductName() {
     return sourceProductName;
   }
 
-  /** setSourceProductName. */
+  /**
+   * setSourceProductName.
+   **/
   public void setSourceProductName(String sourceProductName) {
     this.sourceProductName = sourceProductName;
   }
+
 
   /**
    * groupId.
    *
    * @return DSGroupResponse
-   */
+   **/
   public DSGroupResponse groupId(String groupId) {
     this.groupId = groupId;
     return this;
@@ -127,24 +142,26 @@ public class DSGroupResponse {
 
   /**
    * Get groupId.
-   *
    * @return groupId
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getGroupId() {
     return groupId;
   }
 
-  /** setGroupId. */
+  /**
+   * setGroupId.
+   **/
   public void setGroupId(String groupId) {
     this.groupId = groupId;
   }
+
 
   /**
    * groupName.
    *
    * @return DSGroupResponse
-   */
+   **/
   public DSGroupResponse groupName(String groupName) {
     this.groupName = groupName;
     return this;
@@ -152,24 +169,26 @@ public class DSGroupResponse {
 
   /**
    * Get groupName.
-   *
    * @return groupName
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getGroupName() {
     return groupName;
   }
 
-  /** setGroupName. */
+  /**
+   * setGroupName.
+   **/
   public void setGroupName(String groupName) {
     this.groupName = groupName;
   }
+
 
   /**
    * description.
    *
    * @return DSGroupResponse
-   */
+   **/
   public DSGroupResponse description(String description) {
     this.description = description;
     return this;
@@ -177,24 +196,26 @@ public class DSGroupResponse {
 
   /**
    * Get description.
-   *
    * @return description
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getDescription() {
     return description;
   }
 
-  /** setDescription. */
+  /**
+   * setDescription.
+   **/
   public void setDescription(String description) {
     this.description = description;
   }
+
 
   /**
    * isAdmin.
    *
    * @return DSGroupResponse
-   */
+   **/
   public DSGroupResponse isAdmin(Boolean isAdmin) {
     this.isAdmin = isAdmin;
     return this;
@@ -202,49 +223,53 @@ public class DSGroupResponse {
 
   /**
    * Get isAdmin.
-   *
    * @return isAdmin
-   */
+   **/
   @ApiModelProperty(value = "")
   public Boolean isIsAdmin() {
     return isAdmin;
   }
 
-  /** setIsAdmin. */
+  /**
+   * setIsAdmin.
+   **/
   public void setIsAdmin(Boolean isAdmin) {
     this.isAdmin = isAdmin;
   }
+
 
   /**
    * lastModifiedOn.
    *
    * @return DSGroupResponse
-   */
-  public DSGroupResponse lastModifiedOn(LocalDateTime lastModifiedOn) {
+   **/
+  public DSGroupResponse lastModifiedOn(OffsetDateTime lastModifiedOn) {
     this.lastModifiedOn = lastModifiedOn;
     return this;
   }
 
   /**
    * Get lastModifiedOn.
-   *
    * @return lastModifiedOn
-   */
+   **/
   @ApiModelProperty(value = "")
-  public LocalDateTime getLastModifiedOn() {
+  public OffsetDateTime getLastModifiedOn() {
     return lastModifiedOn;
   }
 
-  /** setLastModifiedOn. */
-  public void setLastModifiedOn(LocalDateTime lastModifiedOn) {
+  /**
+   * setLastModifiedOn.
+   **/
+  public void setLastModifiedOn(OffsetDateTime lastModifiedOn) {
     this.lastModifiedOn = lastModifiedOn;
   }
+
 
   /**
    * userCount.
    *
    * @return DSGroupResponse
-   */
+   **/
   public DSGroupResponse userCount(Integer userCount) {
     this.userCount = userCount;
     return this;
@@ -252,24 +277,26 @@ public class DSGroupResponse {
 
   /**
    * Get userCount.
-   *
    * @return userCount
-   */
+   **/
   @ApiModelProperty(value = "")
   public Integer getUserCount() {
     return userCount;
   }
 
-  /** setUserCount. */
+  /**
+   * setUserCount.
+   **/
   public void setUserCount(Integer userCount) {
     this.userCount = userCount;
   }
+
 
   /**
    * externalAccountId.
    *
    * @return DSGroupResponse
-   */
+   **/
   public DSGroupResponse externalAccountId(Long externalAccountId) {
     this.externalAccountId = externalAccountId;
     return this;
@@ -277,24 +304,26 @@ public class DSGroupResponse {
 
   /**
    * Get externalAccountId.
-   *
    * @return externalAccountId
-   */
+   **/
   @ApiModelProperty(value = "")
   public Long getExternalAccountId() {
     return externalAccountId;
   }
 
-  /** setExternalAccountId. */
+  /**
+   * setExternalAccountId.
+   **/
   public void setExternalAccountId(Long externalAccountId) {
     this.externalAccountId = externalAccountId;
   }
+
 
   /**
    * accountName.
    *
    * @return DSGroupResponse
-   */
+   **/
   public DSGroupResponse accountName(String accountName) {
     this.accountName = accountName;
     return this;
@@ -302,18 +331,20 @@ public class DSGroupResponse {
 
   /**
    * Get accountName.
-   *
    * @return accountName
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getAccountName() {
     return accountName;
   }
 
-  /** setAccountName. */
+  /**
+   * setAccountName.
+   **/
   public void setAccountName(String accountName) {
     this.accountName = accountName;
   }
+
 
   /**
    * Compares objects.
@@ -329,42 +360,36 @@ public class DSGroupResponse {
       return false;
     }
     DSGroupResponse dsGroupResponse = (DSGroupResponse) o;
-    return Objects.equals(this.dsGroupId, dsGroupResponse.dsGroupId)
-        && Objects.equals(this.accountId, dsGroupResponse.accountId)
-        && Objects.equals(this.sourceProductName, dsGroupResponse.sourceProductName)
-        && Objects.equals(this.groupId, dsGroupResponse.groupId)
-        && Objects.equals(this.groupName, dsGroupResponse.groupName)
-        && Objects.equals(this.description, dsGroupResponse.description)
-        && Objects.equals(this.isAdmin, dsGroupResponse.isAdmin)
-        && Objects.equals(this.lastModifiedOn, dsGroupResponse.lastModifiedOn)
-        && Objects.equals(this.userCount, dsGroupResponse.userCount)
-        && Objects.equals(this.externalAccountId, dsGroupResponse.externalAccountId)
-        && Objects.equals(this.accountName, dsGroupResponse.accountName);
+    return Objects.equals(this.dsGroupId, dsGroupResponse.dsGroupId) &&
+        Objects.equals(this.accountId, dsGroupResponse.accountId) &&
+        Objects.equals(this.sourceProductName, dsGroupResponse.sourceProductName) &&
+        Objects.equals(this.groupId, dsGroupResponse.groupId) &&
+        Objects.equals(this.groupName, dsGroupResponse.groupName) &&
+        Objects.equals(this.description, dsGroupResponse.description) &&
+        Objects.equals(this.isAdmin, dsGroupResponse.isAdmin) &&
+        Objects.equals(this.lastModifiedOn, dsGroupResponse.lastModifiedOn) &&
+        Objects.equals(this.userCount, dsGroupResponse.userCount) &&
+        Objects.equals(this.externalAccountId, dsGroupResponse.externalAccountId) &&
+        Objects.equals(this.accountName, dsGroupResponse.accountName);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
-    return Objects.hash(
-        dsGroupId,
-        accountId,
-        sourceProductName,
-        groupId,
-        groupName,
-        description,
-        isAdmin,
-        lastModifiedOn,
-        userCount,
-        externalAccountId,
-        accountName);
+    return Objects.hash(dsGroupId, accountId, sourceProductName, groupId, groupName, description, isAdmin, lastModifiedOn, userCount, externalAccountId, accountName);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DSGroupResponse {\n");
-
+    
     sb.append("    dsGroupId: ").append(toIndentedString(dsGroupId)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    sourceProductName: ").append(toIndentedString(sourceProductName)).append("\n");
@@ -381,7 +406,8 @@ public class DSGroupResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -389,4 +415,6 @@ public class DSGroupResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

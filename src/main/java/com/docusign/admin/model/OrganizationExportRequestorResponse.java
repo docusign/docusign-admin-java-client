@@ -1,10 +1,18 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
-/** OrganizationExportRequestorResponse. */
+/**
+ * OrganizationExportRequestorResponse.
+ *
+ */
+
 public class OrganizationExportRequestorResponse {
   @JsonProperty("name")
   private String name = null;
@@ -18,11 +26,12 @@ public class OrganizationExportRequestorResponse {
   @JsonProperty("email")
   private String email = null;
 
+
   /**
    * name.
    *
    * @return OrganizationExportRequestorResponse
-   */
+   **/
   public OrganizationExportRequestorResponse name(String name) {
     this.name = name;
     return this;
@@ -30,24 +39,26 @@ public class OrganizationExportRequestorResponse {
 
   /**
    * Get name.
-   *
    * @return name
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getName() {
     return name;
   }
 
-  /** setName. */
+  /**
+   * setName.
+   **/
   public void setName(String name) {
     this.name = name;
   }
+
 
   /**
    * id.
    *
    * @return OrganizationExportRequestorResponse
-   */
+   **/
   public OrganizationExportRequestorResponse id(String id) {
     this.id = id;
     return this;
@@ -55,24 +66,26 @@ public class OrganizationExportRequestorResponse {
 
   /**
    * Get id.
-   *
    * @return id
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getId() {
     return id;
   }
 
-  /** setId. */
+  /**
+   * setId.
+   **/
   public void setId(String id) {
     this.id = id;
   }
+
 
   /**
    * type.
    *
    * @return OrganizationExportRequestorResponse
-   */
+   **/
   public OrganizationExportRequestorResponse type(String type) {
     this.type = type;
     return this;
@@ -80,24 +93,26 @@ public class OrganizationExportRequestorResponse {
 
   /**
    * Get type.
-   *
    * @return type
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getType() {
     return type;
   }
 
-  /** setType. */
+  /**
+   * setType.
+   **/
   public void setType(String type) {
     this.type = type;
   }
+
 
   /**
    * email.
    *
    * @return OrganizationExportRequestorResponse
-   */
+   **/
   public OrganizationExportRequestorResponse email(String email) {
     this.email = email;
     return this;
@@ -105,18 +120,20 @@ public class OrganizationExportRequestorResponse {
 
   /**
    * Get email.
-   *
    * @return email
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getEmail() {
     return email;
   }
 
-  /** setEmail. */
+  /**
+   * setEmail.
+   **/
   public void setEmail(String email) {
     this.email = email;
   }
+
 
   /**
    * Compares objects.
@@ -131,26 +148,30 @@ public class OrganizationExportRequestorResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrganizationExportRequestorResponse organizationExportRequestorResponse =
-        (OrganizationExportRequestorResponse) o;
-    return Objects.equals(this.name, organizationExportRequestorResponse.name)
-        && Objects.equals(this.id, organizationExportRequestorResponse.id)
-        && Objects.equals(this.type, organizationExportRequestorResponse.type)
-        && Objects.equals(this.email, organizationExportRequestorResponse.email);
+    OrganizationExportRequestorResponse organizationExportRequestorResponse = (OrganizationExportRequestorResponse) o;
+    return Objects.equals(this.name, organizationExportRequestorResponse.name) &&
+        Objects.equals(this.id, organizationExportRequestorResponse.id) &&
+        Objects.equals(this.type, organizationExportRequestorResponse.type) &&
+        Objects.equals(this.email, organizationExportRequestorResponse.email);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(name, id, type, email);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrganizationExportRequestorResponse {\n");
-
+    
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
@@ -160,7 +181,8 @@ public class OrganizationExportRequestorResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -168,4 +190,6 @@ public class OrganizationExportRequestorResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

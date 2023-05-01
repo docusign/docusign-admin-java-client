@@ -1,29 +1,39 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.DeleteMembershipRequest;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
-/** DeleteMembershipsRequest. */
+/**
+ * DeleteMembershipsRequest.
+ *
+ */
+
 public class DeleteMembershipsRequest {
   @JsonProperty("accounts")
   private java.util.List<DeleteMembershipRequest> accounts = new java.util.ArrayList<>();
+
 
   /**
    * accounts.
    *
    * @return DeleteMembershipsRequest
-   */
+   **/
   public DeleteMembershipsRequest accounts(java.util.List<DeleteMembershipRequest> accounts) {
     this.accounts = accounts;
     return this;
   }
-
+  
   /**
    * addAccountsItem.
    *
    * @return DeleteMembershipsRequest
-   */
+   **/
   public DeleteMembershipsRequest addAccountsItem(DeleteMembershipRequest accountsItem) {
     this.accounts.add(accountsItem);
     return this;
@@ -31,18 +41,20 @@ public class DeleteMembershipsRequest {
 
   /**
    * Get accounts.
-   *
    * @return accounts
-   */
+   **/
   @ApiModelProperty(required = true, value = "")
   public java.util.List<DeleteMembershipRequest> getAccounts() {
     return accounts;
   }
 
-  /** setAccounts. */
+  /**
+   * setAccounts.
+   **/
   public void setAccounts(java.util.List<DeleteMembershipRequest> accounts) {
     this.accounts = accounts;
   }
+
 
   /**
    * Compares objects.
@@ -61,25 +73,31 @@ public class DeleteMembershipsRequest {
     return Objects.equals(this.accounts, deleteMembershipsRequest.accounts);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(accounts);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DeleteMembershipsRequest {\n");
-
+    
     sb.append("    accounts: ").append(toIndentedString(accounts)).append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -87,4 +105,6 @@ public class DeleteMembershipsRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

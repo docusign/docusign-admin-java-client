@@ -1,29 +1,39 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.OrgReportListResponseOrgReport;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
-/** OrgReportListResponse. */
+/**
+ * OrgReportListResponse.
+ *
+ */
+
 public class OrgReportListResponse {
   @JsonProperty("reports")
   private java.util.List<OrgReportListResponseOrgReport> reports = null;
+
 
   /**
    * reports.
    *
    * @return OrgReportListResponse
-   */
+   **/
   public OrgReportListResponse reports(java.util.List<OrgReportListResponseOrgReport> reports) {
     this.reports = reports;
     return this;
   }
-
+  
   /**
    * addReportsItem.
    *
    * @return OrgReportListResponse
-   */
+   **/
   public OrgReportListResponse addReportsItem(OrgReportListResponseOrgReport reportsItem) {
     if (this.reports == null) {
       this.reports = new java.util.ArrayList<>();
@@ -34,18 +44,20 @@ public class OrgReportListResponse {
 
   /**
    * Get reports.
-   *
    * @return reports
-   */
+   **/
   @ApiModelProperty(value = "")
   public java.util.List<OrgReportListResponseOrgReport> getReports() {
     return reports;
   }
 
-  /** setReports. */
+  /**
+   * setReports.
+   **/
   public void setReports(java.util.List<OrgReportListResponseOrgReport> reports) {
     this.reports = reports;
   }
+
 
   /**
    * Compares objects.
@@ -64,25 +76,31 @@ public class OrgReportListResponse {
     return Objects.equals(this.reports, orgReportListResponse.reports);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(reports);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrgReportListResponse {\n");
-
+    
     sb.append("    reports: ").append(toIndentedString(reports)).append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -90,4 +108,6 @@ public class OrgReportListResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

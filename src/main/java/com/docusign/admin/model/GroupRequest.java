@@ -1,10 +1,18 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
-/** GroupRequest. */
+/**
+ * GroupRequest.
+ *
+ */
+
 public class GroupRequest {
   @JsonProperty("id")
   private Long id = null;
@@ -15,11 +23,12 @@ public class GroupRequest {
   @JsonProperty("type")
   private String type = null;
 
+
   /**
    * id.
    *
    * @return GroupRequest
-   */
+   **/
   public GroupRequest id(Long id) {
     this.id = id;
     return this;
@@ -27,24 +36,26 @@ public class GroupRequest {
 
   /**
    * Get id.
-   *
    * @return id
-   */
+   **/
   @ApiModelProperty(required = true, value = "")
   public Long getId() {
     return id;
   }
 
-  /** setId. */
+  /**
+   * setId.
+   **/
   public void setId(Long id) {
     this.id = id;
   }
+
 
   /**
    * name.
    *
    * @return GroupRequest
-   */
+   **/
   public GroupRequest name(String name) {
     this.name = name;
     return this;
@@ -52,24 +63,26 @@ public class GroupRequest {
 
   /**
    * Get name.
-   *
    * @return name
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getName() {
     return name;
   }
 
-  /** setName. */
+  /**
+   * setName.
+   **/
   public void setName(String name) {
     this.name = name;
   }
+
 
   /**
    * type.
    *
    * @return GroupRequest
-   */
+   **/
   public GroupRequest type(String type) {
     this.type = type;
     return this;
@@ -77,18 +90,20 @@ public class GroupRequest {
 
   /**
    * Get type.
-   *
    * @return type
-   */
+   **/
   @ApiModelProperty(value = "")
   public String getType() {
     return type;
   }
 
-  /** setType. */
+  /**
+   * setType.
+   **/
   public void setType(String type) {
     this.type = type;
   }
+
 
   /**
    * Compares objects.
@@ -104,23 +119,28 @@ public class GroupRequest {
       return false;
     }
     GroupRequest groupRequest = (GroupRequest) o;
-    return Objects.equals(this.id, groupRequest.id)
-        && Objects.equals(this.name, groupRequest.name)
-        && Objects.equals(this.type, groupRequest.type);
+    return Objects.equals(this.id, groupRequest.id) &&
+        Objects.equals(this.name, groupRequest.name) &&
+        Objects.equals(this.type, groupRequest.type);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(id, name, type);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GroupRequest {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
@@ -129,7 +149,8 @@ public class GroupRequest {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -137,4 +158,6 @@ public class GroupRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

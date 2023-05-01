@@ -1,10 +1,19 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.DSGroupResponse;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
-/** DSGroupListResponse. */
+/**
+ * DSGroupListResponse.
+ *
+ */
+
 public class DSGroupListResponse {
   @JsonProperty("page")
   private Integer page = null;
@@ -21,11 +30,12 @@ public class DSGroupListResponse {
   @JsonProperty("ds_groups")
   private java.util.List<DSGroupResponse> dsGroups = null;
 
+
   /**
    * page.
    *
    * @return DSGroupListResponse
-   */
+   **/
   public DSGroupListResponse page(Integer page) {
     this.page = page;
     return this;
@@ -33,24 +43,26 @@ public class DSGroupListResponse {
 
   /**
    * Get page.
-   *
    * @return page
-   */
+   **/
   @ApiModelProperty(value = "")
   public Integer getPage() {
     return page;
   }
 
-  /** setPage. */
+  /**
+   * setPage.
+   **/
   public void setPage(Integer page) {
     this.page = page;
   }
+
 
   /**
    * pageSize.
    *
    * @return DSGroupListResponse
-   */
+   **/
   public DSGroupListResponse pageSize(Integer pageSize) {
     this.pageSize = pageSize;
     return this;
@@ -58,24 +70,26 @@ public class DSGroupListResponse {
 
   /**
    * Get pageSize.
-   *
    * @return pageSize
-   */
+   **/
   @ApiModelProperty(value = "")
   public Integer getPageSize() {
     return pageSize;
   }
 
-  /** setPageSize. */
+  /**
+   * setPageSize.
+   **/
   public void setPageSize(Integer pageSize) {
     this.pageSize = pageSize;
   }
+
 
   /**
    * totalCount.
    *
    * @return DSGroupListResponse
-   */
+   **/
   public DSGroupListResponse totalCount(Integer totalCount) {
     this.totalCount = totalCount;
     return this;
@@ -83,24 +97,26 @@ public class DSGroupListResponse {
 
   /**
    * Get totalCount.
-   *
    * @return totalCount
-   */
+   **/
   @ApiModelProperty(value = "")
   public Integer getTotalCount() {
     return totalCount;
   }
 
-  /** setTotalCount. */
+  /**
+   * setTotalCount.
+   **/
   public void setTotalCount(Integer totalCount) {
     this.totalCount = totalCount;
   }
+
 
   /**
    * accountId.
    *
    * @return DSGroupListResponse
-   */
+   **/
   public DSGroupListResponse accountId(java.util.UUID accountId) {
     this.accountId = accountId;
     return this;
@@ -108,28 +124,29 @@ public class DSGroupListResponse {
 
   /**
    * Get accountId.
-   *
    * @return accountId
-   */
+   **/
   @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
   public java.util.UUID getAccountId() {
     return accountId;
   }
 
-  /** setAccountId. */
+  /**
+   * setAccountId.
+   **/
   public void setAccountId(java.util.UUID accountId) {
     this.accountId = accountId;
   }
 
   /**
    * Get dsGroups.
-   *
    * @return dsGroups
-   */
+   **/
   @ApiModelProperty(value = "")
   public java.util.List<DSGroupResponse> getDsGroups() {
     return dsGroups;
   }
+
 
   /**
    * Compares objects.
@@ -145,25 +162,30 @@ public class DSGroupListResponse {
       return false;
     }
     DSGroupListResponse dsGroupListResponse = (DSGroupListResponse) o;
-    return Objects.equals(this.page, dsGroupListResponse.page)
-        && Objects.equals(this.pageSize, dsGroupListResponse.pageSize)
-        && Objects.equals(this.totalCount, dsGroupListResponse.totalCount)
-        && Objects.equals(this.accountId, dsGroupListResponse.accountId)
-        && Objects.equals(this.dsGroups, dsGroupListResponse.dsGroups);
+    return Objects.equals(this.page, dsGroupListResponse.page) &&
+        Objects.equals(this.pageSize, dsGroupListResponse.pageSize) &&
+        Objects.equals(this.totalCount, dsGroupListResponse.totalCount) &&
+        Objects.equals(this.accountId, dsGroupListResponse.accountId) &&
+        Objects.equals(this.dsGroups, dsGroupListResponse.dsGroups);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(page, pageSize, totalCount, accountId, dsGroups);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DSGroupListResponse {\n");
-
+    
     sb.append("    page: ").append(toIndentedString(page)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
@@ -174,7 +196,8 @@ public class DSGroupListResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -182,4 +205,6 @@ public class DSGroupListResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+
