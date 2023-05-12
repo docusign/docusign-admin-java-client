@@ -1,11 +1,20 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
-import java.time.LocalDateTime;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.MemberGroupResponse;
+import com.docusign.admin.model.PermissionProfileResponse;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
+import java.time.OffsetDateTime;
 
-/** MembershipResponse. */
+/**
+ * MembershipResponse.
+ *
+ */
+
 public class MembershipResponse {
   @JsonProperty("email")
   private String email = null;
@@ -29,7 +38,7 @@ public class MembershipResponse {
   private PermissionProfileResponse permissionProfile = null;
 
   @JsonProperty("created_on")
-  private LocalDateTime createdOn = null;
+  private String createdOn = null;
 
   @JsonProperty("groups")
   private java.util.List<MemberGroupResponse> groups = null;
@@ -37,11 +46,12 @@ public class MembershipResponse {
   @JsonProperty("is_admin")
   private Boolean isAdmin = null;
 
+
   /**
    * email.
    *
    * @return MembershipResponse
-   */
+   **/
   public MembershipResponse email(String email) {
     this.email = email;
     return this;
@@ -49,24 +59,26 @@ public class MembershipResponse {
 
   /**
    * Get email.
-   *
    * @return email
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getEmail() {
     return email;
   }
 
-  /** setEmail. */
+  /**
+   * setEmail.
+   **/
   public void setEmail(String email) {
     this.email = email;
   }
+
 
   /**
    * accountId.
    *
    * @return MembershipResponse
-   */
+   **/
   public MembershipResponse accountId(java.util.UUID accountId) {
     this.accountId = accountId;
     return this;
@@ -74,24 +86,26 @@ public class MembershipResponse {
 
   /**
    * Get accountId.
-   *
    * @return accountId
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
   public java.util.UUID getAccountId() {
     return accountId;
   }
 
-  /** setAccountId. */
+  /**
+   * setAccountId.
+   **/
   public void setAccountId(java.util.UUID accountId) {
     this.accountId = accountId;
   }
+
 
   /**
    * externalAccountId.
    *
    * @return MembershipResponse
-   */
+   **/
   public MembershipResponse externalAccountId(String externalAccountId) {
     this.externalAccountId = externalAccountId;
     return this;
@@ -99,24 +113,26 @@ public class MembershipResponse {
 
   /**
    * Get externalAccountId.
-   *
    * @return externalAccountId
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getExternalAccountId() {
     return externalAccountId;
   }
 
-  /** setExternalAccountId. */
+  /**
+   * setExternalAccountId.
+   **/
   public void setExternalAccountId(String externalAccountId) {
     this.externalAccountId = externalAccountId;
   }
+
 
   /**
    * accountName.
    *
    * @return MembershipResponse
-   */
+   **/
   public MembershipResponse accountName(String accountName) {
     this.accountName = accountName;
     return this;
@@ -124,24 +140,26 @@ public class MembershipResponse {
 
   /**
    * Get accountName.
-   *
    * @return accountName
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getAccountName() {
     return accountName;
   }
 
-  /** setAccountName. */
+  /**
+   * setAccountName.
+   **/
   public void setAccountName(String accountName) {
     this.accountName = accountName;
   }
+
 
   /**
    * isExternalAccount.
    *
    * @return MembershipResponse
-   */
+   **/
   public MembershipResponse isExternalAccount(Boolean isExternalAccount) {
     this.isExternalAccount = isExternalAccount;
     return this;
@@ -149,24 +167,26 @@ public class MembershipResponse {
 
   /**
    * Get isExternalAccount.
-   *
    * @return isExternalAccount
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Boolean isIsExternalAccount() {
     return isExternalAccount;
   }
 
-  /** setIsExternalAccount. */
+  /**
+   * setIsExternalAccount.
+   **/
   public void setIsExternalAccount(Boolean isExternalAccount) {
     this.isExternalAccount = isExternalAccount;
   }
+
 
   /**
    * status.
    *
    * @return MembershipResponse
-   */
+   **/
   public MembershipResponse status(String status) {
     this.status = status;
     return this;
@@ -174,24 +194,26 @@ public class MembershipResponse {
 
   /**
    * Get status.
-   *
    * @return status
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getStatus() {
     return status;
   }
 
-  /** setStatus. */
+  /**
+   * setStatus.
+   **/
   public void setStatus(String status) {
     this.status = status;
   }
+
 
   /**
    * permissionProfile.
    *
    * @return MembershipResponse
-   */
+   **/
   public MembershipResponse permissionProfile(PermissionProfileResponse permissionProfile) {
     this.permissionProfile = permissionProfile;
     return this;
@@ -199,59 +221,63 @@ public class MembershipResponse {
 
   /**
    * Get permissionProfile.
-   *
    * @return permissionProfile
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public PermissionProfileResponse getPermissionProfile() {
     return permissionProfile;
   }
 
-  /** setPermissionProfile. */
+  /**
+   * setPermissionProfile.
+   **/
   public void setPermissionProfile(PermissionProfileResponse permissionProfile) {
     this.permissionProfile = permissionProfile;
   }
+
 
   /**
    * createdOn.
    *
    * @return MembershipResponse
-   */
-  public MembershipResponse createdOn(LocalDateTime createdOn) {
+   **/
+  public MembershipResponse createdOn(String createdOn) {
     this.createdOn = createdOn;
     return this;
   }
 
   /**
    * Get createdOn.
-   *
    * @return createdOn
-   */
-  @ApiModelProperty(value = "")
-  public LocalDateTime getCreatedOn() {
+   **/
+  @Schema(description = "")
+  public String getCreatedOn() {
     return createdOn;
   }
 
-  /** setCreatedOn. */
-  public void setCreatedOn(LocalDateTime createdOn) {
+  /**
+   * setCreatedOn.
+   **/
+  public void setCreatedOn(String createdOn) {
     this.createdOn = createdOn;
   }
+
 
   /**
    * groups.
    *
    * @return MembershipResponse
-   */
+   **/
   public MembershipResponse groups(java.util.List<MemberGroupResponse> groups) {
     this.groups = groups;
     return this;
   }
-
+  
   /**
    * addGroupsItem.
    *
    * @return MembershipResponse
-   */
+   **/
   public MembershipResponse addGroupsItem(MemberGroupResponse groupsItem) {
     if (this.groups == null) {
       this.groups = new java.util.ArrayList<>();
@@ -262,24 +288,26 @@ public class MembershipResponse {
 
   /**
    * Get groups.
-   *
    * @return groups
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public java.util.List<MemberGroupResponse> getGroups() {
     return groups;
   }
 
-  /** setGroups. */
+  /**
+   * setGroups.
+   **/
   public void setGroups(java.util.List<MemberGroupResponse> groups) {
     this.groups = groups;
   }
+
 
   /**
    * isAdmin.
    *
    * @return MembershipResponse
-   */
+   **/
   public MembershipResponse isAdmin(Boolean isAdmin) {
     this.isAdmin = isAdmin;
     return this;
@@ -287,18 +315,20 @@ public class MembershipResponse {
 
   /**
    * Get isAdmin.
-   *
    * @return isAdmin
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Boolean isIsAdmin() {
     return isAdmin;
   }
 
-  /** setIsAdmin. */
+  /**
+   * setIsAdmin.
+   **/
   public void setIsAdmin(Boolean isAdmin) {
     this.isAdmin = isAdmin;
   }
+
 
   /**
    * Compares objects.
@@ -314,40 +344,35 @@ public class MembershipResponse {
       return false;
     }
     MembershipResponse membershipResponse = (MembershipResponse) o;
-    return Objects.equals(this.email, membershipResponse.email)
-        && Objects.equals(this.accountId, membershipResponse.accountId)
-        && Objects.equals(this.externalAccountId, membershipResponse.externalAccountId)
-        && Objects.equals(this.accountName, membershipResponse.accountName)
-        && Objects.equals(this.isExternalAccount, membershipResponse.isExternalAccount)
-        && Objects.equals(this.status, membershipResponse.status)
-        && Objects.equals(this.permissionProfile, membershipResponse.permissionProfile)
-        && Objects.equals(this.createdOn, membershipResponse.createdOn)
-        && Objects.equals(this.groups, membershipResponse.groups)
-        && Objects.equals(this.isAdmin, membershipResponse.isAdmin);
+    return Objects.equals(this.email, membershipResponse.email) &&
+        Objects.equals(this.accountId, membershipResponse.accountId) &&
+        Objects.equals(this.externalAccountId, membershipResponse.externalAccountId) &&
+        Objects.equals(this.accountName, membershipResponse.accountName) &&
+        Objects.equals(this.isExternalAccount, membershipResponse.isExternalAccount) &&
+        Objects.equals(this.status, membershipResponse.status) &&
+        Objects.equals(this.permissionProfile, membershipResponse.permissionProfile) &&
+        Objects.equals(this.createdOn, membershipResponse.createdOn) &&
+        Objects.equals(this.groups, membershipResponse.groups) &&
+        Objects.equals(this.isAdmin, membershipResponse.isAdmin);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
-    return Objects.hash(
-        email,
-        accountId,
-        externalAccountId,
-        accountName,
-        isExternalAccount,
-        status,
-        permissionProfile,
-        createdOn,
-        groups,
-        isAdmin);
+    return Objects.hash(email, accountId, externalAccountId, accountName, isExternalAccount, status, permissionProfile, createdOn, groups, isAdmin);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class MembershipResponse {\n");
-
+    
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    externalAccountId: ").append(toIndentedString(externalAccountId)).append("\n");
@@ -363,7 +388,8 @@ public class MembershipResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -371,4 +397,6 @@ public class MembershipResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

@@ -1,14 +1,22 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.DSGroupRequest;
+import com.docusign.admin.model.ProductPermissionProfileRequest;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/** NewMultiProductUserAddRequest. */
+/**
+ * NewMultiProductUserAddRequest.
+ *
+ */
+
 public class NewMultiProductUserAddRequest {
   @JsonProperty("product_permission_profiles")
-  private java.util.List<ProductPermissionProfileRequest> productPermissionProfiles =
-      new java.util.ArrayList<>();
+  private java.util.List<ProductPermissionProfileRequest> productPermissionProfiles = new java.util.ArrayList<>();
 
   @JsonProperty("ds_groups")
   private java.util.List<DSGroupRequest> dsGroups = null;
@@ -40,59 +48,59 @@ public class NewMultiProductUserAddRequest {
   @JsonProperty("auto_activate_memberships")
   private Boolean autoActivateMemberships = null;
 
+
   /**
    * productPermissionProfiles.
    *
    * @return NewMultiProductUserAddRequest
-   */
-  public NewMultiProductUserAddRequest productPermissionProfiles(
-      java.util.List<ProductPermissionProfileRequest> productPermissionProfiles) {
+   **/
+  public NewMultiProductUserAddRequest productPermissionProfiles(java.util.List<ProductPermissionProfileRequest> productPermissionProfiles) {
     this.productPermissionProfiles = productPermissionProfiles;
     return this;
   }
-
+  
   /**
    * addProductPermissionProfilesItem.
    *
    * @return NewMultiProductUserAddRequest
-   */
-  public NewMultiProductUserAddRequest addProductPermissionProfilesItem(
-      ProductPermissionProfileRequest productPermissionProfilesItem) {
+   **/
+  public NewMultiProductUserAddRequest addProductPermissionProfilesItem(ProductPermissionProfileRequest productPermissionProfilesItem) {
     this.productPermissionProfiles.add(productPermissionProfilesItem);
     return this;
   }
 
   /**
    * Get productPermissionProfiles.
-   *
    * @return productPermissionProfiles
-   */
-  @ApiModelProperty(required = true, value = "")
+   **/
+  @Schema(required = true, description = "")
   public java.util.List<ProductPermissionProfileRequest> getProductPermissionProfiles() {
     return productPermissionProfiles;
   }
 
-  /** setProductPermissionProfiles. */
-  public void setProductPermissionProfiles(
-      java.util.List<ProductPermissionProfileRequest> productPermissionProfiles) {
+  /**
+   * setProductPermissionProfiles.
+   **/
+  public void setProductPermissionProfiles(java.util.List<ProductPermissionProfileRequest> productPermissionProfiles) {
     this.productPermissionProfiles = productPermissionProfiles;
   }
+
 
   /**
    * dsGroups.
    *
    * @return NewMultiProductUserAddRequest
-   */
+   **/
   public NewMultiProductUserAddRequest dsGroups(java.util.List<DSGroupRequest> dsGroups) {
     this.dsGroups = dsGroups;
     return this;
   }
-
+  
   /**
    * addDsGroupsItem.
    *
    * @return NewMultiProductUserAddRequest
-   */
+   **/
   public NewMultiProductUserAddRequest addDsGroupsItem(DSGroupRequest dsGroupsItem) {
     if (this.dsGroups == null) {
       this.dsGroups = new java.util.ArrayList<>();
@@ -103,24 +111,26 @@ public class NewMultiProductUserAddRequest {
 
   /**
    * Get dsGroups.
-   *
    * @return dsGroups
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public java.util.List<DSGroupRequest> getDsGroups() {
     return dsGroups;
   }
 
-  /** setDsGroups. */
+  /**
+   * setDsGroups.
+   **/
   public void setDsGroups(java.util.List<DSGroupRequest> dsGroups) {
     this.dsGroups = dsGroups;
   }
+
 
   /**
    * userName.
    *
    * @return NewMultiProductUserAddRequest
-   */
+   **/
   public NewMultiProductUserAddRequest userName(String userName) {
     this.userName = userName;
     return this;
@@ -128,24 +138,26 @@ public class NewMultiProductUserAddRequest {
 
   /**
    * Get userName.
-   *
    * @return userName
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getUserName() {
     return userName;
   }
 
-  /** setUserName. */
+  /**
+   * setUserName.
+   **/
   public void setUserName(String userName) {
     this.userName = userName;
   }
+
 
   /**
    * firstName.
    *
    * @return NewMultiProductUserAddRequest
-   */
+   **/
   public NewMultiProductUserAddRequest firstName(String firstName) {
     this.firstName = firstName;
     return this;
@@ -153,24 +165,26 @@ public class NewMultiProductUserAddRequest {
 
   /**
    * Get firstName.
-   *
    * @return firstName
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getFirstName() {
     return firstName;
   }
 
-  /** setFirstName. */
+  /**
+   * setFirstName.
+   **/
   public void setFirstName(String firstName) {
     this.firstName = firstName;
   }
+
 
   /**
    * lastName.
    *
    * @return NewMultiProductUserAddRequest
-   */
+   **/
   public NewMultiProductUserAddRequest lastName(String lastName) {
     this.lastName = lastName;
     return this;
@@ -178,24 +192,26 @@ public class NewMultiProductUserAddRequest {
 
   /**
    * Get lastName.
-   *
    * @return lastName
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getLastName() {
     return lastName;
   }
 
-  /** setLastName. */
+  /**
+   * setLastName.
+   **/
   public void setLastName(String lastName) {
     this.lastName = lastName;
   }
+
 
   /**
    * email.
    *
    * @return NewMultiProductUserAddRequest
-   */
+   **/
   public NewMultiProductUserAddRequest email(String email) {
     this.email = email;
     return this;
@@ -203,24 +219,26 @@ public class NewMultiProductUserAddRequest {
 
   /**
    * Get email.
-   *
    * @return email
-   */
-  @ApiModelProperty(required = true, value = "")
+   **/
+  @Schema(required = true, description = "")
   public String getEmail() {
     return email;
   }
 
-  /** setEmail. */
+  /**
+   * setEmail.
+   **/
   public void setEmail(String email) {
     this.email = email;
   }
+
 
   /**
    * defaultAccountId.
    *
    * @return NewMultiProductUserAddRequest
-   */
+   **/
   public NewMultiProductUserAddRequest defaultAccountId(java.util.UUID defaultAccountId) {
     this.defaultAccountId = defaultAccountId;
     return this;
@@ -228,24 +246,26 @@ public class NewMultiProductUserAddRequest {
 
   /**
    * Get defaultAccountId.
-   *
    * @return defaultAccountId
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
   public java.util.UUID getDefaultAccountId() {
     return defaultAccountId;
   }
 
-  /** setDefaultAccountId. */
+  /**
+   * setDefaultAccountId.
+   **/
   public void setDefaultAccountId(java.util.UUID defaultAccountId) {
     this.defaultAccountId = defaultAccountId;
   }
+
 
   /**
    * languageCulture.
    *
    * @return NewMultiProductUserAddRequest
-   */
+   **/
   public NewMultiProductUserAddRequest languageCulture(String languageCulture) {
     this.languageCulture = languageCulture;
     return this;
@@ -253,24 +273,26 @@ public class NewMultiProductUserAddRequest {
 
   /**
    * Get languageCulture.
-   *
    * @return languageCulture
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getLanguageCulture() {
     return languageCulture;
   }
 
-  /** setLanguageCulture. */
+  /**
+   * setLanguageCulture.
+   **/
   public void setLanguageCulture(String languageCulture) {
     this.languageCulture = languageCulture;
   }
+
 
   /**
    * accessCode.
    *
    * @return NewMultiProductUserAddRequest
-   */
+   **/
   public NewMultiProductUserAddRequest accessCode(String accessCode) {
     this.accessCode = accessCode;
     return this;
@@ -278,24 +300,26 @@ public class NewMultiProductUserAddRequest {
 
   /**
    * Get accessCode.
-   *
    * @return accessCode
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getAccessCode() {
     return accessCode;
   }
 
-  /** setAccessCode. */
+  /**
+   * setAccessCode.
+   **/
   public void setAccessCode(String accessCode) {
     this.accessCode = accessCode;
   }
+
 
   /**
    * federatedStatus.
    *
    * @return NewMultiProductUserAddRequest
-   */
+   **/
   public NewMultiProductUserAddRequest federatedStatus(String federatedStatus) {
     this.federatedStatus = federatedStatus;
     return this;
@@ -303,24 +327,26 @@ public class NewMultiProductUserAddRequest {
 
   /**
    * Get federatedStatus.
-   *
    * @return federatedStatus
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getFederatedStatus() {
     return federatedStatus;
   }
 
-  /** setFederatedStatus. */
+  /**
+   * setFederatedStatus.
+   **/
   public void setFederatedStatus(String federatedStatus) {
     this.federatedStatus = federatedStatus;
   }
+
 
   /**
    * autoActivateMemberships.
    *
    * @return NewMultiProductUserAddRequest
-   */
+   **/
   public NewMultiProductUserAddRequest autoActivateMemberships(Boolean autoActivateMemberships) {
     this.autoActivateMemberships = autoActivateMemberships;
     return this;
@@ -328,18 +354,20 @@ public class NewMultiProductUserAddRequest {
 
   /**
    * Get autoActivateMemberships.
-   *
    * @return autoActivateMemberships
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Boolean isAutoActivateMemberships() {
     return autoActivateMemberships;
   }
 
-  /** setAutoActivateMemberships. */
+  /**
+   * setAutoActivateMemberships.
+   **/
   public void setAutoActivateMemberships(Boolean autoActivateMemberships) {
     this.autoActivateMemberships = autoActivateMemberships;
   }
+
 
   /**
    * Compares objects.
@@ -355,47 +383,37 @@ public class NewMultiProductUserAddRequest {
       return false;
     }
     NewMultiProductUserAddRequest newMultiProductUserAddRequest = (NewMultiProductUserAddRequest) o;
-    return Objects.equals(
-            this.productPermissionProfiles, newMultiProductUserAddRequest.productPermissionProfiles)
-        && Objects.equals(this.dsGroups, newMultiProductUserAddRequest.dsGroups)
-        && Objects.equals(this.userName, newMultiProductUserAddRequest.userName)
-        && Objects.equals(this.firstName, newMultiProductUserAddRequest.firstName)
-        && Objects.equals(this.lastName, newMultiProductUserAddRequest.lastName)
-        && Objects.equals(this.email, newMultiProductUserAddRequest.email)
-        && Objects.equals(this.defaultAccountId, newMultiProductUserAddRequest.defaultAccountId)
-        && Objects.equals(this.languageCulture, newMultiProductUserAddRequest.languageCulture)
-        && Objects.equals(this.accessCode, newMultiProductUserAddRequest.accessCode)
-        && Objects.equals(this.federatedStatus, newMultiProductUserAddRequest.federatedStatus)
-        && Objects.equals(
-            this.autoActivateMemberships, newMultiProductUserAddRequest.autoActivateMemberships);
+    return Objects.equals(this.productPermissionProfiles, newMultiProductUserAddRequest.productPermissionProfiles) &&
+        Objects.equals(this.dsGroups, newMultiProductUserAddRequest.dsGroups) &&
+        Objects.equals(this.userName, newMultiProductUserAddRequest.userName) &&
+        Objects.equals(this.firstName, newMultiProductUserAddRequest.firstName) &&
+        Objects.equals(this.lastName, newMultiProductUserAddRequest.lastName) &&
+        Objects.equals(this.email, newMultiProductUserAddRequest.email) &&
+        Objects.equals(this.defaultAccountId, newMultiProductUserAddRequest.defaultAccountId) &&
+        Objects.equals(this.languageCulture, newMultiProductUserAddRequest.languageCulture) &&
+        Objects.equals(this.accessCode, newMultiProductUserAddRequest.accessCode) &&
+        Objects.equals(this.federatedStatus, newMultiProductUserAddRequest.federatedStatus) &&
+        Objects.equals(this.autoActivateMemberships, newMultiProductUserAddRequest.autoActivateMemberships);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
-    return Objects.hash(
-        productPermissionProfiles,
-        dsGroups,
-        userName,
-        firstName,
-        lastName,
-        email,
-        defaultAccountId,
-        languageCulture,
-        accessCode,
-        federatedStatus,
-        autoActivateMemberships);
+    return Objects.hash(productPermissionProfiles, dsGroups, userName, firstName, lastName, email, defaultAccountId, languageCulture, accessCode, federatedStatus, autoActivateMemberships);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class NewMultiProductUserAddRequest {\n");
-
-    sb.append("    productPermissionProfiles: ")
-        .append(toIndentedString(productPermissionProfiles))
-        .append("\n");
+    
+    sb.append("    productPermissionProfiles: ").append(toIndentedString(productPermissionProfiles)).append("\n");
     sb.append("    dsGroups: ").append(toIndentedString(dsGroups)).append("\n");
     sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
@@ -405,15 +423,14 @@ public class NewMultiProductUserAddRequest {
     sb.append("    languageCulture: ").append(toIndentedString(languageCulture)).append("\n");
     sb.append("    accessCode: ").append(toIndentedString(accessCode)).append("\n");
     sb.append("    federatedStatus: ").append(toIndentedString(federatedStatus)).append("\n");
-    sb.append("    autoActivateMemberships: ")
-        .append(toIndentedString(autoActivateMemberships))
-        .append("\n");
+    sb.append("    autoActivateMemberships: ").append(toIndentedString(autoActivateMemberships)).append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -421,4 +438,6 @@ public class NewMultiProductUserAddRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

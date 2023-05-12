@@ -1,10 +1,17 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/** UserProductProfileDeleteRequest. */
+/**
+ * UserProductProfileDeleteRequest.
+ *
+ */
+
 public class UserProductProfileDeleteRequest {
   @JsonProperty("user_email")
   private String userEmail = null;
@@ -15,11 +22,12 @@ public class UserProductProfileDeleteRequest {
   @JsonProperty("product_ids")
   private java.util.List<java.util.UUID> productIds = new java.util.ArrayList<>();
 
+
   /**
    * userEmail.
    *
    * @return UserProductProfileDeleteRequest
-   */
+   **/
   public UserProductProfileDeleteRequest userEmail(String userEmail) {
     this.userEmail = userEmail;
     return this;
@@ -27,24 +35,26 @@ public class UserProductProfileDeleteRequest {
 
   /**
    * Get userEmail.
-   *
    * @return userEmail
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getUserEmail() {
     return userEmail;
   }
 
-  /** setUserEmail. */
+  /**
+   * setUserEmail.
+   **/
   public void setUserEmail(String userEmail) {
     this.userEmail = userEmail;
   }
+
 
   /**
    * userId.
    *
    * @return UserProductProfileDeleteRequest
-   */
+   **/
   public UserProductProfileDeleteRequest userId(java.util.UUID userId) {
     this.userId = userId;
     return this;
@@ -52,34 +62,36 @@ public class UserProductProfileDeleteRequest {
 
   /**
    * Get userId.
-   *
    * @return userId
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
   public java.util.UUID getUserId() {
     return userId;
   }
 
-  /** setUserId. */
+  /**
+   * setUserId.
+   **/
   public void setUserId(java.util.UUID userId) {
     this.userId = userId;
   }
+
 
   /**
    * productIds.
    *
    * @return UserProductProfileDeleteRequest
-   */
+   **/
   public UserProductProfileDeleteRequest productIds(java.util.List<java.util.UUID> productIds) {
     this.productIds = productIds;
     return this;
   }
-
+  
   /**
    * addProductIdsItem.
    *
    * @return UserProductProfileDeleteRequest
-   */
+   **/
   public UserProductProfileDeleteRequest addProductIdsItem(java.util.UUID productIdsItem) {
     this.productIds.add(productIdsItem);
     return this;
@@ -87,18 +99,20 @@ public class UserProductProfileDeleteRequest {
 
   /**
    * Get productIds.
-   *
    * @return productIds
-   */
-  @ApiModelProperty(required = true, value = "")
+   **/
+  @Schema(required = true, description = "")
   public java.util.List<java.util.UUID> getProductIds() {
     return productIds;
   }
 
-  /** setProductIds. */
+  /**
+   * setProductIds.
+   **/
   public void setProductIds(java.util.List<java.util.UUID> productIds) {
     this.productIds = productIds;
   }
+
 
   /**
    * Compares objects.
@@ -113,25 +127,29 @@ public class UserProductProfileDeleteRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UserProductProfileDeleteRequest userProductProfileDeleteRequest =
-        (UserProductProfileDeleteRequest) o;
-    return Objects.equals(this.userEmail, userProductProfileDeleteRequest.userEmail)
-        && Objects.equals(this.userId, userProductProfileDeleteRequest.userId)
-        && Objects.equals(this.productIds, userProductProfileDeleteRequest.productIds);
+    UserProductProfileDeleteRequest userProductProfileDeleteRequest = (UserProductProfileDeleteRequest) o;
+    return Objects.equals(this.userEmail, userProductProfileDeleteRequest.userEmail) &&
+        Objects.equals(this.userId, userProductProfileDeleteRequest.userId) &&
+        Objects.equals(this.productIds, userProductProfileDeleteRequest.productIds);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(userEmail, userId, productIds);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UserProductProfileDeleteRequest {\n");
-
+    
     sb.append("    userEmail: ").append(toIndentedString(userEmail)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    productIds: ").append(toIndentedString(productIds)).append("\n");
@@ -140,7 +158,8 @@ public class UserProductProfileDeleteRequest {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -148,4 +167,6 @@ public class UserProductProfileDeleteRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

@@ -1,10 +1,19 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.OSAMRContact;
+import com.docusign.admin.model.OrganizationSalesforceAccountManagersResponse;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/** OrganizationSalesforceAccountManagersResponse. */
+/**
+ * OrganizationSalesforceAccountManagersResponse.
+ *
+ */
+
 public class OrganizationSalesforceAccountManagersResponse {
   @JsonProperty("account_id")
   private String accountId = null;
@@ -24,11 +33,12 @@ public class OrganizationSalesforceAccountManagersResponse {
   @JsonProperty("parent_account")
   private OrganizationSalesforceAccountManagersResponse parentAccount = null;
 
+
   /**
    * accountId.
    *
    * @return OrganizationSalesforceAccountManagersResponse
-   */
+   **/
   public OrganizationSalesforceAccountManagersResponse accountId(String accountId) {
     this.accountId = accountId;
     return this;
@@ -36,24 +46,26 @@ public class OrganizationSalesforceAccountManagersResponse {
 
   /**
    * Get accountId.
-   *
    * @return accountId
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getAccountId() {
     return accountId;
   }
 
-  /** setAccountId. */
+  /**
+   * setAccountId.
+   **/
   public void setAccountId(String accountId) {
     this.accountId = accountId;
   }
+
 
   /**
    * accountName.
    *
    * @return OrganizationSalesforceAccountManagersResponse
-   */
+   **/
   public OrganizationSalesforceAccountManagersResponse accountName(String accountName) {
     this.accountName = accountName;
     return this;
@@ -61,24 +73,26 @@ public class OrganizationSalesforceAccountManagersResponse {
 
   /**
    * Get accountName.
-   *
    * @return accountName
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getAccountName() {
     return accountName;
   }
 
-  /** setAccountName. */
+  /**
+   * setAccountName.
+   **/
   public void setAccountName(String accountName) {
     this.accountName = accountName;
   }
+
 
   /**
    * accountType.
    *
    * @return OrganizationSalesforceAccountManagersResponse
-   */
+   **/
   public OrganizationSalesforceAccountManagersResponse accountType(String accountType) {
     this.accountType = accountType;
     return this;
@@ -86,24 +100,26 @@ public class OrganizationSalesforceAccountManagersResponse {
 
   /**
    * Get accountType.
-   *
    * @return accountType
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getAccountType() {
     return accountType;
   }
 
-  /** setAccountType. */
+  /**
+   * setAccountType.
+   **/
   public void setAccountType(String accountType) {
     this.accountType = accountType;
   }
+
 
   /**
    * accountOwner.
    *
    * @return OrganizationSalesforceAccountManagersResponse
-   */
+   **/
   public OrganizationSalesforceAccountManagersResponse accountOwner(OSAMRContact accountOwner) {
     this.accountOwner = accountOwner;
     return this;
@@ -111,24 +127,26 @@ public class OrganizationSalesforceAccountManagersResponse {
 
   /**
    * Get accountOwner.
-   *
    * @return accountOwner
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public OSAMRContact getAccountOwner() {
     return accountOwner;
   }
 
-  /** setAccountOwner. */
+  /**
+   * setAccountOwner.
+   **/
   public void setAccountOwner(OSAMRContact accountOwner) {
     this.accountOwner = accountOwner;
   }
+
 
   /**
    * accountManager.
    *
    * @return OrganizationSalesforceAccountManagersResponse
-   */
+   **/
   public OrganizationSalesforceAccountManagersResponse accountManager(OSAMRContact accountManager) {
     this.accountManager = accountManager;
     return this;
@@ -136,44 +154,47 @@ public class OrganizationSalesforceAccountManagersResponse {
 
   /**
    * Get accountManager.
-   *
    * @return accountManager
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public OSAMRContact getAccountManager() {
     return accountManager;
   }
 
-  /** setAccountManager. */
+  /**
+   * setAccountManager.
+   **/
   public void setAccountManager(OSAMRContact accountManager) {
     this.accountManager = accountManager;
   }
+
 
   /**
    * parentAccount.
    *
    * @return OrganizationSalesforceAccountManagersResponse
-   */
-  public OrganizationSalesforceAccountManagersResponse parentAccount(
-      OrganizationSalesforceAccountManagersResponse parentAccount) {
+   **/
+  public OrganizationSalesforceAccountManagersResponse parentAccount(OrganizationSalesforceAccountManagersResponse parentAccount) {
     this.parentAccount = parentAccount;
     return this;
   }
 
   /**
    * Get parentAccount.
-   *
    * @return parentAccount
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public OrganizationSalesforceAccountManagersResponse getParentAccount() {
     return parentAccount;
   }
 
-  /** setParentAccount. */
+  /**
+   * setParentAccount.
+   **/
   public void setParentAccount(OrganizationSalesforceAccountManagersResponse parentAccount) {
     this.parentAccount = parentAccount;
   }
+
 
   /**
    * Compares objects.
@@ -188,34 +209,32 @@ public class OrganizationSalesforceAccountManagersResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrganizationSalesforceAccountManagersResponse organizationSalesforceAccountManagersResponse =
-        (OrganizationSalesforceAccountManagersResponse) o;
-    return Objects.equals(this.accountId, organizationSalesforceAccountManagersResponse.accountId)
-        && Objects.equals(
-            this.accountName, organizationSalesforceAccountManagersResponse.accountName)
-        && Objects.equals(
-            this.accountType, organizationSalesforceAccountManagersResponse.accountType)
-        && Objects.equals(
-            this.accountOwner, organizationSalesforceAccountManagersResponse.accountOwner)
-        && Objects.equals(
-            this.accountManager, organizationSalesforceAccountManagersResponse.accountManager)
-        && Objects.equals(
-            this.parentAccount, organizationSalesforceAccountManagersResponse.parentAccount);
+    OrganizationSalesforceAccountManagersResponse organizationSalesforceAccountManagersResponse = (OrganizationSalesforceAccountManagersResponse) o;
+    return Objects.equals(this.accountId, organizationSalesforceAccountManagersResponse.accountId) &&
+        Objects.equals(this.accountName, organizationSalesforceAccountManagersResponse.accountName) &&
+        Objects.equals(this.accountType, organizationSalesforceAccountManagersResponse.accountType) &&
+        Objects.equals(this.accountOwner, organizationSalesforceAccountManagersResponse.accountOwner) &&
+        Objects.equals(this.accountManager, organizationSalesforceAccountManagersResponse.accountManager) &&
+        Objects.equals(this.parentAccount, organizationSalesforceAccountManagersResponse.parentAccount);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
-    return Objects.hash(
-        accountId, accountName, accountType, accountOwner, accountManager, parentAccount);
+    return Objects.hash(accountId, accountName, accountType, accountOwner, accountManager, parentAccount);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrganizationSalesforceAccountManagersResponse {\n");
-
+    
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
     sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
@@ -227,7 +246,8 @@ public class OrganizationSalesforceAccountManagersResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -235,4 +255,6 @@ public class OrganizationSalesforceAccountManagersResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

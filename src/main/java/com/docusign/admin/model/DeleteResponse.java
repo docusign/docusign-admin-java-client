@@ -1,10 +1,18 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.UserIdentityResponse;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/** DeleteResponse. */
+/**
+ * DeleteResponse.
+ *
+ */
+
 public class DeleteResponse {
   @JsonProperty("success")
   private Boolean success = null;
@@ -12,11 +20,12 @@ public class DeleteResponse {
   @JsonProperty("identities")
   private java.util.List<UserIdentityResponse> identities = null;
 
+
   /**
    * success.
    *
    * @return DeleteResponse
-   */
+   **/
   public DeleteResponse success(Boolean success) {
     this.success = success;
     return this;
@@ -24,34 +33,36 @@ public class DeleteResponse {
 
   /**
    * Get success.
-   *
    * @return success
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Boolean isSuccess() {
     return success;
   }
 
-  /** setSuccess. */
+  /**
+   * setSuccess.
+   **/
   public void setSuccess(Boolean success) {
     this.success = success;
   }
+
 
   /**
    * identities.
    *
    * @return DeleteResponse
-   */
+   **/
   public DeleteResponse identities(java.util.List<UserIdentityResponse> identities) {
     this.identities = identities;
     return this;
   }
-
+  
   /**
    * addIdentitiesItem.
    *
    * @return DeleteResponse
-   */
+   **/
   public DeleteResponse addIdentitiesItem(UserIdentityResponse identitiesItem) {
     if (this.identities == null) {
       this.identities = new java.util.ArrayList<>();
@@ -62,18 +73,20 @@ public class DeleteResponse {
 
   /**
    * Get identities.
-   *
    * @return identities
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public java.util.List<UserIdentityResponse> getIdentities() {
     return identities;
   }
 
-  /** setIdentities. */
+  /**
+   * setIdentities.
+   **/
   public void setIdentities(java.util.List<UserIdentityResponse> identities) {
     this.identities = identities;
   }
+
 
   /**
    * Compares objects.
@@ -89,22 +102,27 @@ public class DeleteResponse {
       return false;
     }
     DeleteResponse deleteResponse = (DeleteResponse) o;
-    return Objects.equals(this.success, deleteResponse.success)
-        && Objects.equals(this.identities, deleteResponse.identities);
+    return Objects.equals(this.success, deleteResponse.success) &&
+        Objects.equals(this.identities, deleteResponse.identities);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(success, identities);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DeleteResponse {\n");
-
+    
     sb.append("    success: ").append(toIndentedString(success)).append("\n");
     sb.append("    identities: ").append(toIndentedString(identities)).append("\n");
     sb.append("}");
@@ -112,7 +130,8 @@ public class DeleteResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -120,4 +139,6 @@ public class DeleteResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

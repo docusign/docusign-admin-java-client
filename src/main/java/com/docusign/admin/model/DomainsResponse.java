@@ -1,29 +1,38 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.DomainResponse;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/** DomainsResponse. */
+/**
+ * DomainsResponse.
+ *
+ */
+
 public class DomainsResponse {
   @JsonProperty("reserved_domains")
   private java.util.List<DomainResponse> reservedDomains = null;
+
 
   /**
    * reservedDomains.
    *
    * @return DomainsResponse
-   */
+   **/
   public DomainsResponse reservedDomains(java.util.List<DomainResponse> reservedDomains) {
     this.reservedDomains = reservedDomains;
     return this;
   }
-
+  
   /**
    * addReservedDomainsItem.
    *
    * @return DomainsResponse
-   */
+   **/
   public DomainsResponse addReservedDomainsItem(DomainResponse reservedDomainsItem) {
     if (this.reservedDomains == null) {
       this.reservedDomains = new java.util.ArrayList<>();
@@ -34,18 +43,20 @@ public class DomainsResponse {
 
   /**
    * Get reservedDomains.
-   *
    * @return reservedDomains
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public java.util.List<DomainResponse> getReservedDomains() {
     return reservedDomains;
   }
 
-  /** setReservedDomains. */
+  /**
+   * setReservedDomains.
+   **/
   public void setReservedDomains(java.util.List<DomainResponse> reservedDomains) {
     this.reservedDomains = reservedDomains;
   }
+
 
   /**
    * Compares objects.
@@ -64,25 +75,31 @@ public class DomainsResponse {
     return Objects.equals(this.reservedDomains, domainsResponse.reservedDomains);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(reservedDomains);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DomainsResponse {\n");
-
+    
     sb.append("    reservedDomains: ").append(toIndentedString(reservedDomains)).append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -90,4 +107,6 @@ public class DomainsResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

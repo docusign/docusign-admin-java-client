@@ -1,10 +1,18 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.NewUserResponseAccountProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/** NewUserResponse. */
+/**
+ * NewUserResponse.
+ *
+ */
+
 public class NewUserResponse {
   @JsonProperty("id")
   private java.util.UUID id = null;
@@ -33,11 +41,12 @@ public class NewUserResponse {
   @JsonProperty("accounts")
   private java.util.List<NewUserResponseAccountProperties> accounts = null;
 
+
   /**
    * id.
    *
    * @return NewUserResponse
-   */
+   **/
   public NewUserResponse id(java.util.UUID id) {
     this.id = id;
     return this;
@@ -45,24 +54,26 @@ public class NewUserResponse {
 
   /**
    * Get id.
-   *
    * @return id
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
   public java.util.UUID getId() {
     return id;
   }
 
-  /** setId. */
+  /**
+   * setId.
+   **/
   public void setId(java.util.UUID id) {
     this.id = id;
   }
+
 
   /**
    * siteId.
    *
    * @return NewUserResponse
-   */
+   **/
   public NewUserResponse siteId(Integer siteId) {
     this.siteId = siteId;
     return this;
@@ -70,24 +81,26 @@ public class NewUserResponse {
 
   /**
    * Get siteId.
-   *
    * @return siteId
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Integer getSiteId() {
     return siteId;
   }
 
-  /** setSiteId. */
+  /**
+   * setSiteId.
+   **/
   public void setSiteId(Integer siteId) {
     this.siteId = siteId;
   }
+
 
   /**
    * userName.
    *
    * @return NewUserResponse
-   */
+   **/
   public NewUserResponse userName(String userName) {
     this.userName = userName;
     return this;
@@ -95,24 +108,26 @@ public class NewUserResponse {
 
   /**
    * Get userName.
-   *
    * @return userName
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getUserName() {
     return userName;
   }
 
-  /** setUserName. */
+  /**
+   * setUserName.
+   **/
   public void setUserName(String userName) {
     this.userName = userName;
   }
+
 
   /**
    * firstName.
    *
    * @return NewUserResponse
-   */
+   **/
   public NewUserResponse firstName(String firstName) {
     this.firstName = firstName;
     return this;
@@ -120,24 +135,26 @@ public class NewUserResponse {
 
   /**
    * Get firstName.
-   *
    * @return firstName
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getFirstName() {
     return firstName;
   }
 
-  /** setFirstName. */
+  /**
+   * setFirstName.
+   **/
   public void setFirstName(String firstName) {
     this.firstName = firstName;
   }
+
 
   /**
    * lastName.
    *
    * @return NewUserResponse
-   */
+   **/
   public NewUserResponse lastName(String lastName) {
     this.lastName = lastName;
     return this;
@@ -145,24 +162,26 @@ public class NewUserResponse {
 
   /**
    * Get lastName.
-   *
    * @return lastName
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getLastName() {
     return lastName;
   }
 
-  /** setLastName. */
+  /**
+   * setLastName.
+   **/
   public void setLastName(String lastName) {
     this.lastName = lastName;
   }
+
 
   /**
    * email.
    *
    * @return NewUserResponse
-   */
+   **/
   public NewUserResponse email(String email) {
     this.email = email;
     return this;
@@ -170,24 +189,26 @@ public class NewUserResponse {
 
   /**
    * Get email.
-   *
    * @return email
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getEmail() {
     return email;
   }
 
-  /** setEmail. */
+  /**
+   * setEmail.
+   **/
   public void setEmail(String email) {
     this.email = email;
   }
+
 
   /**
    * languageCulture.
    *
    * @return NewUserResponse
-   */
+   **/
   public NewUserResponse languageCulture(String languageCulture) {
     this.languageCulture = languageCulture;
     return this;
@@ -195,24 +216,26 @@ public class NewUserResponse {
 
   /**
    * Get languageCulture.
-   *
    * @return languageCulture
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getLanguageCulture() {
     return languageCulture;
   }
 
-  /** setLanguageCulture. */
+  /**
+   * setLanguageCulture.
+   **/
   public void setLanguageCulture(String languageCulture) {
     this.languageCulture = languageCulture;
   }
+
 
   /**
    * federatedStatus.
    *
    * @return NewUserResponse
-   */
+   **/
   public NewUserResponse federatedStatus(String federatedStatus) {
     this.federatedStatus = federatedStatus;
     return this;
@@ -220,34 +243,36 @@ public class NewUserResponse {
 
   /**
    * Get federatedStatus.
-   *
    * @return federatedStatus
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getFederatedStatus() {
     return federatedStatus;
   }
 
-  /** setFederatedStatus. */
+  /**
+   * setFederatedStatus.
+   **/
   public void setFederatedStatus(String federatedStatus) {
     this.federatedStatus = federatedStatus;
   }
+
 
   /**
    * accounts.
    *
    * @return NewUserResponse
-   */
+   **/
   public NewUserResponse accounts(java.util.List<NewUserResponseAccountProperties> accounts) {
     this.accounts = accounts;
     return this;
   }
-
+  
   /**
    * addAccountsItem.
    *
    * @return NewUserResponse
-   */
+   **/
   public NewUserResponse addAccountsItem(NewUserResponseAccountProperties accountsItem) {
     if (this.accounts == null) {
       this.accounts = new java.util.ArrayList<>();
@@ -258,18 +283,20 @@ public class NewUserResponse {
 
   /**
    * Get accounts.
-   *
    * @return accounts
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public java.util.List<NewUserResponseAccountProperties> getAccounts() {
     return accounts;
   }
 
-  /** setAccounts. */
+  /**
+   * setAccounts.
+   **/
   public void setAccounts(java.util.List<NewUserResponseAccountProperties> accounts) {
     this.accounts = accounts;
   }
+
 
   /**
    * Compares objects.
@@ -285,38 +312,34 @@ public class NewUserResponse {
       return false;
     }
     NewUserResponse newUserResponse = (NewUserResponse) o;
-    return Objects.equals(this.id, newUserResponse.id)
-        && Objects.equals(this.siteId, newUserResponse.siteId)
-        && Objects.equals(this.userName, newUserResponse.userName)
-        && Objects.equals(this.firstName, newUserResponse.firstName)
-        && Objects.equals(this.lastName, newUserResponse.lastName)
-        && Objects.equals(this.email, newUserResponse.email)
-        && Objects.equals(this.languageCulture, newUserResponse.languageCulture)
-        && Objects.equals(this.federatedStatus, newUserResponse.federatedStatus)
-        && Objects.equals(this.accounts, newUserResponse.accounts);
+    return Objects.equals(this.id, newUserResponse.id) &&
+        Objects.equals(this.siteId, newUserResponse.siteId) &&
+        Objects.equals(this.userName, newUserResponse.userName) &&
+        Objects.equals(this.firstName, newUserResponse.firstName) &&
+        Objects.equals(this.lastName, newUserResponse.lastName) &&
+        Objects.equals(this.email, newUserResponse.email) &&
+        Objects.equals(this.languageCulture, newUserResponse.languageCulture) &&
+        Objects.equals(this.federatedStatus, newUserResponse.federatedStatus) &&
+        Objects.equals(this.accounts, newUserResponse.accounts);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
-    return Objects.hash(
-        id,
-        siteId,
-        userName,
-        firstName,
-        lastName,
-        email,
-        languageCulture,
-        federatedStatus,
-        accounts);
+    return Objects.hash(id, siteId, userName, firstName, lastName, email, languageCulture, federatedStatus, accounts);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class NewUserResponse {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
     sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
@@ -331,7 +354,8 @@ public class NewUserResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -339,4 +363,6 @@ public class NewUserResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

@@ -1,11 +1,18 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
-import java.time.LocalDateTime;
 import java.util.Objects;
+import java.util.Arrays;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
+import java.time.OffsetDateTime;
 
-/** OrgReportRequest. */
+/**
+ * OrgReportRequest.
+ *
+ */
+
 public class OrgReportRequest {
   @JsonProperty("report_type")
   private String reportType = null;
@@ -17,16 +24,17 @@ public class OrgReportRequest {
   private java.util.List<java.util.UUID> accountIds = null;
 
   @JsonProperty("custom_start_date")
-  private LocalDateTime customStartDate = null;
+  private String customStartDate = null;
 
   @JsonProperty("custom_end_date")
-  private LocalDateTime customEndDate = null;
+  private String customEndDate = null;
+
 
   /**
    * reportType.
    *
    * @return OrgReportRequest
-   */
+   **/
   public OrgReportRequest reportType(String reportType) {
     this.reportType = reportType;
     return this;
@@ -34,24 +42,26 @@ public class OrgReportRequest {
 
   /**
    * Get reportType.
-   *
    * @return reportType
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getReportType() {
     return reportType;
   }
 
-  /** setReportType. */
+  /**
+   * setReportType.
+   **/
   public void setReportType(String reportType) {
     this.reportType = reportType;
   }
+
 
   /**
    * reportDateRange.
    *
    * @return OrgReportRequest
-   */
+   **/
   public OrgReportRequest reportDateRange(String reportDateRange) {
     this.reportDateRange = reportDateRange;
     return this;
@@ -59,34 +69,36 @@ public class OrgReportRequest {
 
   /**
    * Get reportDateRange.
-   *
    * @return reportDateRange
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getReportDateRange() {
     return reportDateRange;
   }
 
-  /** setReportDateRange. */
+  /**
+   * setReportDateRange.
+   **/
   public void setReportDateRange(String reportDateRange) {
     this.reportDateRange = reportDateRange;
   }
+
 
   /**
    * accountIds.
    *
    * @return OrgReportRequest
-   */
+   **/
   public OrgReportRequest accountIds(java.util.List<java.util.UUID> accountIds) {
     this.accountIds = accountIds;
     return this;
   }
-
+  
   /**
    * addAccountIdsItem.
    *
    * @return OrgReportRequest
-   */
+   **/
   public OrgReportRequest addAccountIdsItem(java.util.UUID accountIdsItem) {
     if (this.accountIds == null) {
       this.accountIds = new java.util.ArrayList<>();
@@ -97,68 +109,74 @@ public class OrgReportRequest {
 
   /**
    * Get accountIds.
-   *
    * @return accountIds
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public java.util.List<java.util.UUID> getAccountIds() {
     return accountIds;
   }
 
-  /** setAccountIds. */
+  /**
+   * setAccountIds.
+   **/
   public void setAccountIds(java.util.List<java.util.UUID> accountIds) {
     this.accountIds = accountIds;
   }
+
 
   /**
    * customStartDate.
    *
    * @return OrgReportRequest
-   */
-  public OrgReportRequest customStartDate(LocalDateTime customStartDate) {
+   **/
+  public OrgReportRequest customStartDate(String customStartDate) {
     this.customStartDate = customStartDate;
     return this;
   }
 
   /**
    * Get customStartDate.
-   *
    * @return customStartDate
-   */
-  @ApiModelProperty(value = "")
-  public LocalDateTime getCustomStartDate() {
+   **/
+  @Schema(description = "")
+  public String getCustomStartDate() {
     return customStartDate;
   }
 
-  /** setCustomStartDate. */
-  public void setCustomStartDate(LocalDateTime customStartDate) {
+  /**
+   * setCustomStartDate.
+   **/
+  public void setCustomStartDate(String customStartDate) {
     this.customStartDate = customStartDate;
   }
+
 
   /**
    * customEndDate.
    *
    * @return OrgReportRequest
-   */
-  public OrgReportRequest customEndDate(LocalDateTime customEndDate) {
+   **/
+  public OrgReportRequest customEndDate(String customEndDate) {
     this.customEndDate = customEndDate;
     return this;
   }
 
   /**
    * Get customEndDate.
-   *
    * @return customEndDate
-   */
-  @ApiModelProperty(value = "")
-  public LocalDateTime getCustomEndDate() {
+   **/
+  @Schema(description = "")
+  public String getCustomEndDate() {
     return customEndDate;
   }
 
-  /** setCustomEndDate. */
-  public void setCustomEndDate(LocalDateTime customEndDate) {
+  /**
+   * setCustomEndDate.
+   **/
+  public void setCustomEndDate(String customEndDate) {
     this.customEndDate = customEndDate;
   }
+
 
   /**
    * Compares objects.
@@ -174,25 +192,30 @@ public class OrgReportRequest {
       return false;
     }
     OrgReportRequest orgReportRequest = (OrgReportRequest) o;
-    return Objects.equals(this.reportType, orgReportRequest.reportType)
-        && Objects.equals(this.reportDateRange, orgReportRequest.reportDateRange)
-        && Objects.equals(this.accountIds, orgReportRequest.accountIds)
-        && Objects.equals(this.customStartDate, orgReportRequest.customStartDate)
-        && Objects.equals(this.customEndDate, orgReportRequest.customEndDate);
+    return Objects.equals(this.reportType, orgReportRequest.reportType) &&
+        Objects.equals(this.reportDateRange, orgReportRequest.reportDateRange) &&
+        Objects.equals(this.accountIds, orgReportRequest.accountIds) &&
+        Objects.equals(this.customStartDate, orgReportRequest.customStartDate) &&
+        Objects.equals(this.customEndDate, orgReportRequest.customEndDate);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(reportType, reportDateRange, accountIds, customStartDate, customEndDate);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrgReportRequest {\n");
-
+    
     sb.append("    reportType: ").append(toIndentedString(reportType)).append("\n");
     sb.append("    reportDateRange: ").append(toIndentedString(reportDateRange)).append("\n");
     sb.append("    accountIds: ").append(toIndentedString(accountIds)).append("\n");
@@ -203,7 +226,8 @@ public class OrgReportRequest {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -211,4 +235,6 @@ public class OrgReportRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

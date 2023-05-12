@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.UUID;
-import javax.ws.rs.core.UriBuilderException;
+import jakarta.ws.rs.core.UriBuilderException;
 import org.junit.*;
 import org.junit.runners.MethodSorters;
 

@@ -1,11 +1,23 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
-import java.time.LocalDateTime;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.DomainResponse;
+import com.docusign.admin.model.IdentityProvidersResponse;
+import com.docusign.admin.model.LinkResponse;
+import com.docusign.admin.model.OrganizationAccountResponse;
+import com.docusign.admin.model.OrganizationSimpleIdObject;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
+import java.time.OffsetDateTime;
 
-/** OrganizationResponse. */
+/**
+ * OrganizationResponse.
+ *
+ */
+
 public class OrganizationResponse {
   @JsonProperty("id")
   private java.util.UUID id = null;
@@ -23,13 +35,13 @@ public class OrganizationResponse {
   private Long defaultPermissionProfileId = null;
 
   @JsonProperty("created_on")
-  private LocalDateTime createdOn = null;
+  private String createdOn = null;
 
   @JsonProperty("created_by")
   private java.util.UUID createdBy = null;
 
   @JsonProperty("last_modified_on")
-  private LocalDateTime lastModifiedOn = null;
+  private String lastModifiedOn = null;
 
   @JsonProperty("last_modified_by")
   private java.util.UUID lastModifiedBy = null;
@@ -49,11 +61,12 @@ public class OrganizationResponse {
   @JsonProperty("links")
   private java.util.List<LinkResponse> links = null;
 
+
   /**
    * id.
    *
    * @return OrganizationResponse
-   */
+   **/
   public OrganizationResponse id(java.util.UUID id) {
     this.id = id;
     return this;
@@ -61,24 +74,26 @@ public class OrganizationResponse {
 
   /**
    * Get id.
-   *
    * @return id
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
   public java.util.UUID getId() {
     return id;
   }
 
-  /** setId. */
+  /**
+   * setId.
+   **/
   public void setId(java.util.UUID id) {
     this.id = id;
   }
+
 
   /**
    * name.
    *
    * @return OrganizationResponse
-   */
+   **/
   public OrganizationResponse name(String name) {
     this.name = name;
     return this;
@@ -86,24 +101,26 @@ public class OrganizationResponse {
 
   /**
    * Get name.
-   *
    * @return name
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getName() {
     return name;
   }
 
-  /** setName. */
+  /**
+   * setName.
+   **/
   public void setName(String name) {
     this.name = name;
   }
+
 
   /**
    * description.
    *
    * @return OrganizationResponse
-   */
+   **/
   public OrganizationResponse description(String description) {
     this.description = description;
     return this;
@@ -111,24 +128,26 @@ public class OrganizationResponse {
 
   /**
    * Get description.
-   *
    * @return description
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getDescription() {
     return description;
   }
 
-  /** setDescription. */
+  /**
+   * setDescription.
+   **/
   public void setDescription(String description) {
     this.description = description;
   }
+
 
   /**
    * defaultAccountId.
    *
    * @return OrganizationResponse
-   */
+   **/
   public OrganizationResponse defaultAccountId(java.util.UUID defaultAccountId) {
     this.defaultAccountId = defaultAccountId;
     return this;
@@ -136,24 +155,26 @@ public class OrganizationResponse {
 
   /**
    * Get defaultAccountId.
-   *
    * @return defaultAccountId
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
   public java.util.UUID getDefaultAccountId() {
     return defaultAccountId;
   }
 
-  /** setDefaultAccountId. */
+  /**
+   * setDefaultAccountId.
+   **/
   public void setDefaultAccountId(java.util.UUID defaultAccountId) {
     this.defaultAccountId = defaultAccountId;
   }
+
 
   /**
    * defaultPermissionProfileId.
    *
    * @return OrganizationResponse
-   */
+   **/
   public OrganizationResponse defaultPermissionProfileId(Long defaultPermissionProfileId) {
     this.defaultPermissionProfileId = defaultPermissionProfileId;
     return this;
@@ -161,49 +182,53 @@ public class OrganizationResponse {
 
   /**
    * Get defaultPermissionProfileId.
-   *
    * @return defaultPermissionProfileId
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Long getDefaultPermissionProfileId() {
     return defaultPermissionProfileId;
   }
 
-  /** setDefaultPermissionProfileId. */
+  /**
+   * setDefaultPermissionProfileId.
+   **/
   public void setDefaultPermissionProfileId(Long defaultPermissionProfileId) {
     this.defaultPermissionProfileId = defaultPermissionProfileId;
   }
+
 
   /**
    * createdOn.
    *
    * @return OrganizationResponse
-   */
-  public OrganizationResponse createdOn(LocalDateTime createdOn) {
+   **/
+  public OrganizationResponse createdOn(String createdOn) {
     this.createdOn = createdOn;
     return this;
   }
 
   /**
    * Get createdOn.
-   *
    * @return createdOn
-   */
-  @ApiModelProperty(value = "")
-  public LocalDateTime getCreatedOn() {
+   **/
+  @Schema(description = "")
+  public String getCreatedOn() {
     return createdOn;
   }
 
-  /** setCreatedOn. */
-  public void setCreatedOn(LocalDateTime createdOn) {
+  /**
+   * setCreatedOn.
+   **/
+  public void setCreatedOn(String createdOn) {
     this.createdOn = createdOn;
   }
+
 
   /**
    * createdBy.
    *
    * @return OrganizationResponse
-   */
+   **/
   public OrganizationResponse createdBy(java.util.UUID createdBy) {
     this.createdBy = createdBy;
     return this;
@@ -211,49 +236,53 @@ public class OrganizationResponse {
 
   /**
    * Get createdBy.
-   *
    * @return createdBy
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
   public java.util.UUID getCreatedBy() {
     return createdBy;
   }
 
-  /** setCreatedBy. */
+  /**
+   * setCreatedBy.
+   **/
   public void setCreatedBy(java.util.UUID createdBy) {
     this.createdBy = createdBy;
   }
+
 
   /**
    * lastModifiedOn.
    *
    * @return OrganizationResponse
-   */
-  public OrganizationResponse lastModifiedOn(LocalDateTime lastModifiedOn) {
+   **/
+  public OrganizationResponse lastModifiedOn(String lastModifiedOn) {
     this.lastModifiedOn = lastModifiedOn;
     return this;
   }
 
   /**
    * Get lastModifiedOn.
-   *
    * @return lastModifiedOn
-   */
-  @ApiModelProperty(value = "")
-  public LocalDateTime getLastModifiedOn() {
+   **/
+  @Schema(description = "")
+  public String getLastModifiedOn() {
     return lastModifiedOn;
   }
 
-  /** setLastModifiedOn. */
-  public void setLastModifiedOn(LocalDateTime lastModifiedOn) {
+  /**
+   * setLastModifiedOn.
+   **/
+  public void setLastModifiedOn(String lastModifiedOn) {
     this.lastModifiedOn = lastModifiedOn;
   }
+
 
   /**
    * lastModifiedBy.
    *
    * @return OrganizationResponse
-   */
+   **/
   public OrganizationResponse lastModifiedBy(java.util.UUID lastModifiedBy) {
     this.lastModifiedBy = lastModifiedBy;
     return this;
@@ -261,34 +290,36 @@ public class OrganizationResponse {
 
   /**
    * Get lastModifiedBy.
-   *
    * @return lastModifiedBy
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
   public java.util.UUID getLastModifiedBy() {
     return lastModifiedBy;
   }
 
-  /** setLastModifiedBy. */
+  /**
+   * setLastModifiedBy.
+   **/
   public void setLastModifiedBy(java.util.UUID lastModifiedBy) {
     this.lastModifiedBy = lastModifiedBy;
   }
+
 
   /**
    * accounts.
    *
    * @return OrganizationResponse
-   */
+   **/
   public OrganizationResponse accounts(java.util.List<OrganizationAccountResponse> accounts) {
     this.accounts = accounts;
     return this;
   }
-
+  
   /**
    * addAccountsItem.
    *
    * @return OrganizationResponse
-   */
+   **/
   public OrganizationResponse addAccountsItem(OrganizationAccountResponse accountsItem) {
     if (this.accounts == null) {
       this.accounts = new java.util.ArrayList<>();
@@ -299,34 +330,36 @@ public class OrganizationResponse {
 
   /**
    * Get accounts.
-   *
    * @return accounts
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public java.util.List<OrganizationAccountResponse> getAccounts() {
     return accounts;
   }
 
-  /** setAccounts. */
+  /**
+   * setAccounts.
+   **/
   public void setAccounts(java.util.List<OrganizationAccountResponse> accounts) {
     this.accounts = accounts;
   }
+
 
   /**
    * users.
    *
    * @return OrganizationResponse
-   */
+   **/
   public OrganizationResponse users(java.util.List<OrganizationSimpleIdObject> users) {
     this.users = users;
     return this;
   }
-
+  
   /**
    * addUsersItem.
    *
    * @return OrganizationResponse
-   */
+   **/
   public OrganizationResponse addUsersItem(OrganizationSimpleIdObject usersItem) {
     if (this.users == null) {
       this.users = new java.util.ArrayList<>();
@@ -337,34 +370,36 @@ public class OrganizationResponse {
 
   /**
    * Get users.
-   *
    * @return users
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public java.util.List<OrganizationSimpleIdObject> getUsers() {
     return users;
   }
 
-  /** setUsers. */
+  /**
+   * setUsers.
+   **/
   public void setUsers(java.util.List<OrganizationSimpleIdObject> users) {
     this.users = users;
   }
+
 
   /**
    * reservedDomains.
    *
    * @return OrganizationResponse
-   */
+   **/
   public OrganizationResponse reservedDomains(java.util.List<DomainResponse> reservedDomains) {
     this.reservedDomains = reservedDomains;
     return this;
   }
-
+  
   /**
    * addReservedDomainsItem.
    *
    * @return OrganizationResponse
-   */
+   **/
   public OrganizationResponse addReservedDomainsItem(DomainResponse reservedDomainsItem) {
     if (this.reservedDomains == null) {
       this.reservedDomains = new java.util.ArrayList<>();
@@ -375,37 +410,37 @@ public class OrganizationResponse {
 
   /**
    * Get reservedDomains.
-   *
    * @return reservedDomains
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public java.util.List<DomainResponse> getReservedDomains() {
     return reservedDomains;
   }
 
-  /** setReservedDomains. */
+  /**
+   * setReservedDomains.
+   **/
   public void setReservedDomains(java.util.List<DomainResponse> reservedDomains) {
     this.reservedDomains = reservedDomains;
   }
+
 
   /**
    * identityProviders.
    *
    * @return OrganizationResponse
-   */
-  public OrganizationResponse identityProviders(
-      java.util.List<IdentityProvidersResponse> identityProviders) {
+   **/
+  public OrganizationResponse identityProviders(java.util.List<IdentityProvidersResponse> identityProviders) {
     this.identityProviders = identityProviders;
     return this;
   }
-
+  
   /**
    * addIdentityProvidersItem.
    *
    * @return OrganizationResponse
-   */
-  public OrganizationResponse addIdentityProvidersItem(
-      IdentityProvidersResponse identityProvidersItem) {
+   **/
+  public OrganizationResponse addIdentityProvidersItem(IdentityProvidersResponse identityProvidersItem) {
     if (this.identityProviders == null) {
       this.identityProviders = new java.util.ArrayList<>();
     }
@@ -415,34 +450,36 @@ public class OrganizationResponse {
 
   /**
    * Get identityProviders.
-   *
    * @return identityProviders
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public java.util.List<IdentityProvidersResponse> getIdentityProviders() {
     return identityProviders;
   }
 
-  /** setIdentityProviders. */
+  /**
+   * setIdentityProviders.
+   **/
   public void setIdentityProviders(java.util.List<IdentityProvidersResponse> identityProviders) {
     this.identityProviders = identityProviders;
   }
+
 
   /**
    * links.
    *
    * @return OrganizationResponse
-   */
+   **/
   public OrganizationResponse links(java.util.List<LinkResponse> links) {
     this.links = links;
     return this;
   }
-
+  
   /**
    * addLinksItem.
    *
    * @return OrganizationResponse
-   */
+   **/
   public OrganizationResponse addLinksItem(LinkResponse linksItem) {
     if (this.links == null) {
       this.links = new java.util.ArrayList<>();
@@ -453,18 +490,20 @@ public class OrganizationResponse {
 
   /**
    * Get links.
-   *
    * @return links
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public java.util.List<LinkResponse> getLinks() {
     return links;
   }
 
-  /** setLinks. */
+  /**
+   * setLinks.
+   **/
   public void setLinks(java.util.List<LinkResponse> links) {
     this.links = links;
   }
+
 
   /**
    * Compares objects.
@@ -480,56 +519,44 @@ public class OrganizationResponse {
       return false;
     }
     OrganizationResponse organizationResponse = (OrganizationResponse) o;
-    return Objects.equals(this.id, organizationResponse.id)
-        && Objects.equals(this.name, organizationResponse.name)
-        && Objects.equals(this.description, organizationResponse.description)
-        && Objects.equals(this.defaultAccountId, organizationResponse.defaultAccountId)
-        && Objects.equals(
-            this.defaultPermissionProfileId, organizationResponse.defaultPermissionProfileId)
-        && Objects.equals(this.createdOn, organizationResponse.createdOn)
-        && Objects.equals(this.createdBy, organizationResponse.createdBy)
-        && Objects.equals(this.lastModifiedOn, organizationResponse.lastModifiedOn)
-        && Objects.equals(this.lastModifiedBy, organizationResponse.lastModifiedBy)
-        && Objects.equals(this.accounts, organizationResponse.accounts)
-        && Objects.equals(this.users, organizationResponse.users)
-        && Objects.equals(this.reservedDomains, organizationResponse.reservedDomains)
-        && Objects.equals(this.identityProviders, organizationResponse.identityProviders)
-        && Objects.equals(this.links, organizationResponse.links);
+    return Objects.equals(this.id, organizationResponse.id) &&
+        Objects.equals(this.name, organizationResponse.name) &&
+        Objects.equals(this.description, organizationResponse.description) &&
+        Objects.equals(this.defaultAccountId, organizationResponse.defaultAccountId) &&
+        Objects.equals(this.defaultPermissionProfileId, organizationResponse.defaultPermissionProfileId) &&
+        Objects.equals(this.createdOn, organizationResponse.createdOn) &&
+        Objects.equals(this.createdBy, organizationResponse.createdBy) &&
+        Objects.equals(this.lastModifiedOn, organizationResponse.lastModifiedOn) &&
+        Objects.equals(this.lastModifiedBy, organizationResponse.lastModifiedBy) &&
+        Objects.equals(this.accounts, organizationResponse.accounts) &&
+        Objects.equals(this.users, organizationResponse.users) &&
+        Objects.equals(this.reservedDomains, organizationResponse.reservedDomains) &&
+        Objects.equals(this.identityProviders, organizationResponse.identityProviders) &&
+        Objects.equals(this.links, organizationResponse.links);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
-    return Objects.hash(
-        id,
-        name,
-        description,
-        defaultAccountId,
-        defaultPermissionProfileId,
-        createdOn,
-        createdBy,
-        lastModifiedOn,
-        lastModifiedBy,
-        accounts,
-        users,
-        reservedDomains,
-        identityProviders,
-        links);
+    return Objects.hash(id, name, description, defaultAccountId, defaultPermissionProfileId, createdOn, createdBy, lastModifiedOn, lastModifiedBy, accounts, users, reservedDomains, identityProviders, links);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrganizationResponse {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    defaultAccountId: ").append(toIndentedString(defaultAccountId)).append("\n");
-    sb.append("    defaultPermissionProfileId: ")
-        .append(toIndentedString(defaultPermissionProfileId))
-        .append("\n");
+    sb.append("    defaultPermissionProfileId: ").append(toIndentedString(defaultPermissionProfileId)).append("\n");
     sb.append("    createdOn: ").append(toIndentedString(createdOn)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    lastModifiedOn: ").append(toIndentedString(lastModifiedOn)).append("\n");
@@ -544,7 +571,8 @@ public class OrganizationResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -552,4 +580,6 @@ public class OrganizationResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

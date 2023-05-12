@@ -1,10 +1,17 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/** PagingResponseProperties. */
+/**
+ * PagingResponseProperties.
+ *
+ */
+
 public class PagingResponseProperties {
   @JsonProperty("result_set_size")
   private Integer resultSetSize = null;
@@ -24,11 +31,12 @@ public class PagingResponseProperties {
   @JsonProperty("previous")
   private String previous = null;
 
+
   /**
    * resultSetSize.
    *
    * @return PagingResponseProperties
-   */
+   **/
   public PagingResponseProperties resultSetSize(Integer resultSetSize) {
     this.resultSetSize = resultSetSize;
     return this;
@@ -36,24 +44,26 @@ public class PagingResponseProperties {
 
   /**
    * Get resultSetSize.
-   *
    * @return resultSetSize
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Integer getResultSetSize() {
     return resultSetSize;
   }
 
-  /** setResultSetSize. */
+  /**
+   * setResultSetSize.
+   **/
   public void setResultSetSize(Integer resultSetSize) {
     this.resultSetSize = resultSetSize;
   }
+
 
   /**
    * resultSetStartPosition.
    *
    * @return PagingResponseProperties
-   */
+   **/
   public PagingResponseProperties resultSetStartPosition(Integer resultSetStartPosition) {
     this.resultSetStartPosition = resultSetStartPosition;
     return this;
@@ -61,24 +71,26 @@ public class PagingResponseProperties {
 
   /**
    * Get resultSetStartPosition.
-   *
    * @return resultSetStartPosition
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Integer getResultSetStartPosition() {
     return resultSetStartPosition;
   }
 
-  /** setResultSetStartPosition. */
+  /**
+   * setResultSetStartPosition.
+   **/
   public void setResultSetStartPosition(Integer resultSetStartPosition) {
     this.resultSetStartPosition = resultSetStartPosition;
   }
+
 
   /**
    * resultSetEndPosition.
    *
    * @return PagingResponseProperties
-   */
+   **/
   public PagingResponseProperties resultSetEndPosition(Integer resultSetEndPosition) {
     this.resultSetEndPosition = resultSetEndPosition;
     return this;
@@ -86,24 +98,26 @@ public class PagingResponseProperties {
 
   /**
    * Get resultSetEndPosition.
-   *
    * @return resultSetEndPosition
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Integer getResultSetEndPosition() {
     return resultSetEndPosition;
   }
 
-  /** setResultSetEndPosition. */
+  /**
+   * setResultSetEndPosition.
+   **/
   public void setResultSetEndPosition(Integer resultSetEndPosition) {
     this.resultSetEndPosition = resultSetEndPosition;
   }
+
 
   /**
    * totalSetSize.
    *
    * @return PagingResponseProperties
-   */
+   **/
   public PagingResponseProperties totalSetSize(Integer totalSetSize) {
     this.totalSetSize = totalSetSize;
     return this;
@@ -111,24 +125,26 @@ public class PagingResponseProperties {
 
   /**
    * Get totalSetSize.
-   *
    * @return totalSetSize
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Integer getTotalSetSize() {
     return totalSetSize;
   }
 
-  /** setTotalSetSize. */
+  /**
+   * setTotalSetSize.
+   **/
   public void setTotalSetSize(Integer totalSetSize) {
     this.totalSetSize = totalSetSize;
   }
+
 
   /**
    * next.
    *
    * @return PagingResponseProperties
-   */
+   **/
   public PagingResponseProperties next(String next) {
     this.next = next;
     return this;
@@ -136,24 +152,26 @@ public class PagingResponseProperties {
 
   /**
    * Get next.
-   *
    * @return next
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getNext() {
     return next;
   }
 
-  /** setNext. */
+  /**
+   * setNext.
+   **/
   public void setNext(String next) {
     this.next = next;
   }
+
 
   /**
    * previous.
    *
    * @return PagingResponseProperties
-   */
+   **/
   public PagingResponseProperties previous(String previous) {
     this.previous = previous;
     return this;
@@ -161,18 +179,20 @@ public class PagingResponseProperties {
 
   /**
    * Get previous.
-   *
    * @return previous
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getPrevious() {
     return previous;
   }
 
-  /** setPrevious. */
+  /**
+   * setPrevious.
+   **/
   public void setPrevious(String previous) {
     this.previous = previous;
   }
+
 
   /**
    * Compares objects.
@@ -188,35 +208,34 @@ public class PagingResponseProperties {
       return false;
     }
     PagingResponseProperties pagingResponseProperties = (PagingResponseProperties) o;
-    return Objects.equals(this.resultSetSize, pagingResponseProperties.resultSetSize)
-        && Objects.equals(
-            this.resultSetStartPosition, pagingResponseProperties.resultSetStartPosition)
-        && Objects.equals(this.resultSetEndPosition, pagingResponseProperties.resultSetEndPosition)
-        && Objects.equals(this.totalSetSize, pagingResponseProperties.totalSetSize)
-        && Objects.equals(this.next, pagingResponseProperties.next)
-        && Objects.equals(this.previous, pagingResponseProperties.previous);
+    return Objects.equals(this.resultSetSize, pagingResponseProperties.resultSetSize) &&
+        Objects.equals(this.resultSetStartPosition, pagingResponseProperties.resultSetStartPosition) &&
+        Objects.equals(this.resultSetEndPosition, pagingResponseProperties.resultSetEndPosition) &&
+        Objects.equals(this.totalSetSize, pagingResponseProperties.totalSetSize) &&
+        Objects.equals(this.next, pagingResponseProperties.next) &&
+        Objects.equals(this.previous, pagingResponseProperties.previous);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
-    return Objects.hash(
-        resultSetSize, resultSetStartPosition, resultSetEndPosition, totalSetSize, next, previous);
+    return Objects.hash(resultSetSize, resultSetStartPosition, resultSetEndPosition, totalSetSize, next, previous);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PagingResponseProperties {\n");
-
+    
     sb.append("    resultSetSize: ").append(toIndentedString(resultSetSize)).append("\n");
-    sb.append("    resultSetStartPosition: ")
-        .append(toIndentedString(resultSetStartPosition))
-        .append("\n");
-    sb.append("    resultSetEndPosition: ")
-        .append(toIndentedString(resultSetEndPosition))
-        .append("\n");
+    sb.append("    resultSetStartPosition: ").append(toIndentedString(resultSetStartPosition)).append("\n");
+    sb.append("    resultSetEndPosition: ").append(toIndentedString(resultSetEndPosition)).append("\n");
     sb.append("    totalSetSize: ").append(toIndentedString(totalSetSize)).append("\n");
     sb.append("    next: ").append(toIndentedString(next)).append("\n");
     sb.append("    previous: ").append(toIndentedString(previous)).append("\n");
@@ -225,7 +244,8 @@ public class PagingResponseProperties {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -233,4 +253,6 @@ public class PagingResponseProperties {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

@@ -1,10 +1,18 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.AddUserResponseAccountProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/** AddUserResponse. */
+/**
+ * AddUserResponse.
+ *
+ */
+
 public class AddUserResponse {
   @JsonProperty("id")
   private java.util.UUID id = null;
@@ -33,11 +41,12 @@ public class AddUserResponse {
   @JsonProperty("accounts")
   private java.util.List<AddUserResponseAccountProperties> accounts = null;
 
+
   /**
    * id.
    *
    * @return AddUserResponse
-   */
+   **/
   public AddUserResponse id(java.util.UUID id) {
     this.id = id;
     return this;
@@ -45,24 +54,26 @@ public class AddUserResponse {
 
   /**
    * Get id.
-   *
    * @return id
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
   public java.util.UUID getId() {
     return id;
   }
 
-  /** setId. */
+  /**
+   * setId.
+   **/
   public void setId(java.util.UUID id) {
     this.id = id;
   }
+
 
   /**
    * siteId.
    *
    * @return AddUserResponse
-   */
+   **/
   public AddUserResponse siteId(Integer siteId) {
     this.siteId = siteId;
     return this;
@@ -70,24 +81,26 @@ public class AddUserResponse {
 
   /**
    * Get siteId.
-   *
    * @return siteId
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Integer getSiteId() {
     return siteId;
   }
 
-  /** setSiteId. */
+  /**
+   * setSiteId.
+   **/
   public void setSiteId(Integer siteId) {
     this.siteId = siteId;
   }
+
 
   /**
    * userName.
    *
    * @return AddUserResponse
-   */
+   **/
   public AddUserResponse userName(String userName) {
     this.userName = userName;
     return this;
@@ -95,24 +108,26 @@ public class AddUserResponse {
 
   /**
    * Get userName.
-   *
    * @return userName
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getUserName() {
     return userName;
   }
 
-  /** setUserName. */
+  /**
+   * setUserName.
+   **/
   public void setUserName(String userName) {
     this.userName = userName;
   }
+
 
   /**
    * firstName.
    *
    * @return AddUserResponse
-   */
+   **/
   public AddUserResponse firstName(String firstName) {
     this.firstName = firstName;
     return this;
@@ -120,24 +135,26 @@ public class AddUserResponse {
 
   /**
    * Get firstName.
-   *
    * @return firstName
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getFirstName() {
     return firstName;
   }
 
-  /** setFirstName. */
+  /**
+   * setFirstName.
+   **/
   public void setFirstName(String firstName) {
     this.firstName = firstName;
   }
+
 
   /**
    * lastName.
    *
    * @return AddUserResponse
-   */
+   **/
   public AddUserResponse lastName(String lastName) {
     this.lastName = lastName;
     return this;
@@ -145,24 +162,26 @@ public class AddUserResponse {
 
   /**
    * Get lastName.
-   *
    * @return lastName
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getLastName() {
     return lastName;
   }
 
-  /** setLastName. */
+  /**
+   * setLastName.
+   **/
   public void setLastName(String lastName) {
     this.lastName = lastName;
   }
+
 
   /**
    * email.
    *
    * @return AddUserResponse
-   */
+   **/
   public AddUserResponse email(String email) {
     this.email = email;
     return this;
@@ -170,24 +189,26 @@ public class AddUserResponse {
 
   /**
    * Get email.
-   *
    * @return email
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getEmail() {
     return email;
   }
 
-  /** setEmail. */
+  /**
+   * setEmail.
+   **/
   public void setEmail(String email) {
     this.email = email;
   }
+
 
   /**
    * languageCulture.
    *
    * @return AddUserResponse
-   */
+   **/
   public AddUserResponse languageCulture(String languageCulture) {
     this.languageCulture = languageCulture;
     return this;
@@ -195,24 +216,26 @@ public class AddUserResponse {
 
   /**
    * Get languageCulture.
-   *
    * @return languageCulture
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getLanguageCulture() {
     return languageCulture;
   }
 
-  /** setLanguageCulture. */
+  /**
+   * setLanguageCulture.
+   **/
   public void setLanguageCulture(String languageCulture) {
     this.languageCulture = languageCulture;
   }
+
 
   /**
    * federatedStatus.
    *
    * @return AddUserResponse
-   */
+   **/
   public AddUserResponse federatedStatus(String federatedStatus) {
     this.federatedStatus = federatedStatus;
     return this;
@@ -220,28 +243,29 @@ public class AddUserResponse {
 
   /**
    * Get federatedStatus.
-   *
    * @return federatedStatus
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getFederatedStatus() {
     return federatedStatus;
   }
 
-  /** setFederatedStatus. */
+  /**
+   * setFederatedStatus.
+   **/
   public void setFederatedStatus(String federatedStatus) {
     this.federatedStatus = federatedStatus;
   }
 
   /**
    * Get accounts.
-   *
    * @return accounts
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public java.util.List<AddUserResponseAccountProperties> getAccounts() {
     return accounts;
   }
+
 
   /**
    * Compares objects.
@@ -257,38 +281,34 @@ public class AddUserResponse {
       return false;
     }
     AddUserResponse addUserResponse = (AddUserResponse) o;
-    return Objects.equals(this.id, addUserResponse.id)
-        && Objects.equals(this.siteId, addUserResponse.siteId)
-        && Objects.equals(this.userName, addUserResponse.userName)
-        && Objects.equals(this.firstName, addUserResponse.firstName)
-        && Objects.equals(this.lastName, addUserResponse.lastName)
-        && Objects.equals(this.email, addUserResponse.email)
-        && Objects.equals(this.languageCulture, addUserResponse.languageCulture)
-        && Objects.equals(this.federatedStatus, addUserResponse.federatedStatus)
-        && Objects.equals(this.accounts, addUserResponse.accounts);
+    return Objects.equals(this.id, addUserResponse.id) &&
+        Objects.equals(this.siteId, addUserResponse.siteId) &&
+        Objects.equals(this.userName, addUserResponse.userName) &&
+        Objects.equals(this.firstName, addUserResponse.firstName) &&
+        Objects.equals(this.lastName, addUserResponse.lastName) &&
+        Objects.equals(this.email, addUserResponse.email) &&
+        Objects.equals(this.languageCulture, addUserResponse.languageCulture) &&
+        Objects.equals(this.federatedStatus, addUserResponse.federatedStatus) &&
+        Objects.equals(this.accounts, addUserResponse.accounts);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
-    return Objects.hash(
-        id,
-        siteId,
-        userName,
-        firstName,
-        lastName,
-        email,
-        languageCulture,
-        federatedStatus,
-        accounts);
+    return Objects.hash(id, siteId, userName, firstName, lastName, email, languageCulture, federatedStatus, accounts);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AddUserResponse {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
     sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
@@ -303,7 +323,8 @@ public class AddUserResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -311,4 +332,6 @@ public class AddUserResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

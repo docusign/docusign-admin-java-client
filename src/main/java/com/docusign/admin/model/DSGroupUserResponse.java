@@ -1,10 +1,18 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.ErrorDetails;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/** DSGroupUserResponse. */
+/**
+ * DSGroupUserResponse.
+ *
+ */
+
 public class DSGroupUserResponse {
   @JsonProperty("user_id")
   private java.util.UUID userId = null;
@@ -30,11 +38,12 @@ public class DSGroupUserResponse {
   @JsonProperty("error_details")
   private ErrorDetails errorDetails = null;
 
+
   /**
    * userId.
    *
    * @return DSGroupUserResponse
-   */
+   **/
   public DSGroupUserResponse userId(java.util.UUID userId) {
     this.userId = userId;
     return this;
@@ -42,24 +51,26 @@ public class DSGroupUserResponse {
 
   /**
    * Get userId.
-   *
    * @return userId
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
   public java.util.UUID getUserId() {
     return userId;
   }
 
-  /** setUserId. */
+  /**
+   * setUserId.
+   **/
   public void setUserId(java.util.UUID userId) {
     this.userId = userId;
   }
+
 
   /**
    * accountId.
    *
    * @return DSGroupUserResponse
-   */
+   **/
   public DSGroupUserResponse accountId(java.util.UUID accountId) {
     this.accountId = accountId;
     return this;
@@ -67,24 +78,26 @@ public class DSGroupUserResponse {
 
   /**
    * Get accountId.
-   *
    * @return accountId
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
   public java.util.UUID getAccountId() {
     return accountId;
   }
 
-  /** setAccountId. */
+  /**
+   * setAccountId.
+   **/
   public void setAccountId(java.util.UUID accountId) {
     this.accountId = accountId;
   }
+
 
   /**
    * userName.
    *
    * @return DSGroupUserResponse
-   */
+   **/
   public DSGroupUserResponse userName(String userName) {
     this.userName = userName;
     return this;
@@ -92,24 +105,26 @@ public class DSGroupUserResponse {
 
   /**
    * Get userName.
-   *
    * @return userName
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getUserName() {
     return userName;
   }
 
-  /** setUserName. */
+  /**
+   * setUserName.
+   **/
   public void setUserName(String userName) {
     this.userName = userName;
   }
+
 
   /**
    * firstName.
    *
    * @return DSGroupUserResponse
-   */
+   **/
   public DSGroupUserResponse firstName(String firstName) {
     this.firstName = firstName;
     return this;
@@ -117,24 +132,26 @@ public class DSGroupUserResponse {
 
   /**
    * Get firstName.
-   *
    * @return firstName
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getFirstName() {
     return firstName;
   }
 
-  /** setFirstName. */
+  /**
+   * setFirstName.
+   **/
   public void setFirstName(String firstName) {
     this.firstName = firstName;
   }
+
 
   /**
    * lastName.
    *
    * @return DSGroupUserResponse
-   */
+   **/
   public DSGroupUserResponse lastName(String lastName) {
     this.lastName = lastName;
     return this;
@@ -142,24 +159,26 @@ public class DSGroupUserResponse {
 
   /**
    * Get lastName.
-   *
    * @return lastName
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getLastName() {
     return lastName;
   }
 
-  /** setLastName. */
+  /**
+   * setLastName.
+   **/
   public void setLastName(String lastName) {
     this.lastName = lastName;
   }
+
 
   /**
    * middleName.
    *
    * @return DSGroupUserResponse
-   */
+   **/
   public DSGroupUserResponse middleName(String middleName) {
     this.middleName = middleName;
     return this;
@@ -167,24 +186,26 @@ public class DSGroupUserResponse {
 
   /**
    * Get middleName.
-   *
    * @return middleName
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getMiddleName() {
     return middleName;
   }
 
-  /** setMiddleName. */
+  /**
+   * setMiddleName.
+   **/
   public void setMiddleName(String middleName) {
     this.middleName = middleName;
   }
+
 
   /**
    * status.
    *
    * @return DSGroupUserResponse
-   */
+   **/
   public DSGroupUserResponse status(String status) {
     this.status = status;
     return this;
@@ -192,24 +213,26 @@ public class DSGroupUserResponse {
 
   /**
    * Get status.
-   *
    * @return status
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getStatus() {
     return status;
   }
 
-  /** setStatus. */
+  /**
+   * setStatus.
+   **/
   public void setStatus(String status) {
     this.status = status;
   }
+
 
   /**
    * errorDetails.
    *
    * @return DSGroupUserResponse
-   */
+   **/
   public DSGroupUserResponse errorDetails(ErrorDetails errorDetails) {
     this.errorDetails = errorDetails;
     return this;
@@ -217,18 +240,20 @@ public class DSGroupUserResponse {
 
   /**
    * Get errorDetails.
-   *
    * @return errorDetails
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public ErrorDetails getErrorDetails() {
     return errorDetails;
   }
 
-  /** setErrorDetails. */
+  /**
+   * setErrorDetails.
+   **/
   public void setErrorDetails(ErrorDetails errorDetails) {
     this.errorDetails = errorDetails;
   }
+
 
   /**
    * Compares objects.
@@ -244,29 +269,33 @@ public class DSGroupUserResponse {
       return false;
     }
     DSGroupUserResponse dsGroupUserResponse = (DSGroupUserResponse) o;
-    return Objects.equals(this.userId, dsGroupUserResponse.userId)
-        && Objects.equals(this.accountId, dsGroupUserResponse.accountId)
-        && Objects.equals(this.userName, dsGroupUserResponse.userName)
-        && Objects.equals(this.firstName, dsGroupUserResponse.firstName)
-        && Objects.equals(this.lastName, dsGroupUserResponse.lastName)
-        && Objects.equals(this.middleName, dsGroupUserResponse.middleName)
-        && Objects.equals(this.status, dsGroupUserResponse.status)
-        && Objects.equals(this.errorDetails, dsGroupUserResponse.errorDetails);
+    return Objects.equals(this.userId, dsGroupUserResponse.userId) &&
+        Objects.equals(this.accountId, dsGroupUserResponse.accountId) &&
+        Objects.equals(this.userName, dsGroupUserResponse.userName) &&
+        Objects.equals(this.firstName, dsGroupUserResponse.firstName) &&
+        Objects.equals(this.lastName, dsGroupUserResponse.lastName) &&
+        Objects.equals(this.middleName, dsGroupUserResponse.middleName) &&
+        Objects.equals(this.status, dsGroupUserResponse.status) &&
+        Objects.equals(this.errorDetails, dsGroupUserResponse.errorDetails);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
-    return Objects.hash(
-        userId, accountId, userName, firstName, lastName, middleName, status, errorDetails);
+    return Objects.hash(userId, accountId, userName, firstName, lastName, middleName, status, errorDetails);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DSGroupUserResponse {\n");
-
+    
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
@@ -280,7 +309,8 @@ public class DSGroupUserResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -288,4 +318,6 @@ public class DSGroupUserResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

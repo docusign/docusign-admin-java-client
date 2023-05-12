@@ -1,10 +1,17 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/** PermissionProfileResponse. */
+/**
+ * PermissionProfileResponse.
+ *
+ */
+
 public class PermissionProfileResponse {
   @JsonProperty("id")
   private Long id = null;
@@ -12,11 +19,12 @@ public class PermissionProfileResponse {
   @JsonProperty("name")
   private String name = null;
 
+
   /**
    * id.
    *
    * @return PermissionProfileResponse
-   */
+   **/
   public PermissionProfileResponse id(Long id) {
     this.id = id;
     return this;
@@ -24,24 +32,26 @@ public class PermissionProfileResponse {
 
   /**
    * Get id.
-   *
    * @return id
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Long getId() {
     return id;
   }
 
-  /** setId. */
+  /**
+   * setId.
+   **/
   public void setId(Long id) {
     this.id = id;
   }
+
 
   /**
    * name.
    *
    * @return PermissionProfileResponse
-   */
+   **/
   public PermissionProfileResponse name(String name) {
     this.name = name;
     return this;
@@ -49,18 +59,20 @@ public class PermissionProfileResponse {
 
   /**
    * Get name.
-   *
    * @return name
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getName() {
     return name;
   }
 
-  /** setName. */
+  /**
+   * setName.
+   **/
   public void setName(String name) {
     this.name = name;
   }
+
 
   /**
    * Compares objects.
@@ -76,22 +88,27 @@ public class PermissionProfileResponse {
       return false;
     }
     PermissionProfileResponse permissionProfileResponse = (PermissionProfileResponse) o;
-    return Objects.equals(this.id, permissionProfileResponse.id)
-        && Objects.equals(this.name, permissionProfileResponse.name);
+    return Objects.equals(this.id, permissionProfileResponse.id) &&
+        Objects.equals(this.name, permissionProfileResponse.name);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(id, name);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PermissionProfileResponse {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
@@ -99,7 +116,8 @@ public class PermissionProfileResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -107,4 +125,6 @@ public class PermissionProfileResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

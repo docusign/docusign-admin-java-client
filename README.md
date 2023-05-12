@@ -74,8 +74,8 @@ The DocuSign Java Client is licensed under the [MIT License](https://github.com/
 /master/LICENSE).
 
 
-[travis-image]: https://img.shields.io/travis/docusign/docusign-admin-java-client.svg?style=flat
-[travis-url]: https://travis-ci.org/docusign/docusign-admin-java-client
+[travis-image]: https://api.travis-ci.com/docusign/docusign-admin-java-client.svg?branch=master
+[travis-url]: https://app.travis-ci.com/github/docusign/docusign-admin-java-client
 [maven-image]: https://img.shields.io/maven-central/v/com.docusign/docusign-admin-java.svg?style=flat
 [maven-url]: https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.docusign%22
 

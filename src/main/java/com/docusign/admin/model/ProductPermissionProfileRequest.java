@@ -1,10 +1,17 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/** ProductPermissionProfileRequest. */
+/**
+ * ProductPermissionProfileRequest.
+ *
+ */
+
 public class ProductPermissionProfileRequest {
   @JsonProperty("product_id")
   private java.util.UUID productId = null;
@@ -12,11 +19,12 @@ public class ProductPermissionProfileRequest {
   @JsonProperty("permission_profile_id")
   private String permissionProfileId = null;
 
+
   /**
    * productId.
    *
    * @return ProductPermissionProfileRequest
-   */
+   **/
   public ProductPermissionProfileRequest productId(java.util.UUID productId) {
     this.productId = productId;
     return this;
@@ -24,24 +32,26 @@ public class ProductPermissionProfileRequest {
 
   /**
    * Get productId.
-   *
    * @return productId
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", required = true, value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", required = true, description = "")
   public java.util.UUID getProductId() {
     return productId;
   }
 
-  /** setProductId. */
+  /**
+   * setProductId.
+   **/
   public void setProductId(java.util.UUID productId) {
     this.productId = productId;
   }
+
 
   /**
    * permissionProfileId.
    *
    * @return ProductPermissionProfileRequest
-   */
+   **/
   public ProductPermissionProfileRequest permissionProfileId(String permissionProfileId) {
     this.permissionProfileId = permissionProfileId;
     return this;
@@ -49,18 +59,20 @@ public class ProductPermissionProfileRequest {
 
   /**
    * Get permissionProfileId.
-   *
    * @return permissionProfileId
-   */
-  @ApiModelProperty(required = true, value = "")
+   **/
+  @Schema(required = true, description = "")
   public String getPermissionProfileId() {
     return permissionProfileId;
   }
 
-  /** setPermissionProfileId. */
+  /**
+   * setPermissionProfileId.
+   **/
   public void setPermissionProfileId(String permissionProfileId) {
     this.permissionProfileId = permissionProfileId;
   }
+
 
   /**
    * Compares objects.
@@ -75,35 +87,37 @@ public class ProductPermissionProfileRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProductPermissionProfileRequest productPermissionProfileRequest =
-        (ProductPermissionProfileRequest) o;
-    return Objects.equals(this.productId, productPermissionProfileRequest.productId)
-        && Objects.equals(
-            this.permissionProfileId, productPermissionProfileRequest.permissionProfileId);
+    ProductPermissionProfileRequest productPermissionProfileRequest = (ProductPermissionProfileRequest) o;
+    return Objects.equals(this.productId, productPermissionProfileRequest.productId) &&
+        Objects.equals(this.permissionProfileId, productPermissionProfileRequest.permissionProfileId);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(productId, permissionProfileId);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProductPermissionProfileRequest {\n");
-
+    
     sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-    sb.append("    permissionProfileId: ")
-        .append(toIndentedString(permissionProfileId))
-        .append("\n");
+    sb.append("    permissionProfileId: ").append(toIndentedString(permissionProfileId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -111,4 +125,6 @@ public class ProductPermissionProfileRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+
