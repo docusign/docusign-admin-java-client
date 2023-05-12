@@ -1,11 +1,19 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
-import java.time.LocalDateTime;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.OrgReportListResponseRequestor;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
+import java.time.OffsetDateTime;
 
-/** OrgReportListResponseOrgReport. */
+/**
+ * OrgReportListResponseOrgReport.
+ *
+ */
+
 public class OrgReportListResponseOrgReport {
   @JsonProperty("complete")
   private Boolean complete = null;
@@ -23,7 +31,7 @@ public class OrgReportListResponseOrgReport {
   private OrgReportListResponseRequestor requestor = null;
 
   @JsonProperty("created_on")
-  private LocalDateTime createdOn = null;
+  private String createdOn = null;
 
   @JsonProperty("account_export_count")
   private Integer accountExportCount = null;
@@ -38,16 +46,17 @@ public class OrgReportListResponseOrgReport {
   private String reportDateRange = null;
 
   @JsonProperty("custom_start_date")
-  private LocalDateTime customStartDate = null;
+  private String customStartDate = null;
 
   @JsonProperty("custom_end_date")
-  private LocalDateTime customEndDate = null;
+  private String customEndDate = null;
+
 
   /**
    * complete.
    *
    * @return OrgReportListResponseOrgReport
-   */
+   **/
   public OrgReportListResponseOrgReport complete(Boolean complete) {
     this.complete = complete;
     return this;
@@ -55,24 +64,26 @@ public class OrgReportListResponseOrgReport {
 
   /**
    * Get complete.
-   *
    * @return complete
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Boolean isComplete() {
     return complete;
   }
 
-  /** setComplete. */
+  /**
+   * setComplete.
+   **/
   public void setComplete(Boolean complete) {
     this.complete = complete;
   }
+
 
   /**
    * reportCorrelationId.
    *
    * @return OrgReportListResponseOrgReport
-   */
+   **/
   public OrgReportListResponseOrgReport reportCorrelationId(java.util.UUID reportCorrelationId) {
     this.reportCorrelationId = reportCorrelationId;
     return this;
@@ -80,24 +91,26 @@ public class OrgReportListResponseOrgReport {
 
   /**
    * Get reportCorrelationId.
-   *
    * @return reportCorrelationId
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
   public java.util.UUID getReportCorrelationId() {
     return reportCorrelationId;
   }
 
-  /** setReportCorrelationId. */
+  /**
+   * setReportCorrelationId.
+   **/
   public void setReportCorrelationId(java.util.UUID reportCorrelationId) {
     this.reportCorrelationId = reportCorrelationId;
   }
+
 
   /**
    * siteId.
    *
    * @return OrgReportListResponseOrgReport
-   */
+   **/
   public OrgReportListResponseOrgReport siteId(Integer siteId) {
     this.siteId = siteId;
     return this;
@@ -105,24 +118,26 @@ public class OrgReportListResponseOrgReport {
 
   /**
    * Get siteId.
-   *
    * @return siteId
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Integer getSiteId() {
     return siteId;
   }
 
-  /** setSiteId. */
+  /**
+   * setSiteId.
+   **/
   public void setSiteId(Integer siteId) {
     this.siteId = siteId;
   }
+
 
   /**
    * reportId.
    *
    * @return OrgReportListResponseOrgReport
-   */
+   **/
   public OrgReportListResponseOrgReport reportId(java.util.UUID reportId) {
     this.reportId = reportId;
     return this;
@@ -130,24 +145,26 @@ public class OrgReportListResponseOrgReport {
 
   /**
    * Get reportId.
-   *
    * @return reportId
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
   public java.util.UUID getReportId() {
     return reportId;
   }
 
-  /** setReportId. */
+  /**
+   * setReportId.
+   **/
   public void setReportId(java.util.UUID reportId) {
     this.reportId = reportId;
   }
+
 
   /**
    * requestor.
    *
    * @return OrgReportListResponseOrgReport
-   */
+   **/
   public OrgReportListResponseOrgReport requestor(OrgReportListResponseRequestor requestor) {
     this.requestor = requestor;
     return this;
@@ -155,49 +172,53 @@ public class OrgReportListResponseOrgReport {
 
   /**
    * Get requestor.
-   *
    * @return requestor
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public OrgReportListResponseRequestor getRequestor() {
     return requestor;
   }
 
-  /** setRequestor. */
+  /**
+   * setRequestor.
+   **/
   public void setRequestor(OrgReportListResponseRequestor requestor) {
     this.requestor = requestor;
   }
+
 
   /**
    * createdOn.
    *
    * @return OrgReportListResponseOrgReport
-   */
-  public OrgReportListResponseOrgReport createdOn(LocalDateTime createdOn) {
+   **/
+  public OrgReportListResponseOrgReport createdOn(String createdOn) {
     this.createdOn = createdOn;
     return this;
   }
 
   /**
    * Get createdOn.
-   *
    * @return createdOn
-   */
-  @ApiModelProperty(value = "")
-  public LocalDateTime getCreatedOn() {
+   **/
+  @Schema(description = "")
+  public String getCreatedOn() {
     return createdOn;
   }
 
-  /** setCreatedOn. */
-  public void setCreatedOn(LocalDateTime createdOn) {
+  /**
+   * setCreatedOn.
+   **/
+  public void setCreatedOn(String createdOn) {
     this.createdOn = createdOn;
   }
+
 
   /**
    * accountExportCount.
    *
    * @return OrgReportListResponseOrgReport
-   */
+   **/
   public OrgReportListResponseOrgReport accountExportCount(Integer accountExportCount) {
     this.accountExportCount = accountExportCount;
     return this;
@@ -205,24 +226,26 @@ public class OrgReportListResponseOrgReport {
 
   /**
    * Get accountExportCount.
-   *
    * @return accountExportCount
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Integer getAccountExportCount() {
     return accountExportCount;
   }
 
-  /** setAccountExportCount. */
+  /**
+   * setAccountExportCount.
+   **/
   public void setAccountExportCount(Integer accountExportCount) {
     this.accountExportCount = accountExportCount;
   }
+
 
   /**
    * url.
    *
    * @return OrgReportListResponseOrgReport
-   */
+   **/
   public OrgReportListResponseOrgReport url(String url) {
     this.url = url;
     return this;
@@ -230,24 +253,26 @@ public class OrgReportListResponseOrgReport {
 
   /**
    * Get url.
-   *
    * @return url
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getUrl() {
     return url;
   }
 
-  /** setUrl. */
+  /**
+   * setUrl.
+   **/
   public void setUrl(String url) {
     this.url = url;
   }
+
 
   /**
    * reportTypeId.
    *
    * @return OrgReportListResponseOrgReport
-   */
+   **/
   public OrgReportListResponseOrgReport reportTypeId(String reportTypeId) {
     this.reportTypeId = reportTypeId;
     return this;
@@ -255,24 +280,26 @@ public class OrgReportListResponseOrgReport {
 
   /**
    * Get reportTypeId.
-   *
    * @return reportTypeId
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getReportTypeId() {
     return reportTypeId;
   }
 
-  /** setReportTypeId. */
+  /**
+   * setReportTypeId.
+   **/
   public void setReportTypeId(String reportTypeId) {
     this.reportTypeId = reportTypeId;
   }
+
 
   /**
    * reportDateRange.
    *
    * @return OrgReportListResponseOrgReport
-   */
+   **/
   public OrgReportListResponseOrgReport reportDateRange(String reportDateRange) {
     this.reportDateRange = reportDateRange;
     return this;
@@ -280,68 +307,74 @@ public class OrgReportListResponseOrgReport {
 
   /**
    * Get reportDateRange.
-   *
    * @return reportDateRange
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getReportDateRange() {
     return reportDateRange;
   }
 
-  /** setReportDateRange. */
+  /**
+   * setReportDateRange.
+   **/
   public void setReportDateRange(String reportDateRange) {
     this.reportDateRange = reportDateRange;
   }
+
 
   /**
    * customStartDate.
    *
    * @return OrgReportListResponseOrgReport
-   */
-  public OrgReportListResponseOrgReport customStartDate(LocalDateTime customStartDate) {
+   **/
+  public OrgReportListResponseOrgReport customStartDate(String customStartDate) {
     this.customStartDate = customStartDate;
     return this;
   }
 
   /**
    * Get customStartDate.
-   *
    * @return customStartDate
-   */
-  @ApiModelProperty(value = "")
-  public LocalDateTime getCustomStartDate() {
+   **/
+  @Schema(description = "")
+  public String getCustomStartDate() {
     return customStartDate;
   }
 
-  /** setCustomStartDate. */
-  public void setCustomStartDate(LocalDateTime customStartDate) {
+  /**
+   * setCustomStartDate.
+   **/
+  public void setCustomStartDate(String customStartDate) {
     this.customStartDate = customStartDate;
   }
+
 
   /**
    * customEndDate.
    *
    * @return OrgReportListResponseOrgReport
-   */
-  public OrgReportListResponseOrgReport customEndDate(LocalDateTime customEndDate) {
+   **/
+  public OrgReportListResponseOrgReport customEndDate(String customEndDate) {
     this.customEndDate = customEndDate;
     return this;
   }
 
   /**
    * Get customEndDate.
-   *
    * @return customEndDate
-   */
-  @ApiModelProperty(value = "")
-  public LocalDateTime getCustomEndDate() {
+   **/
+  @Schema(description = "")
+  public String getCustomEndDate() {
     return customEndDate;
   }
 
-  /** setCustomEndDate. */
-  public void setCustomEndDate(LocalDateTime customEndDate) {
+  /**
+   * setCustomEndDate.
+   **/
+  public void setCustomEndDate(String customEndDate) {
     this.customEndDate = customEndDate;
   }
+
 
   /**
    * Compares objects.
@@ -356,52 +389,40 @@ public class OrgReportListResponseOrgReport {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrgReportListResponseOrgReport orgReportListResponseOrgReport =
-        (OrgReportListResponseOrgReport) o;
-    return Objects.equals(this.complete, orgReportListResponseOrgReport.complete)
-        && Objects.equals(
-            this.reportCorrelationId, orgReportListResponseOrgReport.reportCorrelationId)
-        && Objects.equals(this.siteId, orgReportListResponseOrgReport.siteId)
-        && Objects.equals(this.reportId, orgReportListResponseOrgReport.reportId)
-        && Objects.equals(this.requestor, orgReportListResponseOrgReport.requestor)
-        && Objects.equals(this.createdOn, orgReportListResponseOrgReport.createdOn)
-        && Objects.equals(
-            this.accountExportCount, orgReportListResponseOrgReport.accountExportCount)
-        && Objects.equals(this.url, orgReportListResponseOrgReport.url)
-        && Objects.equals(this.reportTypeId, orgReportListResponseOrgReport.reportTypeId)
-        && Objects.equals(this.reportDateRange, orgReportListResponseOrgReport.reportDateRange)
-        && Objects.equals(this.customStartDate, orgReportListResponseOrgReport.customStartDate)
-        && Objects.equals(this.customEndDate, orgReportListResponseOrgReport.customEndDate);
+    OrgReportListResponseOrgReport orgReportListResponseOrgReport = (OrgReportListResponseOrgReport) o;
+    return Objects.equals(this.complete, orgReportListResponseOrgReport.complete) &&
+        Objects.equals(this.reportCorrelationId, orgReportListResponseOrgReport.reportCorrelationId) &&
+        Objects.equals(this.siteId, orgReportListResponseOrgReport.siteId) &&
+        Objects.equals(this.reportId, orgReportListResponseOrgReport.reportId) &&
+        Objects.equals(this.requestor, orgReportListResponseOrgReport.requestor) &&
+        Objects.equals(this.createdOn, orgReportListResponseOrgReport.createdOn) &&
+        Objects.equals(this.accountExportCount, orgReportListResponseOrgReport.accountExportCount) &&
+        Objects.equals(this.url, orgReportListResponseOrgReport.url) &&
+        Objects.equals(this.reportTypeId, orgReportListResponseOrgReport.reportTypeId) &&
+        Objects.equals(this.reportDateRange, orgReportListResponseOrgReport.reportDateRange) &&
+        Objects.equals(this.customStartDate, orgReportListResponseOrgReport.customStartDate) &&
+        Objects.equals(this.customEndDate, orgReportListResponseOrgReport.customEndDate);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
-    return Objects.hash(
-        complete,
-        reportCorrelationId,
-        siteId,
-        reportId,
-        requestor,
-        createdOn,
-        accountExportCount,
-        url,
-        reportTypeId,
-        reportDateRange,
-        customStartDate,
-        customEndDate);
+    return Objects.hash(complete, reportCorrelationId, siteId, reportId, requestor, createdOn, accountExportCount, url, reportTypeId, reportDateRange, customStartDate, customEndDate);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrgReportListResponseOrgReport {\n");
-
+    
     sb.append("    complete: ").append(toIndentedString(complete)).append("\n");
-    sb.append("    reportCorrelationId: ")
-        .append(toIndentedString(reportCorrelationId))
-        .append("\n");
+    sb.append("    reportCorrelationId: ").append(toIndentedString(reportCorrelationId)).append("\n");
     sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
     sb.append("    reportId: ").append(toIndentedString(reportId)).append("\n");
     sb.append("    requestor: ").append(toIndentedString(requestor)).append("\n");
@@ -417,7 +438,8 @@ public class OrgReportListResponseOrgReport {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -425,4 +447,6 @@ public class OrgReportListResponseOrgReport {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

@@ -8,39 +8,39 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 /**
- * UserIdentityRequest.
+ * MembershipDataRedactionRequest.
  *
  */
 
-public class UserIdentityRequest {
-  @JsonProperty("id")
-  private java.util.UUID id = null;
+public class MembershipDataRedactionRequest {
+  @JsonProperty("account_id")
+  private java.util.UUID accountId = null;
 
 
   /**
-   * id.
+   * accountId.
    *
-   * @return UserIdentityRequest
+   * @return MembershipDataRedactionRequest
    **/
-  public UserIdentityRequest id(java.util.UUID id) {
-    this.id = id;
+  public MembershipDataRedactionRequest accountId(java.util.UUID accountId) {
+    this.accountId = accountId;
     return this;
   }
 
   /**
-   * Get id.
-   * @return id
+   * Get accountId.
+   * @return accountId
    **/
   @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
-  public java.util.UUID getId() {
-    return id;
+  public java.util.UUID getAccountId() {
+    return accountId;
   }
 
   /**
-   * setId.
+   * setAccountId.
    **/
-  public void setId(java.util.UUID id) {
-    this.id = id;
+  public void setAccountId(java.util.UUID accountId) {
+    this.accountId = accountId;
   }
 
 
@@ -57,8 +57,8 @@ public class UserIdentityRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UserIdentityRequest userIdentityRequest = (UserIdentityRequest) o;
-    return Objects.equals(this.id, userIdentityRequest.id);
+    MembershipDataRedactionRequest membershipDataRedactionRequest = (MembershipDataRedactionRequest) o;
+    return Objects.equals(this.accountId, membershipDataRedactionRequest.accountId);
   }
 
   /**
@@ -66,7 +66,7 @@ public class UserIdentityRequest {
    */
   @Override
   public int hashCode() {
-    return Objects.hash(id);
+    return Objects.hash(accountId);
   }
 
 
@@ -76,9 +76,9 @@ public class UserIdentityRequest {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UserIdentityRequest {\n");
+    sb.append("class MembershipDataRedactionRequest {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

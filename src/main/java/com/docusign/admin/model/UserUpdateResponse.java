@@ -1,10 +1,18 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.ErrorDetails;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/** UserUpdateResponse. */
+/**
+ * UserUpdateResponse.
+ *
+ */
+
 public class UserUpdateResponse {
   @JsonProperty("id")
   private java.util.UUID id = null;
@@ -18,11 +26,12 @@ public class UserUpdateResponse {
   @JsonProperty("error_details")
   private ErrorDetails errorDetails = null;
 
+
   /**
    * id.
    *
    * @return UserUpdateResponse
-   */
+   **/
   public UserUpdateResponse id(java.util.UUID id) {
     this.id = id;
     return this;
@@ -30,24 +39,26 @@ public class UserUpdateResponse {
 
   /**
    * Get id.
-   *
    * @return id
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
   public java.util.UUID getId() {
     return id;
   }
 
-  /** setId. */
+  /**
+   * setId.
+   **/
   public void setId(java.util.UUID id) {
     this.id = id;
   }
+
 
   /**
    * siteId.
    *
    * @return UserUpdateResponse
-   */
+   **/
   public UserUpdateResponse siteId(Integer siteId) {
     this.siteId = siteId;
     return this;
@@ -55,24 +66,26 @@ public class UserUpdateResponse {
 
   /**
    * Get siteId.
-   *
    * @return siteId
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Integer getSiteId() {
     return siteId;
   }
 
-  /** setSiteId. */
+  /**
+   * setSiteId.
+   **/
   public void setSiteId(Integer siteId) {
     this.siteId = siteId;
   }
+
 
   /**
    * email.
    *
    * @return UserUpdateResponse
-   */
+   **/
   public UserUpdateResponse email(String email) {
     this.email = email;
     return this;
@@ -80,24 +93,26 @@ public class UserUpdateResponse {
 
   /**
    * Get email.
-   *
    * @return email
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getEmail() {
     return email;
   }
 
-  /** setEmail. */
+  /**
+   * setEmail.
+   **/
   public void setEmail(String email) {
     this.email = email;
   }
+
 
   /**
    * errorDetails.
    *
    * @return UserUpdateResponse
-   */
+   **/
   public UserUpdateResponse errorDetails(ErrorDetails errorDetails) {
     this.errorDetails = errorDetails;
     return this;
@@ -105,18 +120,20 @@ public class UserUpdateResponse {
 
   /**
    * Get errorDetails.
-   *
    * @return errorDetails
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public ErrorDetails getErrorDetails() {
     return errorDetails;
   }
 
-  /** setErrorDetails. */
+  /**
+   * setErrorDetails.
+   **/
   public void setErrorDetails(ErrorDetails errorDetails) {
     this.errorDetails = errorDetails;
   }
+
 
   /**
    * Compares objects.
@@ -132,24 +149,29 @@ public class UserUpdateResponse {
       return false;
     }
     UserUpdateResponse userUpdateResponse = (UserUpdateResponse) o;
-    return Objects.equals(this.id, userUpdateResponse.id)
-        && Objects.equals(this.siteId, userUpdateResponse.siteId)
-        && Objects.equals(this.email, userUpdateResponse.email)
-        && Objects.equals(this.errorDetails, userUpdateResponse.errorDetails);
+    return Objects.equals(this.id, userUpdateResponse.id) &&
+        Objects.equals(this.siteId, userUpdateResponse.siteId) &&
+        Objects.equals(this.email, userUpdateResponse.email) &&
+        Objects.equals(this.errorDetails, userUpdateResponse.errorDetails);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(id, siteId, email, errorDetails);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UserUpdateResponse {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
@@ -159,7 +181,8 @@ public class UserUpdateResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -167,4 +190,6 @@ public class UserUpdateResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

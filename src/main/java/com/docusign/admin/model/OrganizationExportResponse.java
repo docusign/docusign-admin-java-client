@@ -1,11 +1,22 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
-import java.time.LocalDateTime;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.OrgExportSelectedAccount;
+import com.docusign.admin.model.OrgExportSelectedDomain;
+import com.docusign.admin.model.OrganizationExportRequestorResponse;
+import com.docusign.admin.model.OrganizationExportTaskResponse;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
+import java.time.OffsetDateTime;
 
-/** OrganizationExportResponse. */
+/**
+ * OrganizationExportResponse.
+ *
+ */
+
 public class OrganizationExportResponse {
   @JsonProperty("id")
   private java.util.UUID id = null;
@@ -17,16 +28,16 @@ public class OrganizationExportResponse {
   private OrganizationExportRequestorResponse requestor = null;
 
   @JsonProperty("created")
-  private LocalDateTime created = null;
+  private String created = null;
 
   @JsonProperty("last_modified")
-  private LocalDateTime lastModified = null;
+  private String lastModified = null;
 
   @JsonProperty("completed")
-  private LocalDateTime completed = null;
+  private String completed = null;
 
   @JsonProperty("expires")
-  private LocalDateTime expires = null;
+  private String expires = null;
 
   @JsonProperty("status")
   private String status = null;
@@ -55,11 +66,12 @@ public class OrganizationExportResponse {
   @JsonProperty("success")
   private Boolean success = null;
 
+
   /**
    * id.
    *
    * @return OrganizationExportResponse
-   */
+   **/
   public OrganizationExportResponse id(java.util.UUID id) {
     this.id = id;
     return this;
@@ -67,24 +79,26 @@ public class OrganizationExportResponse {
 
   /**
    * Get id.
-   *
    * @return id
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
   public java.util.UUID getId() {
     return id;
   }
 
-  /** setId. */
+  /**
+   * setId.
+   **/
   public void setId(java.util.UUID id) {
     this.id = id;
   }
+
 
   /**
    * type.
    *
    * @return OrganizationExportResponse
-   */
+   **/
   public OrganizationExportResponse type(String type) {
     this.type = type;
     return this;
@@ -92,24 +106,26 @@ public class OrganizationExportResponse {
 
   /**
    * Get type.
-   *
    * @return type
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getType() {
     return type;
   }
 
-  /** setType. */
+  /**
+   * setType.
+   **/
   public void setType(String type) {
     this.type = type;
   }
+
 
   /**
    * requestor.
    *
    * @return OrganizationExportResponse
-   */
+   **/
   public OrganizationExportResponse requestor(OrganizationExportRequestorResponse requestor) {
     this.requestor = requestor;
     return this;
@@ -117,124 +133,134 @@ public class OrganizationExportResponse {
 
   /**
    * Get requestor.
-   *
    * @return requestor
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public OrganizationExportRequestorResponse getRequestor() {
     return requestor;
   }
 
-  /** setRequestor. */
+  /**
+   * setRequestor.
+   **/
   public void setRequestor(OrganizationExportRequestorResponse requestor) {
     this.requestor = requestor;
   }
+
 
   /**
    * created.
    *
    * @return OrganizationExportResponse
-   */
-  public OrganizationExportResponse created(LocalDateTime created) {
+   **/
+  public OrganizationExportResponse created(String created) {
     this.created = created;
     return this;
   }
 
   /**
    * Get created.
-   *
    * @return created
-   */
-  @ApiModelProperty(value = "")
-  public LocalDateTime getCreated() {
+   **/
+  @Schema(description = "")
+  public String getCreated() {
     return created;
   }
 
-  /** setCreated. */
-  public void setCreated(LocalDateTime created) {
+  /**
+   * setCreated.
+   **/
+  public void setCreated(String created) {
     this.created = created;
   }
+
 
   /**
    * lastModified.
    *
    * @return OrganizationExportResponse
-   */
-  public OrganizationExportResponse lastModified(LocalDateTime lastModified) {
+   **/
+  public OrganizationExportResponse lastModified(String lastModified) {
     this.lastModified = lastModified;
     return this;
   }
 
   /**
    * Get lastModified.
-   *
    * @return lastModified
-   */
-  @ApiModelProperty(value = "")
-  public LocalDateTime getLastModified() {
+   **/
+  @Schema(description = "")
+  public String getLastModified() {
     return lastModified;
   }
 
-  /** setLastModified. */
-  public void setLastModified(LocalDateTime lastModified) {
+  /**
+   * setLastModified.
+   **/
+  public void setLastModified(String lastModified) {
     this.lastModified = lastModified;
   }
+
 
   /**
    * completed.
    *
    * @return OrganizationExportResponse
-   */
-  public OrganizationExportResponse completed(LocalDateTime completed) {
+   **/
+  public OrganizationExportResponse completed(String completed) {
     this.completed = completed;
     return this;
   }
 
   /**
    * Get completed.
-   *
    * @return completed
-   */
-  @ApiModelProperty(value = "")
-  public LocalDateTime getCompleted() {
+   **/
+  @Schema(description = "")
+  public String getCompleted() {
     return completed;
   }
 
-  /** setCompleted. */
-  public void setCompleted(LocalDateTime completed) {
+  /**
+   * setCompleted.
+   **/
+  public void setCompleted(String completed) {
     this.completed = completed;
   }
+
 
   /**
    * expires.
    *
    * @return OrganizationExportResponse
-   */
-  public OrganizationExportResponse expires(LocalDateTime expires) {
+   **/
+  public OrganizationExportResponse expires(String expires) {
     this.expires = expires;
     return this;
   }
 
   /**
    * Get expires.
-   *
    * @return expires
-   */
-  @ApiModelProperty(value = "")
-  public LocalDateTime getExpires() {
+   **/
+  @Schema(description = "")
+  public String getExpires() {
     return expires;
   }
 
-  /** setExpires. */
-  public void setExpires(LocalDateTime expires) {
+  /**
+   * setExpires.
+   **/
+  public void setExpires(String expires) {
     this.expires = expires;
   }
+
 
   /**
    * status.
    *
    * @return OrganizationExportResponse
-   */
+   **/
   public OrganizationExportResponse status(String status) {
     this.status = status;
     return this;
@@ -242,37 +268,37 @@ public class OrganizationExportResponse {
 
   /**
    * Get status.
-   *
    * @return status
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getStatus() {
     return status;
   }
 
-  /** setStatus. */
+  /**
+   * setStatus.
+   **/
   public void setStatus(String status) {
     this.status = status;
   }
+
 
   /**
    * selectedAccounts.
    *
    * @return OrganizationExportResponse
-   */
-  public OrganizationExportResponse selectedAccounts(
-      java.util.List<OrgExportSelectedAccount> selectedAccounts) {
+   **/
+  public OrganizationExportResponse selectedAccounts(java.util.List<OrgExportSelectedAccount> selectedAccounts) {
     this.selectedAccounts = selectedAccounts;
     return this;
   }
-
+  
   /**
    * addSelectedAccountsItem.
    *
    * @return OrganizationExportResponse
-   */
-  public OrganizationExportResponse addSelectedAccountsItem(
-      OrgExportSelectedAccount selectedAccountsItem) {
+   **/
+  public OrganizationExportResponse addSelectedAccountsItem(OrgExportSelectedAccount selectedAccountsItem) {
     if (this.selectedAccounts == null) {
       this.selectedAccounts = new java.util.ArrayList<>();
     }
@@ -282,37 +308,37 @@ public class OrganizationExportResponse {
 
   /**
    * Get selectedAccounts.
-   *
    * @return selectedAccounts
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public java.util.List<OrgExportSelectedAccount> getSelectedAccounts() {
     return selectedAccounts;
   }
 
-  /** setSelectedAccounts. */
+  /**
+   * setSelectedAccounts.
+   **/
   public void setSelectedAccounts(java.util.List<OrgExportSelectedAccount> selectedAccounts) {
     this.selectedAccounts = selectedAccounts;
   }
+
 
   /**
    * selectedDomains.
    *
    * @return OrganizationExportResponse
-   */
-  public OrganizationExportResponse selectedDomains(
-      java.util.List<OrgExportSelectedDomain> selectedDomains) {
+   **/
+  public OrganizationExportResponse selectedDomains(java.util.List<OrgExportSelectedDomain> selectedDomains) {
     this.selectedDomains = selectedDomains;
     return this;
   }
-
+  
   /**
    * addSelectedDomainsItem.
    *
    * @return OrganizationExportResponse
-   */
-  public OrganizationExportResponse addSelectedDomainsItem(
-      OrgExportSelectedDomain selectedDomainsItem) {
+   **/
+  public OrganizationExportResponse addSelectedDomainsItem(OrgExportSelectedDomain selectedDomainsItem) {
     if (this.selectedDomains == null) {
       this.selectedDomains = new java.util.ArrayList<>();
     }
@@ -322,24 +348,26 @@ public class OrganizationExportResponse {
 
   /**
    * Get selectedDomains.
-   *
    * @return selectedDomains
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public java.util.List<OrgExportSelectedDomain> getSelectedDomains() {
     return selectedDomains;
   }
 
-  /** setSelectedDomains. */
+  /**
+   * setSelectedDomains.
+   **/
   public void setSelectedDomains(java.util.List<OrgExportSelectedDomain> selectedDomains) {
     this.selectedDomains = selectedDomains;
   }
+
 
   /**
    * metadataUrl.
    *
    * @return OrganizationExportResponse
-   */
+   **/
   public OrganizationExportResponse metadataUrl(String metadataUrl) {
     this.metadataUrl = metadataUrl;
     return this;
@@ -347,24 +375,26 @@ public class OrganizationExportResponse {
 
   /**
    * Get metadataUrl.
-   *
    * @return metadataUrl
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getMetadataUrl() {
     return metadataUrl;
   }
 
-  /** setMetadataUrl. */
+  /**
+   * setMetadataUrl.
+   **/
   public void setMetadataUrl(String metadataUrl) {
     this.metadataUrl = metadataUrl;
   }
+
 
   /**
    * percentCompleted.
    *
    * @return OrganizationExportResponse
-   */
+   **/
   public OrganizationExportResponse percentCompleted(Integer percentCompleted) {
     this.percentCompleted = percentCompleted;
     return this;
@@ -372,24 +402,26 @@ public class OrganizationExportResponse {
 
   /**
    * Get percentCompleted.
-   *
    * @return percentCompleted
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Integer getPercentCompleted() {
     return percentCompleted;
   }
 
-  /** setPercentCompleted. */
+  /**
+   * setPercentCompleted.
+   **/
   public void setPercentCompleted(Integer percentCompleted) {
     this.percentCompleted = percentCompleted;
   }
+
 
   /**
    * numberRows.
    *
    * @return OrganizationExportResponse
-   */
+   **/
   public OrganizationExportResponse numberRows(Long numberRows) {
     this.numberRows = numberRows;
     return this;
@@ -397,24 +429,26 @@ public class OrganizationExportResponse {
 
   /**
    * Get numberRows.
-   *
    * @return numberRows
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Long getNumberRows() {
     return numberRows;
   }
 
-  /** setNumberRows. */
+  /**
+   * setNumberRows.
+   **/
   public void setNumberRows(Long numberRows) {
     this.numberRows = numberRows;
   }
+
 
   /**
    * sizeBytes.
    *
    * @return OrganizationExportResponse
-   */
+   **/
   public OrganizationExportResponse sizeBytes(Long sizeBytes) {
     this.sizeBytes = sizeBytes;
     return this;
@@ -422,35 +456,36 @@ public class OrganizationExportResponse {
 
   /**
    * Get sizeBytes.
-   *
    * @return sizeBytes
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Long getSizeBytes() {
     return sizeBytes;
   }
 
-  /** setSizeBytes. */
+  /**
+   * setSizeBytes.
+   **/
   public void setSizeBytes(Long sizeBytes) {
     this.sizeBytes = sizeBytes;
   }
+
 
   /**
    * results.
    *
    * @return OrganizationExportResponse
-   */
-  public OrganizationExportResponse results(
-      java.util.List<OrganizationExportTaskResponse> results) {
+   **/
+  public OrganizationExportResponse results(java.util.List<OrganizationExportTaskResponse> results) {
     this.results = results;
     return this;
   }
-
+  
   /**
    * addResultsItem.
    *
    * @return OrganizationExportResponse
-   */
+   **/
   public OrganizationExportResponse addResultsItem(OrganizationExportTaskResponse resultsItem) {
     if (this.results == null) {
       this.results = new java.util.ArrayList<>();
@@ -461,24 +496,26 @@ public class OrganizationExportResponse {
 
   /**
    * Get results.
-   *
    * @return results
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public java.util.List<OrganizationExportTaskResponse> getResults() {
     return results;
   }
 
-  /** setResults. */
+  /**
+   * setResults.
+   **/
   public void setResults(java.util.List<OrganizationExportTaskResponse> results) {
     this.results = results;
   }
+
 
   /**
    * success.
    *
    * @return OrganizationExportResponse
-   */
+   **/
   public OrganizationExportResponse success(Boolean success) {
     this.success = success;
     return this;
@@ -486,18 +523,20 @@ public class OrganizationExportResponse {
 
   /**
    * Get success.
-   *
    * @return success
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Boolean isSuccess() {
     return success;
   }
 
-  /** setSuccess. */
+  /**
+   * setSuccess.
+   **/
   public void setSuccess(Boolean success) {
     this.success = success;
   }
+
 
   /**
    * Compares objects.
@@ -513,52 +552,41 @@ public class OrganizationExportResponse {
       return false;
     }
     OrganizationExportResponse organizationExportResponse = (OrganizationExportResponse) o;
-    return Objects.equals(this.id, organizationExportResponse.id)
-        && Objects.equals(this.type, organizationExportResponse.type)
-        && Objects.equals(this.requestor, organizationExportResponse.requestor)
-        && Objects.equals(this.created, organizationExportResponse.created)
-        && Objects.equals(this.lastModified, organizationExportResponse.lastModified)
-        && Objects.equals(this.completed, organizationExportResponse.completed)
-        && Objects.equals(this.expires, organizationExportResponse.expires)
-        && Objects.equals(this.status, organizationExportResponse.status)
-        && Objects.equals(this.selectedAccounts, organizationExportResponse.selectedAccounts)
-        && Objects.equals(this.selectedDomains, organizationExportResponse.selectedDomains)
-        && Objects.equals(this.metadataUrl, organizationExportResponse.metadataUrl)
-        && Objects.equals(this.percentCompleted, organizationExportResponse.percentCompleted)
-        && Objects.equals(this.numberRows, organizationExportResponse.numberRows)
-        && Objects.equals(this.sizeBytes, organizationExportResponse.sizeBytes)
-        && Objects.equals(this.results, organizationExportResponse.results)
-        && Objects.equals(this.success, organizationExportResponse.success);
+    return Objects.equals(this.id, organizationExportResponse.id) &&
+        Objects.equals(this.type, organizationExportResponse.type) &&
+        Objects.equals(this.requestor, organizationExportResponse.requestor) &&
+        Objects.equals(this.created, organizationExportResponse.created) &&
+        Objects.equals(this.lastModified, organizationExportResponse.lastModified) &&
+        Objects.equals(this.completed, organizationExportResponse.completed) &&
+        Objects.equals(this.expires, organizationExportResponse.expires) &&
+        Objects.equals(this.status, organizationExportResponse.status) &&
+        Objects.equals(this.selectedAccounts, organizationExportResponse.selectedAccounts) &&
+        Objects.equals(this.selectedDomains, organizationExportResponse.selectedDomains) &&
+        Objects.equals(this.metadataUrl, organizationExportResponse.metadataUrl) &&
+        Objects.equals(this.percentCompleted, organizationExportResponse.percentCompleted) &&
+        Objects.equals(this.numberRows, organizationExportResponse.numberRows) &&
+        Objects.equals(this.sizeBytes, organizationExportResponse.sizeBytes) &&
+        Objects.equals(this.results, organizationExportResponse.results) &&
+        Objects.equals(this.success, organizationExportResponse.success);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
-    return Objects.hash(
-        id,
-        type,
-        requestor,
-        created,
-        lastModified,
-        completed,
-        expires,
-        status,
-        selectedAccounts,
-        selectedDomains,
-        metadataUrl,
-        percentCompleted,
-        numberRows,
-        sizeBytes,
-        results,
-        success);
+    return Objects.hash(id, type, requestor, created, lastModified, completed, expires, status, selectedAccounts, selectedDomains, metadataUrl, percentCompleted, numberRows, sizeBytes, results, success);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrganizationExportResponse {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    requestor: ").append(toIndentedString(requestor)).append("\n");
@@ -580,7 +608,8 @@ public class OrganizationExportResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -588,4 +617,6 @@ public class OrganizationExportResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

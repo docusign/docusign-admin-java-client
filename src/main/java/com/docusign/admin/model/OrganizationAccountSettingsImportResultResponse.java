@@ -1,10 +1,19 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.OASIRRErrorDetails;
+import com.docusign.admin.model.OASIRROrganizationAccountSettingsErrorDataResponse;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/** OrganizationAccountSettingsImportResultResponse. */
+/**
+ * OrganizationAccountSettingsImportResultResponse.
+ *
+ */
+
 public class OrganizationAccountSettingsImportResultResponse {
   @JsonProperty("id")
   private java.util.UUID id = null;
@@ -22,17 +31,17 @@ public class OrganizationAccountSettingsImportResultResponse {
   private OASIRRErrorDetails errorDetails = null;
 
   @JsonProperty("processing_issues_by_account")
-  private java.util.List<OASIRROrganizationAccountSettingsErrorDataResponse>
-      processingIssuesByAccount = null;
+  private java.util.List<OASIRROrganizationAccountSettingsErrorDataResponse> processingIssuesByAccount = null;
 
   @JsonProperty("number_unprocessed_accounts")
   private Long numberUnprocessedAccounts = null;
+
 
   /**
    * id.
    *
    * @return OrganizationAccountSettingsImportResultResponse
-   */
+   **/
   public OrganizationAccountSettingsImportResultResponse id(java.util.UUID id) {
     this.id = id;
     return this;
@@ -40,24 +49,26 @@ public class OrganizationAccountSettingsImportResultResponse {
 
   /**
    * Get id.
-   *
    * @return id
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
   public java.util.UUID getId() {
     return id;
   }
 
-  /** setId. */
+  /**
+   * setId.
+   **/
   public void setId(java.util.UUID id) {
     this.id = id;
   }
+
 
   /**
    * siteId.
    *
    * @return OrganizationAccountSettingsImportResultResponse
-   */
+   **/
   public OrganizationAccountSettingsImportResultResponse siteId(Integer siteId) {
     this.siteId = siteId;
     return this;
@@ -65,24 +76,26 @@ public class OrganizationAccountSettingsImportResultResponse {
 
   /**
    * Get siteId.
-   *
    * @return siteId
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Integer getSiteId() {
     return siteId;
   }
 
-  /** setSiteId. */
+  /**
+   * setSiteId.
+   **/
   public void setSiteId(Integer siteId) {
     this.siteId = siteId;
   }
+
 
   /**
    * url.
    *
    * @return OrganizationAccountSettingsImportResultResponse
-   */
+   **/
   public OrganizationAccountSettingsImportResultResponse url(String url) {
     this.url = url;
     return this;
@@ -90,90 +103,91 @@ public class OrganizationAccountSettingsImportResultResponse {
 
   /**
    * Get url.
-   *
    * @return url
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getUrl() {
     return url;
   }
 
-  /** setUrl. */
+  /**
+   * setUrl.
+   **/
   public void setUrl(String url) {
     this.url = url;
   }
+
 
   /**
    * numberProcessedAccounts.
    *
    * @return OrganizationAccountSettingsImportResultResponse
-   */
-  public OrganizationAccountSettingsImportResultResponse numberProcessedAccounts(
-      Long numberProcessedAccounts) {
+   **/
+  public OrganizationAccountSettingsImportResultResponse numberProcessedAccounts(Long numberProcessedAccounts) {
     this.numberProcessedAccounts = numberProcessedAccounts;
     return this;
   }
 
   /**
    * Get numberProcessedAccounts.
-   *
    * @return numberProcessedAccounts
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Long getNumberProcessedAccounts() {
     return numberProcessedAccounts;
   }
 
-  /** setNumberProcessedAccounts. */
+  /**
+   * setNumberProcessedAccounts.
+   **/
   public void setNumberProcessedAccounts(Long numberProcessedAccounts) {
     this.numberProcessedAccounts = numberProcessedAccounts;
   }
+
 
   /**
    * errorDetails.
    *
    * @return OrganizationAccountSettingsImportResultResponse
-   */
-  public OrganizationAccountSettingsImportResultResponse errorDetails(
-      OASIRRErrorDetails errorDetails) {
+   **/
+  public OrganizationAccountSettingsImportResultResponse errorDetails(OASIRRErrorDetails errorDetails) {
     this.errorDetails = errorDetails;
     return this;
   }
 
   /**
    * Get errorDetails.
-   *
    * @return errorDetails
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public OASIRRErrorDetails getErrorDetails() {
     return errorDetails;
   }
 
-  /** setErrorDetails. */
+  /**
+   * setErrorDetails.
+   **/
   public void setErrorDetails(OASIRRErrorDetails errorDetails) {
     this.errorDetails = errorDetails;
   }
+
 
   /**
    * processingIssuesByAccount.
    *
    * @return OrganizationAccountSettingsImportResultResponse
-   */
-  public OrganizationAccountSettingsImportResultResponse processingIssuesByAccount(
-      java.util.List<OASIRROrganizationAccountSettingsErrorDataResponse>
-          processingIssuesByAccount) {
+   **/
+  public OrganizationAccountSettingsImportResultResponse processingIssuesByAccount(java.util.List<OASIRROrganizationAccountSettingsErrorDataResponse> processingIssuesByAccount) {
     this.processingIssuesByAccount = processingIssuesByAccount;
     return this;
   }
-
+  
   /**
    * addProcessingIssuesByAccountItem.
    *
    * @return OrganizationAccountSettingsImportResultResponse
-   */
-  public OrganizationAccountSettingsImportResultResponse addProcessingIssuesByAccountItem(
-      OASIRROrganizationAccountSettingsErrorDataResponse processingIssuesByAccountItem) {
+   **/
+  public OrganizationAccountSettingsImportResultResponse addProcessingIssuesByAccountItem(OASIRROrganizationAccountSettingsErrorDataResponse processingIssuesByAccountItem) {
     if (this.processingIssuesByAccount == null) {
       this.processingIssuesByAccount = new java.util.ArrayList<>();
     }
@@ -183,47 +197,47 @@ public class OrganizationAccountSettingsImportResultResponse {
 
   /**
    * Get processingIssuesByAccount.
-   *
    * @return processingIssuesByAccount
-   */
-  @ApiModelProperty(value = "")
-  public java.util.List<OASIRROrganizationAccountSettingsErrorDataResponse>
-      getProcessingIssuesByAccount() {
+   **/
+  @Schema(description = "")
+  public java.util.List<OASIRROrganizationAccountSettingsErrorDataResponse> getProcessingIssuesByAccount() {
     return processingIssuesByAccount;
   }
 
-  /** setProcessingIssuesByAccount. */
-  public void setProcessingIssuesByAccount(
-      java.util.List<OASIRROrganizationAccountSettingsErrorDataResponse>
-          processingIssuesByAccount) {
+  /**
+   * setProcessingIssuesByAccount.
+   **/
+  public void setProcessingIssuesByAccount(java.util.List<OASIRROrganizationAccountSettingsErrorDataResponse> processingIssuesByAccount) {
     this.processingIssuesByAccount = processingIssuesByAccount;
   }
+
 
   /**
    * numberUnprocessedAccounts.
    *
    * @return OrganizationAccountSettingsImportResultResponse
-   */
-  public OrganizationAccountSettingsImportResultResponse numberUnprocessedAccounts(
-      Long numberUnprocessedAccounts) {
+   **/
+  public OrganizationAccountSettingsImportResultResponse numberUnprocessedAccounts(Long numberUnprocessedAccounts) {
     this.numberUnprocessedAccounts = numberUnprocessedAccounts;
     return this;
   }
 
   /**
    * Get numberUnprocessedAccounts.
-   *
    * @return numberUnprocessedAccounts
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Long getNumberUnprocessedAccounts() {
     return numberUnprocessedAccounts;
   }
 
-  /** setNumberUnprocessedAccounts. */
+  /**
+   * setNumberUnprocessedAccounts.
+   **/
   public void setNumberUnprocessedAccounts(Long numberUnprocessedAccounts) {
     this.numberUnprocessedAccounts = numberUnprocessedAccounts;
   }
+
 
   /**
    * Compares objects.
@@ -238,63 +252,47 @@ public class OrganizationAccountSettingsImportResultResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrganizationAccountSettingsImportResultResponse
-        organizationAccountSettingsImportResultResponse =
-            (OrganizationAccountSettingsImportResultResponse) o;
-    return Objects.equals(this.id, organizationAccountSettingsImportResultResponse.id)
-        && Objects.equals(this.siteId, organizationAccountSettingsImportResultResponse.siteId)
-        && Objects.equals(this.url, organizationAccountSettingsImportResultResponse.url)
-        && Objects.equals(
-            this.numberProcessedAccounts,
-            organizationAccountSettingsImportResultResponse.numberProcessedAccounts)
-        && Objects.equals(
-            this.errorDetails, organizationAccountSettingsImportResultResponse.errorDetails)
-        && Objects.equals(
-            this.processingIssuesByAccount,
-            organizationAccountSettingsImportResultResponse.processingIssuesByAccount)
-        && Objects.equals(
-            this.numberUnprocessedAccounts,
-            organizationAccountSettingsImportResultResponse.numberUnprocessedAccounts);
+    OrganizationAccountSettingsImportResultResponse organizationAccountSettingsImportResultResponse = (OrganizationAccountSettingsImportResultResponse) o;
+    return Objects.equals(this.id, organizationAccountSettingsImportResultResponse.id) &&
+        Objects.equals(this.siteId, organizationAccountSettingsImportResultResponse.siteId) &&
+        Objects.equals(this.url, organizationAccountSettingsImportResultResponse.url) &&
+        Objects.equals(this.numberProcessedAccounts, organizationAccountSettingsImportResultResponse.numberProcessedAccounts) &&
+        Objects.equals(this.errorDetails, organizationAccountSettingsImportResultResponse.errorDetails) &&
+        Objects.equals(this.processingIssuesByAccount, organizationAccountSettingsImportResultResponse.processingIssuesByAccount) &&
+        Objects.equals(this.numberUnprocessedAccounts, organizationAccountSettingsImportResultResponse.numberUnprocessedAccounts);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
-    return Objects.hash(
-        id,
-        siteId,
-        url,
-        numberProcessedAccounts,
-        errorDetails,
-        processingIssuesByAccount,
-        numberUnprocessedAccounts);
+    return Objects.hash(id, siteId, url, numberProcessedAccounts, errorDetails, processingIssuesByAccount, numberUnprocessedAccounts);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrganizationAccountSettingsImportResultResponse {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    numberProcessedAccounts: ")
-        .append(toIndentedString(numberProcessedAccounts))
-        .append("\n");
+    sb.append("    numberProcessedAccounts: ").append(toIndentedString(numberProcessedAccounts)).append("\n");
     sb.append("    errorDetails: ").append(toIndentedString(errorDetails)).append("\n");
-    sb.append("    processingIssuesByAccount: ")
-        .append(toIndentedString(processingIssuesByAccount))
-        .append("\n");
-    sb.append("    numberUnprocessedAccounts: ")
-        .append(toIndentedString(numberUnprocessedAccounts))
-        .append("\n");
+    sb.append("    processingIssuesByAccount: ").append(toIndentedString(processingIssuesByAccount)).append("\n");
+    sb.append("    numberUnprocessedAccounts: ").append(toIndentedString(numberUnprocessedAccounts)).append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -302,4 +300,6 @@ public class OrganizationAccountSettingsImportResultResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

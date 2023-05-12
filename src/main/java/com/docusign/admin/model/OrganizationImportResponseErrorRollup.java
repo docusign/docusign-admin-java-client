@@ -1,10 +1,17 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/** OrganizationImportResponseErrorRollup. */
+/**
+ * OrganizationImportResponseErrorRollup.
+ *
+ */
+
 public class OrganizationImportResponseErrorRollup {
   @JsonProperty("error_type")
   private String errorType = null;
@@ -12,11 +19,12 @@ public class OrganizationImportResponseErrorRollup {
   @JsonProperty("count")
   private Integer count = null;
 
+
   /**
    * errorType.
    *
    * @return OrganizationImportResponseErrorRollup
-   */
+   **/
   public OrganizationImportResponseErrorRollup errorType(String errorType) {
     this.errorType = errorType;
     return this;
@@ -24,24 +32,26 @@ public class OrganizationImportResponseErrorRollup {
 
   /**
    * Get errorType.
-   *
    * @return errorType
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getErrorType() {
     return errorType;
   }
 
-  /** setErrorType. */
+  /**
+   * setErrorType.
+   **/
   public void setErrorType(String errorType) {
     this.errorType = errorType;
   }
+
 
   /**
    * count.
    *
    * @return OrganizationImportResponseErrorRollup
-   */
+   **/
   public OrganizationImportResponseErrorRollup count(Integer count) {
     this.count = count;
     return this;
@@ -49,18 +59,20 @@ public class OrganizationImportResponseErrorRollup {
 
   /**
    * Get count.
-   *
    * @return count
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Integer getCount() {
     return count;
   }
 
-  /** setCount. */
+  /**
+   * setCount.
+   **/
   public void setCount(Integer count) {
     this.count = count;
   }
+
 
   /**
    * Compares objects.
@@ -75,24 +87,28 @@ public class OrganizationImportResponseErrorRollup {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrganizationImportResponseErrorRollup organizationImportResponseErrorRollup =
-        (OrganizationImportResponseErrorRollup) o;
-    return Objects.equals(this.errorType, organizationImportResponseErrorRollup.errorType)
-        && Objects.equals(this.count, organizationImportResponseErrorRollup.count);
+    OrganizationImportResponseErrorRollup organizationImportResponseErrorRollup = (OrganizationImportResponseErrorRollup) o;
+    return Objects.equals(this.errorType, organizationImportResponseErrorRollup.errorType) &&
+        Objects.equals(this.count, organizationImportResponseErrorRollup.count);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(errorType, count);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrganizationImportResponseErrorRollup {\n");
-
+    
     sb.append("    errorType: ").append(toIndentedString(errorType)).append("\n");
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
     sb.append("}");
@@ -100,7 +116,8 @@ public class OrganizationImportResponseErrorRollup {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -108,4 +125,6 @@ public class OrganizationImportResponseErrorRollup {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

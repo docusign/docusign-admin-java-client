@@ -1,10 +1,17 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/** MemberGroupResponse. */
+/**
+ * MemberGroupResponse.
+ *
+ */
+
 public class MemberGroupResponse {
   @JsonProperty("id")
   private Long id = null;
@@ -15,11 +22,12 @@ public class MemberGroupResponse {
   @JsonProperty("type")
   private String type = null;
 
+
   /**
    * id.
    *
    * @return MemberGroupResponse
-   */
+   **/
   public MemberGroupResponse id(Long id) {
     this.id = id;
     return this;
@@ -27,24 +35,26 @@ public class MemberGroupResponse {
 
   /**
    * Get id.
-   *
    * @return id
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Long getId() {
     return id;
   }
 
-  /** setId. */
+  /**
+   * setId.
+   **/
   public void setId(Long id) {
     this.id = id;
   }
+
 
   /**
    * name.
    *
    * @return MemberGroupResponse
-   */
+   **/
   public MemberGroupResponse name(String name) {
     this.name = name;
     return this;
@@ -52,24 +62,26 @@ public class MemberGroupResponse {
 
   /**
    * Get name.
-   *
    * @return name
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getName() {
     return name;
   }
 
-  /** setName. */
+  /**
+   * setName.
+   **/
   public void setName(String name) {
     this.name = name;
   }
+
 
   /**
    * type.
    *
    * @return MemberGroupResponse
-   */
+   **/
   public MemberGroupResponse type(String type) {
     this.type = type;
     return this;
@@ -77,18 +89,20 @@ public class MemberGroupResponse {
 
   /**
    * Get type.
-   *
    * @return type
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getType() {
     return type;
   }
 
-  /** setType. */
+  /**
+   * setType.
+   **/
   public void setType(String type) {
     this.type = type;
   }
+
 
   /**
    * Compares objects.
@@ -104,23 +118,28 @@ public class MemberGroupResponse {
       return false;
     }
     MemberGroupResponse memberGroupResponse = (MemberGroupResponse) o;
-    return Objects.equals(this.id, memberGroupResponse.id)
-        && Objects.equals(this.name, memberGroupResponse.name)
-        && Objects.equals(this.type, memberGroupResponse.type);
+    return Objects.equals(this.id, memberGroupResponse.id) &&
+        Objects.equals(this.name, memberGroupResponse.name) &&
+        Objects.equals(this.type, memberGroupResponse.type);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(id, name, type);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class MemberGroupResponse {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
@@ -129,7 +148,8 @@ public class MemberGroupResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -137,4 +157,6 @@ public class MemberGroupResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

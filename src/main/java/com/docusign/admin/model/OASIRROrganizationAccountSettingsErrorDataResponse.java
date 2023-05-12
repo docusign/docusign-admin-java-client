@@ -1,10 +1,17 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/** OASIRROrganizationAccountSettingsErrorDataResponse. */
+/**
+ * OASIRROrganizationAccountSettingsErrorDataResponse.
+ *
+ */
+
 public class OASIRROrganizationAccountSettingsErrorDataResponse {
   @JsonProperty("account_id")
   private String accountId = null;
@@ -21,11 +28,12 @@ public class OASIRROrganizationAccountSettingsErrorDataResponse {
   @JsonProperty("setting_key")
   private String settingKey = null;
 
+
   /**
    * accountId.
    *
    * @return OASIRROrganizationAccountSettingsErrorDataResponse
-   */
+   **/
   public OASIRROrganizationAccountSettingsErrorDataResponse accountId(String accountId) {
     this.accountId = accountId;
     return this;
@@ -33,24 +41,26 @@ public class OASIRROrganizationAccountSettingsErrorDataResponse {
 
   /**
    * Get accountId.
-   *
    * @return accountId
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getAccountId() {
     return accountId;
   }
 
-  /** setAccountId. */
+  /**
+   * setAccountId.
+   **/
   public void setAccountId(String accountId) {
     this.accountId = accountId;
   }
+
 
   /**
    * accountName.
    *
    * @return OASIRROrganizationAccountSettingsErrorDataResponse
-   */
+   **/
   public OASIRROrganizationAccountSettingsErrorDataResponse accountName(String accountName) {
     this.accountName = accountName;
     return this;
@@ -58,24 +68,26 @@ public class OASIRROrganizationAccountSettingsErrorDataResponse {
 
   /**
    * Get accountName.
-   *
    * @return accountName
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getAccountName() {
     return accountName;
   }
 
-  /** setAccountName. */
+  /**
+   * setAccountName.
+   **/
   public void setAccountName(String accountName) {
     this.accountName = accountName;
   }
+
 
   /**
    * error.
    *
    * @return OASIRROrganizationAccountSettingsErrorDataResponse
-   */
+   **/
   public OASIRROrganizationAccountSettingsErrorDataResponse error(String error) {
     this.error = error;
     return this;
@@ -83,24 +95,26 @@ public class OASIRROrganizationAccountSettingsErrorDataResponse {
 
   /**
    * Get error.
-   *
    * @return error
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getError() {
     return error;
   }
 
-  /** setError. */
+  /**
+   * setError.
+   **/
   public void setError(String error) {
     this.error = error;
   }
+
 
   /**
    * errorKey.
    *
    * @return OASIRROrganizationAccountSettingsErrorDataResponse
-   */
+   **/
   public OASIRROrganizationAccountSettingsErrorDataResponse errorKey(String errorKey) {
     this.errorKey = errorKey;
     return this;
@@ -108,24 +122,26 @@ public class OASIRROrganizationAccountSettingsErrorDataResponse {
 
   /**
    * Get errorKey.
-   *
    * @return errorKey
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getErrorKey() {
     return errorKey;
   }
 
-  /** setErrorKey. */
+  /**
+   * setErrorKey.
+   **/
   public void setErrorKey(String errorKey) {
     this.errorKey = errorKey;
   }
+
 
   /**
    * settingKey.
    *
    * @return OASIRROrganizationAccountSettingsErrorDataResponse
-   */
+   **/
   public OASIRROrganizationAccountSettingsErrorDataResponse settingKey(String settingKey) {
     this.settingKey = settingKey;
     return this;
@@ -133,18 +149,20 @@ public class OASIRROrganizationAccountSettingsErrorDataResponse {
 
   /**
    * Get settingKey.
-   *
    * @return settingKey
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getSettingKey() {
     return settingKey;
   }
 
-  /** setSettingKey. */
+  /**
+   * setSettingKey.
+   **/
   public void setSettingKey(String settingKey) {
     this.settingKey = settingKey;
   }
+
 
   /**
    * Compares objects.
@@ -159,32 +177,31 @@ public class OASIRROrganizationAccountSettingsErrorDataResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OASIRROrganizationAccountSettingsErrorDataResponse
-        oaSIRROrganizationAccountSettingsErrorDataResponse =
-            (OASIRROrganizationAccountSettingsErrorDataResponse) o;
-    return Objects.equals(
-            this.accountId, oaSIRROrganizationAccountSettingsErrorDataResponse.accountId)
-        && Objects.equals(
-            this.accountName, oaSIRROrganizationAccountSettingsErrorDataResponse.accountName)
-        && Objects.equals(this.error, oaSIRROrganizationAccountSettingsErrorDataResponse.error)
-        && Objects.equals(
-            this.errorKey, oaSIRROrganizationAccountSettingsErrorDataResponse.errorKey)
-        && Objects.equals(
-            this.settingKey, oaSIRROrganizationAccountSettingsErrorDataResponse.settingKey);
+    OASIRROrganizationAccountSettingsErrorDataResponse oaSIRROrganizationAccountSettingsErrorDataResponse = (OASIRROrganizationAccountSettingsErrorDataResponse) o;
+    return Objects.equals(this.accountId, oaSIRROrganizationAccountSettingsErrorDataResponse.accountId) &&
+        Objects.equals(this.accountName, oaSIRROrganizationAccountSettingsErrorDataResponse.accountName) &&
+        Objects.equals(this.error, oaSIRROrganizationAccountSettingsErrorDataResponse.error) &&
+        Objects.equals(this.errorKey, oaSIRROrganizationAccountSettingsErrorDataResponse.errorKey) &&
+        Objects.equals(this.settingKey, oaSIRROrganizationAccountSettingsErrorDataResponse.settingKey);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(accountId, accountName, error, errorKey, settingKey);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OASIRROrganizationAccountSettingsErrorDataResponse {\n");
-
+    
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
@@ -195,7 +212,8 @@ public class OASIRROrganizationAccountSettingsErrorDataResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -203,4 +221,6 @@ public class OASIRROrganizationAccountSettingsErrorDataResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

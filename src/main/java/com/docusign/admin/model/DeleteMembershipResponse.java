@@ -1,10 +1,18 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.ErrorDetails;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/** DeleteMembershipResponse. */
+/**
+ * DeleteMembershipResponse.
+ *
+ */
+
 public class DeleteMembershipResponse {
   @JsonProperty("id")
   private java.util.UUID id = null;
@@ -12,11 +20,12 @@ public class DeleteMembershipResponse {
   @JsonProperty("error_details")
   private ErrorDetails errorDetails = null;
 
+
   /**
    * id.
    *
    * @return DeleteMembershipResponse
-   */
+   **/
   public DeleteMembershipResponse id(java.util.UUID id) {
     this.id = id;
     return this;
@@ -24,24 +33,26 @@ public class DeleteMembershipResponse {
 
   /**
    * Get id.
-   *
    * @return id
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
   public java.util.UUID getId() {
     return id;
   }
 
-  /** setId. */
+  /**
+   * setId.
+   **/
   public void setId(java.util.UUID id) {
     this.id = id;
   }
+
 
   /**
    * errorDetails.
    *
    * @return DeleteMembershipResponse
-   */
+   **/
   public DeleteMembershipResponse errorDetails(ErrorDetails errorDetails) {
     this.errorDetails = errorDetails;
     return this;
@@ -49,18 +60,20 @@ public class DeleteMembershipResponse {
 
   /**
    * Get errorDetails.
-   *
    * @return errorDetails
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public ErrorDetails getErrorDetails() {
     return errorDetails;
   }
 
-  /** setErrorDetails. */
+  /**
+   * setErrorDetails.
+   **/
   public void setErrorDetails(ErrorDetails errorDetails) {
     this.errorDetails = errorDetails;
   }
+
 
   /**
    * Compares objects.
@@ -76,22 +89,27 @@ public class DeleteMembershipResponse {
       return false;
     }
     DeleteMembershipResponse deleteMembershipResponse = (DeleteMembershipResponse) o;
-    return Objects.equals(this.id, deleteMembershipResponse.id)
-        && Objects.equals(this.errorDetails, deleteMembershipResponse.errorDetails);
+    return Objects.equals(this.id, deleteMembershipResponse.id) &&
+        Objects.equals(this.errorDetails, deleteMembershipResponse.errorDetails);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(id, errorDetails);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DeleteMembershipResponse {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    errorDetails: ").append(toIndentedString(errorDetails)).append("\n");
     sb.append("}");
@@ -99,7 +117,8 @@ public class DeleteMembershipResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -107,4 +126,6 @@ public class DeleteMembershipResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

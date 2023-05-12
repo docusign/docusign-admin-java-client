@@ -1,10 +1,20 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.CertificateResponse;
+import com.docusign.admin.model.RequiredAttributeMappingResponse;
+import com.docusign.admin.model.SettingResponse;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/** Saml2IdentityProviderResponse. */
+/**
+ * Saml2IdentityProviderResponse.
+ *
+ */
+
 public class Saml2IdentityProviderResponse {
   @JsonProperty("issuer")
   private String issuer = null;
@@ -18,11 +28,12 @@ public class Saml2IdentityProviderResponse {
   @JsonProperty("attribute_mappings")
   private java.util.List<RequiredAttributeMappingResponse> attributeMappings = null;
 
+
   /**
    * issuer.
    *
    * @return Saml2IdentityProviderResponse
-   */
+   **/
   public Saml2IdentityProviderResponse issuer(String issuer) {
     this.issuer = issuer;
     return this;
@@ -30,34 +41,36 @@ public class Saml2IdentityProviderResponse {
 
   /**
    * Get issuer.
-   *
    * @return issuer
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getIssuer() {
     return issuer;
   }
 
-  /** setIssuer. */
+  /**
+   * setIssuer.
+   **/
   public void setIssuer(String issuer) {
     this.issuer = issuer;
   }
+
 
   /**
    * settings.
    *
    * @return Saml2IdentityProviderResponse
-   */
+   **/
   public Saml2IdentityProviderResponse settings(java.util.List<SettingResponse> settings) {
     this.settings = settings;
     return this;
   }
-
+  
   /**
    * addSettingsItem.
    *
    * @return Saml2IdentityProviderResponse
-   */
+   **/
   public Saml2IdentityProviderResponse addSettingsItem(SettingResponse settingsItem) {
     if (this.settings == null) {
       this.settings = new java.util.ArrayList<>();
@@ -68,35 +81,36 @@ public class Saml2IdentityProviderResponse {
 
   /**
    * Get settings.
-   *
    * @return settings
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public java.util.List<SettingResponse> getSettings() {
     return settings;
   }
 
-  /** setSettings. */
+  /**
+   * setSettings.
+   **/
   public void setSettings(java.util.List<SettingResponse> settings) {
     this.settings = settings;
   }
+
 
   /**
    * certificates.
    *
    * @return Saml2IdentityProviderResponse
-   */
-  public Saml2IdentityProviderResponse certificates(
-      java.util.List<CertificateResponse> certificates) {
+   **/
+  public Saml2IdentityProviderResponse certificates(java.util.List<CertificateResponse> certificates) {
     this.certificates = certificates;
     return this;
   }
-
+  
   /**
    * addCertificatesItem.
    *
    * @return Saml2IdentityProviderResponse
-   */
+   **/
   public Saml2IdentityProviderResponse addCertificatesItem(CertificateResponse certificatesItem) {
     if (this.certificates == null) {
       this.certificates = new java.util.ArrayList<>();
@@ -107,37 +121,37 @@ public class Saml2IdentityProviderResponse {
 
   /**
    * Get certificates.
-   *
    * @return certificates
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public java.util.List<CertificateResponse> getCertificates() {
     return certificates;
   }
 
-  /** setCertificates. */
+  /**
+   * setCertificates.
+   **/
   public void setCertificates(java.util.List<CertificateResponse> certificates) {
     this.certificates = certificates;
   }
+
 
   /**
    * attributeMappings.
    *
    * @return Saml2IdentityProviderResponse
-   */
-  public Saml2IdentityProviderResponse attributeMappings(
-      java.util.List<RequiredAttributeMappingResponse> attributeMappings) {
+   **/
+  public Saml2IdentityProviderResponse attributeMappings(java.util.List<RequiredAttributeMappingResponse> attributeMappings) {
     this.attributeMappings = attributeMappings;
     return this;
   }
-
+  
   /**
    * addAttributeMappingsItem.
    *
    * @return Saml2IdentityProviderResponse
-   */
-  public Saml2IdentityProviderResponse addAttributeMappingsItem(
-      RequiredAttributeMappingResponse attributeMappingsItem) {
+   **/
+  public Saml2IdentityProviderResponse addAttributeMappingsItem(RequiredAttributeMappingResponse attributeMappingsItem) {
     if (this.attributeMappings == null) {
       this.attributeMappings = new java.util.ArrayList<>();
     }
@@ -147,19 +161,20 @@ public class Saml2IdentityProviderResponse {
 
   /**
    * Get attributeMappings.
-   *
    * @return attributeMappings
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public java.util.List<RequiredAttributeMappingResponse> getAttributeMappings() {
     return attributeMappings;
   }
 
-  /** setAttributeMappings. */
-  public void setAttributeMappings(
-      java.util.List<RequiredAttributeMappingResponse> attributeMappings) {
+  /**
+   * setAttributeMappings.
+   **/
+  public void setAttributeMappings(java.util.List<RequiredAttributeMappingResponse> attributeMappings) {
     this.attributeMappings = attributeMappings;
   }
+
 
   /**
    * Compares objects.
@@ -175,24 +190,29 @@ public class Saml2IdentityProviderResponse {
       return false;
     }
     Saml2IdentityProviderResponse saml2IdentityProviderResponse = (Saml2IdentityProviderResponse) o;
-    return Objects.equals(this.issuer, saml2IdentityProviderResponse.issuer)
-        && Objects.equals(this.settings, saml2IdentityProviderResponse.settings)
-        && Objects.equals(this.certificates, saml2IdentityProviderResponse.certificates)
-        && Objects.equals(this.attributeMappings, saml2IdentityProviderResponse.attributeMappings);
+    return Objects.equals(this.issuer, saml2IdentityProviderResponse.issuer) &&
+        Objects.equals(this.settings, saml2IdentityProviderResponse.settings) &&
+        Objects.equals(this.certificates, saml2IdentityProviderResponse.certificates) &&
+        Objects.equals(this.attributeMappings, saml2IdentityProviderResponse.attributeMappings);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(issuer, settings, certificates, attributeMappings);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Saml2IdentityProviderResponse {\n");
-
+    
     sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
     sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
     sb.append("    certificates: ").append(toIndentedString(certificates)).append("\n");
@@ -202,7 +222,8 @@ public class Saml2IdentityProviderResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -210,4 +231,6 @@ public class Saml2IdentityProviderResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

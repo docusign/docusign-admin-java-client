@@ -1,10 +1,19 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.MemberGroupResponse;
+import com.docusign.admin.model.PermissionProfileResponse;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/** NewUserResponseAccountProperties. */
+/**
+ * NewUserResponseAccountProperties.
+ *
+ */
+
 public class NewUserResponseAccountProperties {
   @JsonProperty("id")
   private java.util.UUID id = null;
@@ -24,11 +33,12 @@ public class NewUserResponseAccountProperties {
   @JsonProperty("job_title")
   private String jobTitle = null;
 
+
   /**
    * id.
    *
    * @return NewUserResponseAccountProperties
-   */
+   **/
   public NewUserResponseAccountProperties id(java.util.UUID id) {
     this.id = id;
     return this;
@@ -36,24 +46,26 @@ public class NewUserResponseAccountProperties {
 
   /**
    * Get id.
-   *
    * @return id
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
   public java.util.UUID getId() {
     return id;
   }
 
-  /** setId. */
+  /**
+   * setId.
+   **/
   public void setId(java.util.UUID id) {
     this.id = id;
   }
+
 
   /**
    * siteId.
    *
    * @return NewUserResponseAccountProperties
-   */
+   **/
   public NewUserResponseAccountProperties siteId(Integer siteId) {
     this.siteId = siteId;
     return this;
@@ -61,60 +73,63 @@ public class NewUserResponseAccountProperties {
 
   /**
    * Get siteId.
-   *
    * @return siteId
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public Integer getSiteId() {
     return siteId;
   }
 
-  /** setSiteId. */
+  /**
+   * setSiteId.
+   **/
   public void setSiteId(Integer siteId) {
     this.siteId = siteId;
   }
+
 
   /**
    * permissionProfile.
    *
    * @return NewUserResponseAccountProperties
-   */
-  public NewUserResponseAccountProperties permissionProfile(
-      PermissionProfileResponse permissionProfile) {
+   **/
+  public NewUserResponseAccountProperties permissionProfile(PermissionProfileResponse permissionProfile) {
     this.permissionProfile = permissionProfile;
     return this;
   }
 
   /**
    * Get permissionProfile.
-   *
    * @return permissionProfile
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public PermissionProfileResponse getPermissionProfile() {
     return permissionProfile;
   }
 
-  /** setPermissionProfile. */
+  /**
+   * setPermissionProfile.
+   **/
   public void setPermissionProfile(PermissionProfileResponse permissionProfile) {
     this.permissionProfile = permissionProfile;
   }
+
 
   /**
    * groups.
    *
    * @return NewUserResponseAccountProperties
-   */
+   **/
   public NewUserResponseAccountProperties groups(java.util.List<MemberGroupResponse> groups) {
     this.groups = groups;
     return this;
   }
-
+  
   /**
    * addGroupsItem.
    *
    * @return NewUserResponseAccountProperties
-   */
+   **/
   public NewUserResponseAccountProperties addGroupsItem(MemberGroupResponse groupsItem) {
     if (this.groups == null) {
       this.groups = new java.util.ArrayList<>();
@@ -125,24 +140,26 @@ public class NewUserResponseAccountProperties {
 
   /**
    * Get groups.
-   *
    * @return groups
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public java.util.List<MemberGroupResponse> getGroups() {
     return groups;
   }
 
-  /** setGroups. */
+  /**
+   * setGroups.
+   **/
   public void setGroups(java.util.List<MemberGroupResponse> groups) {
     this.groups = groups;
   }
+
 
   /**
    * companyName.
    *
    * @return NewUserResponseAccountProperties
-   */
+   **/
   public NewUserResponseAccountProperties companyName(String companyName) {
     this.companyName = companyName;
     return this;
@@ -150,24 +167,26 @@ public class NewUserResponseAccountProperties {
 
   /**
    * Get companyName.
-   *
    * @return companyName
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getCompanyName() {
     return companyName;
   }
 
-  /** setCompanyName. */
+  /**
+   * setCompanyName.
+   **/
   public void setCompanyName(String companyName) {
     this.companyName = companyName;
   }
+
 
   /**
    * jobTitle.
    *
    * @return NewUserResponseAccountProperties
-   */
+   **/
   public NewUserResponseAccountProperties jobTitle(String jobTitle) {
     this.jobTitle = jobTitle;
     return this;
@@ -175,18 +194,20 @@ public class NewUserResponseAccountProperties {
 
   /**
    * Get jobTitle.
-   *
    * @return jobTitle
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getJobTitle() {
     return jobTitle;
   }
 
-  /** setJobTitle. */
+  /**
+   * setJobTitle.
+   **/
   public void setJobTitle(String jobTitle) {
     this.jobTitle = jobTitle;
   }
+
 
   /**
    * Compares objects.
@@ -201,29 +222,32 @@ public class NewUserResponseAccountProperties {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    NewUserResponseAccountProperties newUserResponseAccountProperties =
-        (NewUserResponseAccountProperties) o;
-    return Objects.equals(this.id, newUserResponseAccountProperties.id)
-        && Objects.equals(this.siteId, newUserResponseAccountProperties.siteId)
-        && Objects.equals(
-            this.permissionProfile, newUserResponseAccountProperties.permissionProfile)
-        && Objects.equals(this.groups, newUserResponseAccountProperties.groups)
-        && Objects.equals(this.companyName, newUserResponseAccountProperties.companyName)
-        && Objects.equals(this.jobTitle, newUserResponseAccountProperties.jobTitle);
+    NewUserResponseAccountProperties newUserResponseAccountProperties = (NewUserResponseAccountProperties) o;
+    return Objects.equals(this.id, newUserResponseAccountProperties.id) &&
+        Objects.equals(this.siteId, newUserResponseAccountProperties.siteId) &&
+        Objects.equals(this.permissionProfile, newUserResponseAccountProperties.permissionProfile) &&
+        Objects.equals(this.groups, newUserResponseAccountProperties.groups) &&
+        Objects.equals(this.companyName, newUserResponseAccountProperties.companyName) &&
+        Objects.equals(this.jobTitle, newUserResponseAccountProperties.jobTitle);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(id, siteId, permissionProfile, groups, companyName, jobTitle);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class NewUserResponseAccountProperties {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
     sb.append("    permissionProfile: ").append(toIndentedString(permissionProfile)).append("\n");
@@ -235,7 +259,8 @@ public class NewUserResponseAccountProperties {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -243,4 +268,6 @@ public class NewUserResponseAccountProperties {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

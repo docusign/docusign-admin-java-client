@@ -1,19 +1,27 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/** OrganizationSimpleIdObject. */
+/**
+ * OrganizationSimpleIdObject.
+ *
+ */
+
 public class OrganizationSimpleIdObject {
   @JsonProperty("id")
   private java.util.UUID id = null;
+
 
   /**
    * id.
    *
    * @return OrganizationSimpleIdObject
-   */
+   **/
   public OrganizationSimpleIdObject id(java.util.UUID id) {
     this.id = id;
     return this;
@@ -21,18 +29,20 @@ public class OrganizationSimpleIdObject {
 
   /**
    * Get id.
-   *
    * @return id
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
   public java.util.UUID getId() {
     return id;
   }
 
-  /** setId. */
+  /**
+   * setId.
+   **/
   public void setId(java.util.UUID id) {
     this.id = id;
   }
+
 
   /**
    * Compares objects.
@@ -51,25 +61,31 @@ public class OrganizationSimpleIdObject {
     return Objects.equals(this.id, organizationSimpleIdObject.id);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(id);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrganizationSimpleIdObject {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -77,4 +93,6 @@ public class OrganizationSimpleIdObject {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

@@ -1,19 +1,27 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/** OrganizationAccountRequest. */
+/**
+ * OrganizationAccountRequest.
+ *
+ */
+
 public class OrganizationAccountRequest {
   @JsonProperty("account_id")
   private java.util.UUID accountId = null;
+
 
   /**
    * accountId.
    *
    * @return OrganizationAccountRequest
-   */
+   **/
   public OrganizationAccountRequest accountId(java.util.UUID accountId) {
     this.accountId = accountId;
     return this;
@@ -21,18 +29,20 @@ public class OrganizationAccountRequest {
 
   /**
    * Get accountId.
-   *
    * @return accountId
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", required = true, value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", required = true, description = "")
   public java.util.UUID getAccountId() {
     return accountId;
   }
 
-  /** setAccountId. */
+  /**
+   * setAccountId.
+   **/
   public void setAccountId(java.util.UUID accountId) {
     this.accountId = accountId;
   }
+
 
   /**
    * Compares objects.
@@ -51,25 +61,31 @@ public class OrganizationAccountRequest {
     return Objects.equals(this.accountId, organizationAccountRequest.accountId);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(accountId);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrganizationAccountRequest {\n");
-
+    
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -77,4 +93,6 @@ public class OrganizationAccountRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

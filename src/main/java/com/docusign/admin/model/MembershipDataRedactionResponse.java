@@ -8,24 +8,57 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 /**
- * OrgExportSelectedAccount.
+ * MembershipDataRedactionResponse.
  *
  */
 
-public class OrgExportSelectedAccount {
+public class MembershipDataRedactionResponse {
   @JsonProperty("account_id")
   private java.util.UUID accountId = null;
 
-
   /**
-   * accountId.
-   *
-   * @return OrgExportSelectedAccount
-   **/
-  public OrgExportSelectedAccount accountId(java.util.UUID accountId) {
-    this.accountId = accountId;
-    return this;
+   * Gets or Sets status
+   */
+  public enum StatusEnum {
+    UNKNOWN("unknown"),
+    
+    PENDING("pending"),
+    
+    FAILURE("failure"),
+    
+    SUCCESS("success"),
+    
+    ALREADY_REDACTED("already_redacted");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static StatusEnum fromValue(String value) {
+      for (StatusEnum b : StatusEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
   }
+
+  @JsonProperty("status")
+  private StatusEnum status = null;
 
   /**
    * Get accountId.
@@ -37,10 +70,12 @@ public class OrgExportSelectedAccount {
   }
 
   /**
-   * setAccountId.
+   * Get status.
+   * @return status
    **/
-  public void setAccountId(java.util.UUID accountId) {
-    this.accountId = accountId;
+  @Schema(description = "")
+  public StatusEnum getStatus() {
+    return status;
   }
 
 
@@ -57,8 +92,9 @@ public class OrgExportSelectedAccount {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrgExportSelectedAccount orgExportSelectedAccount = (OrgExportSelectedAccount) o;
-    return Objects.equals(this.accountId, orgExportSelectedAccount.accountId);
+    MembershipDataRedactionResponse membershipDataRedactionResponse = (MembershipDataRedactionResponse) o;
+    return Objects.equals(this.accountId, membershipDataRedactionResponse.accountId) &&
+        Objects.equals(this.status, membershipDataRedactionResponse.status);
   }
 
   /**
@@ -66,7 +102,7 @@ public class OrgExportSelectedAccount {
    */
   @Override
   public int hashCode() {
-    return Objects.hash(accountId);
+    return Objects.hash(accountId, status);
   }
 
 
@@ -76,9 +112,10 @@ public class OrgExportSelectedAccount {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OrgExportSelectedAccount {\n");
+    sb.append("class MembershipDataRedactionResponse {\n");
     
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }

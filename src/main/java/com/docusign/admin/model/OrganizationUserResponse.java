@@ -1,11 +1,19 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
-import java.time.LocalDateTime;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.DSGroupResponse;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
+import java.time.OffsetDateTime;
 
-/** OrganizationUserResponse. */
+/**
+ * OrganizationUserResponse.
+ *
+ */
+
 public class OrganizationUserResponse {
   @JsonProperty("id")
   private java.util.UUID id = null;
@@ -29,10 +37,10 @@ public class OrganizationUserResponse {
   private String email = null;
 
   @JsonProperty("created_on")
-  private LocalDateTime createdOn = null;
+  private String createdOn = null;
 
   @JsonProperty("membership_created_on")
-  private LocalDateTime membershipCreatedOn = null;
+  private String membershipCreatedOn = null;
 
   @JsonProperty("ds_groups")
   private java.util.List<DSGroupResponse> dsGroups = null;
@@ -40,11 +48,12 @@ public class OrganizationUserResponse {
   @JsonProperty("membership_id")
   private java.util.UUID membershipId = null;
 
+
   /**
    * id.
    *
    * @return OrganizationUserResponse
-   */
+   **/
   public OrganizationUserResponse id(java.util.UUID id) {
     this.id = id;
     return this;
@@ -52,24 +61,26 @@ public class OrganizationUserResponse {
 
   /**
    * Get id.
-   *
    * @return id
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
   public java.util.UUID getId() {
     return id;
   }
 
-  /** setId. */
+  /**
+   * setId.
+   **/
   public void setId(java.util.UUID id) {
     this.id = id;
   }
+
 
   /**
    * userName.
    *
    * @return OrganizationUserResponse
-   */
+   **/
   public OrganizationUserResponse userName(String userName) {
     this.userName = userName;
     return this;
@@ -77,24 +88,26 @@ public class OrganizationUserResponse {
 
   /**
    * Get userName.
-   *
    * @return userName
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getUserName() {
     return userName;
   }
 
-  /** setUserName. */
+  /**
+   * setUserName.
+   **/
   public void setUserName(String userName) {
     this.userName = userName;
   }
+
 
   /**
    * firstName.
    *
    * @return OrganizationUserResponse
-   */
+   **/
   public OrganizationUserResponse firstName(String firstName) {
     this.firstName = firstName;
     return this;
@@ -102,24 +115,26 @@ public class OrganizationUserResponse {
 
   /**
    * Get firstName.
-   *
    * @return firstName
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getFirstName() {
     return firstName;
   }
 
-  /** setFirstName. */
+  /**
+   * setFirstName.
+   **/
   public void setFirstName(String firstName) {
     this.firstName = firstName;
   }
+
 
   /**
    * lastName.
    *
    * @return OrganizationUserResponse
-   */
+   **/
   public OrganizationUserResponse lastName(String lastName) {
     this.lastName = lastName;
     return this;
@@ -127,24 +142,26 @@ public class OrganizationUserResponse {
 
   /**
    * Get lastName.
-   *
    * @return lastName
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getLastName() {
     return lastName;
   }
 
-  /** setLastName. */
+  /**
+   * setLastName.
+   **/
   public void setLastName(String lastName) {
     this.lastName = lastName;
   }
+
 
   /**
    * userStatus.
    *
    * @return OrganizationUserResponse
-   */
+   **/
   public OrganizationUserResponse userStatus(String userStatus) {
     this.userStatus = userStatus;
     return this;
@@ -152,24 +169,26 @@ public class OrganizationUserResponse {
 
   /**
    * Get userStatus.
-   *
    * @return userStatus
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getUserStatus() {
     return userStatus;
   }
 
-  /** setUserStatus. */
+  /**
+   * setUserStatus.
+   **/
   public void setUserStatus(String userStatus) {
     this.userStatus = userStatus;
   }
+
 
   /**
    * membershipStatus.
    *
    * @return OrganizationUserResponse
-   */
+   **/
   public OrganizationUserResponse membershipStatus(String membershipStatus) {
     this.membershipStatus = membershipStatus;
     return this;
@@ -177,24 +196,26 @@ public class OrganizationUserResponse {
 
   /**
    * Get membershipStatus.
-   *
    * @return membershipStatus
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getMembershipStatus() {
     return membershipStatus;
   }
 
-  /** setMembershipStatus. */
+  /**
+   * setMembershipStatus.
+   **/
   public void setMembershipStatus(String membershipStatus) {
     this.membershipStatus = membershipStatus;
   }
+
 
   /**
    * email.
    *
    * @return OrganizationUserResponse
-   */
+   **/
   public OrganizationUserResponse email(String email) {
     this.email = email;
     return this;
@@ -202,84 +223,90 @@ public class OrganizationUserResponse {
 
   /**
    * Get email.
-   *
    * @return email
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getEmail() {
     return email;
   }
 
-  /** setEmail. */
+  /**
+   * setEmail.
+   **/
   public void setEmail(String email) {
     this.email = email;
   }
+
 
   /**
    * createdOn.
    *
    * @return OrganizationUserResponse
-   */
-  public OrganizationUserResponse createdOn(LocalDateTime createdOn) {
+   **/
+  public OrganizationUserResponse createdOn(String createdOn) {
     this.createdOn = createdOn;
     return this;
   }
 
   /**
    * Get createdOn.
-   *
    * @return createdOn
-   */
-  @ApiModelProperty(value = "")
-  public LocalDateTime getCreatedOn() {
+   **/
+  @Schema(description = "")
+  public String getCreatedOn() {
     return createdOn;
   }
 
-  /** setCreatedOn. */
-  public void setCreatedOn(LocalDateTime createdOn) {
+  /**
+   * setCreatedOn.
+   **/
+  public void setCreatedOn(String createdOn) {
     this.createdOn = createdOn;
   }
+
 
   /**
    * membershipCreatedOn.
    *
    * @return OrganizationUserResponse
-   */
-  public OrganizationUserResponse membershipCreatedOn(LocalDateTime membershipCreatedOn) {
+   **/
+  public OrganizationUserResponse membershipCreatedOn(String membershipCreatedOn) {
     this.membershipCreatedOn = membershipCreatedOn;
     return this;
   }
 
   /**
    * Get membershipCreatedOn.
-   *
    * @return membershipCreatedOn
-   */
-  @ApiModelProperty(value = "")
-  public LocalDateTime getMembershipCreatedOn() {
+   **/
+  @Schema(description = "")
+  public String getMembershipCreatedOn() {
     return membershipCreatedOn;
   }
 
-  /** setMembershipCreatedOn. */
-  public void setMembershipCreatedOn(LocalDateTime membershipCreatedOn) {
+  /**
+   * setMembershipCreatedOn.
+   **/
+  public void setMembershipCreatedOn(String membershipCreatedOn) {
     this.membershipCreatedOn = membershipCreatedOn;
   }
+
 
   /**
    * dsGroups.
    *
    * @return OrganizationUserResponse
-   */
+   **/
   public OrganizationUserResponse dsGroups(java.util.List<DSGroupResponse> dsGroups) {
     this.dsGroups = dsGroups;
     return this;
   }
-
+  
   /**
    * addDsGroupsItem.
    *
    * @return OrganizationUserResponse
-   */
+   **/
   public OrganizationUserResponse addDsGroupsItem(DSGroupResponse dsGroupsItem) {
     if (this.dsGroups == null) {
       this.dsGroups = new java.util.ArrayList<>();
@@ -290,24 +317,26 @@ public class OrganizationUserResponse {
 
   /**
    * Get dsGroups.
-   *
    * @return dsGroups
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public java.util.List<DSGroupResponse> getDsGroups() {
     return dsGroups;
   }
 
-  /** setDsGroups. */
+  /**
+   * setDsGroups.
+   **/
   public void setDsGroups(java.util.List<DSGroupResponse> dsGroups) {
     this.dsGroups = dsGroups;
   }
+
 
   /**
    * membershipId.
    *
    * @return OrganizationUserResponse
-   */
+   **/
   public OrganizationUserResponse membershipId(java.util.UUID membershipId) {
     this.membershipId = membershipId;
     return this;
@@ -315,18 +344,20 @@ public class OrganizationUserResponse {
 
   /**
    * Get membershipId.
-   *
    * @return membershipId
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
   public java.util.UUID getMembershipId() {
     return membershipId;
   }
 
-  /** setMembershipId. */
+  /**
+   * setMembershipId.
+   **/
   public void setMembershipId(java.util.UUID membershipId) {
     this.membershipId = membershipId;
   }
+
 
   /**
    * Compares objects.
@@ -342,42 +373,36 @@ public class OrganizationUserResponse {
       return false;
     }
     OrganizationUserResponse organizationUserResponse = (OrganizationUserResponse) o;
-    return Objects.equals(this.id, organizationUserResponse.id)
-        && Objects.equals(this.userName, organizationUserResponse.userName)
-        && Objects.equals(this.firstName, organizationUserResponse.firstName)
-        && Objects.equals(this.lastName, organizationUserResponse.lastName)
-        && Objects.equals(this.userStatus, organizationUserResponse.userStatus)
-        && Objects.equals(this.membershipStatus, organizationUserResponse.membershipStatus)
-        && Objects.equals(this.email, organizationUserResponse.email)
-        && Objects.equals(this.createdOn, organizationUserResponse.createdOn)
-        && Objects.equals(this.membershipCreatedOn, organizationUserResponse.membershipCreatedOn)
-        && Objects.equals(this.dsGroups, organizationUserResponse.dsGroups)
-        && Objects.equals(this.membershipId, organizationUserResponse.membershipId);
+    return Objects.equals(this.id, organizationUserResponse.id) &&
+        Objects.equals(this.userName, organizationUserResponse.userName) &&
+        Objects.equals(this.firstName, organizationUserResponse.firstName) &&
+        Objects.equals(this.lastName, organizationUserResponse.lastName) &&
+        Objects.equals(this.userStatus, organizationUserResponse.userStatus) &&
+        Objects.equals(this.membershipStatus, organizationUserResponse.membershipStatus) &&
+        Objects.equals(this.email, organizationUserResponse.email) &&
+        Objects.equals(this.createdOn, organizationUserResponse.createdOn) &&
+        Objects.equals(this.membershipCreatedOn, organizationUserResponse.membershipCreatedOn) &&
+        Objects.equals(this.dsGroups, organizationUserResponse.dsGroups) &&
+        Objects.equals(this.membershipId, organizationUserResponse.membershipId);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
-    return Objects.hash(
-        id,
-        userName,
-        firstName,
-        lastName,
-        userStatus,
-        membershipStatus,
-        email,
-        createdOn,
-        membershipCreatedOn,
-        dsGroups,
-        membershipId);
+    return Objects.hash(id, userName, firstName, lastName, userStatus, membershipStatus, email, createdOn, membershipCreatedOn, dsGroups, membershipId);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrganizationUserResponse {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
@@ -386,9 +411,7 @@ public class OrganizationUserResponse {
     sb.append("    membershipStatus: ").append(toIndentedString(membershipStatus)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    createdOn: ").append(toIndentedString(createdOn)).append("\n");
-    sb.append("    membershipCreatedOn: ")
-        .append(toIndentedString(membershipCreatedOn))
-        .append("\n");
+    sb.append("    membershipCreatedOn: ").append(toIndentedString(membershipCreatedOn)).append("\n");
     sb.append("    dsGroups: ").append(toIndentedString(dsGroups)).append("\n");
     sb.append("    membershipId: ").append(toIndentedString(membershipId)).append("\n");
     sb.append("}");
@@ -396,7 +419,8 @@ public class OrganizationUserResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -404,4 +428,6 @@ public class OrganizationUserResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+

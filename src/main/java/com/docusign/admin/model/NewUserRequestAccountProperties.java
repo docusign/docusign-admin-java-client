@@ -1,10 +1,19 @@
 package com.docusign.admin.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
+import java.util.Arrays;
+import com.docusign.admin.model.GroupRequest;
+import com.docusign.admin.model.PermissionProfileRequest;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/** NewUserRequestAccountProperties. */
+/**
+ * NewUserRequestAccountProperties.
+ *
+ */
+
 public class NewUserRequestAccountProperties {
   @JsonProperty("id")
   private java.util.UUID id = null;
@@ -21,11 +30,12 @@ public class NewUserRequestAccountProperties {
   @JsonProperty("job_title")
   private String jobTitle = null;
 
+
   /**
    * id.
    *
    * @return NewUserRequestAccountProperties
-   */
+   **/
   public NewUserRequestAccountProperties id(java.util.UUID id) {
     this.id = id;
     return this;
@@ -33,60 +43,63 @@ public class NewUserRequestAccountProperties {
 
   /**
    * Get id.
-   *
    * @return id
-   */
-  @ApiModelProperty(example = "00000000-0000-0000-0000-000000000000", required = true, value = "")
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", required = true, description = "")
   public java.util.UUID getId() {
     return id;
   }
 
-  /** setId. */
+  /**
+   * setId.
+   **/
   public void setId(java.util.UUID id) {
     this.id = id;
   }
+
 
   /**
    * permissionProfile.
    *
    * @return NewUserRequestAccountProperties
-   */
-  public NewUserRequestAccountProperties permissionProfile(
-      PermissionProfileRequest permissionProfile) {
+   **/
+  public NewUserRequestAccountProperties permissionProfile(PermissionProfileRequest permissionProfile) {
     this.permissionProfile = permissionProfile;
     return this;
   }
 
   /**
    * Get permissionProfile.
-   *
    * @return permissionProfile
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public PermissionProfileRequest getPermissionProfile() {
     return permissionProfile;
   }
 
-  /** setPermissionProfile. */
+  /**
+   * setPermissionProfile.
+   **/
   public void setPermissionProfile(PermissionProfileRequest permissionProfile) {
     this.permissionProfile = permissionProfile;
   }
+
 
   /**
    * groups.
    *
    * @return NewUserRequestAccountProperties
-   */
+   **/
   public NewUserRequestAccountProperties groups(java.util.List<GroupRequest> groups) {
     this.groups = groups;
     return this;
   }
-
+  
   /**
    * addGroupsItem.
    *
    * @return NewUserRequestAccountProperties
-   */
+   **/
   public NewUserRequestAccountProperties addGroupsItem(GroupRequest groupsItem) {
     if (this.groups == null) {
       this.groups = new java.util.ArrayList<>();
@@ -97,24 +110,26 @@ public class NewUserRequestAccountProperties {
 
   /**
    * Get groups.
-   *
    * @return groups
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public java.util.List<GroupRequest> getGroups() {
     return groups;
   }
 
-  /** setGroups. */
+  /**
+   * setGroups.
+   **/
   public void setGroups(java.util.List<GroupRequest> groups) {
     this.groups = groups;
   }
+
 
   /**
    * companyName.
    *
    * @return NewUserRequestAccountProperties
-   */
+   **/
   public NewUserRequestAccountProperties companyName(String companyName) {
     this.companyName = companyName;
     return this;
@@ -122,24 +137,26 @@ public class NewUserRequestAccountProperties {
 
   /**
    * Get companyName.
-   *
    * @return companyName
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getCompanyName() {
     return companyName;
   }
 
-  /** setCompanyName. */
+  /**
+   * setCompanyName.
+   **/
   public void setCompanyName(String companyName) {
     this.companyName = companyName;
   }
+
 
   /**
    * jobTitle.
    *
    * @return NewUserRequestAccountProperties
-   */
+   **/
   public NewUserRequestAccountProperties jobTitle(String jobTitle) {
     this.jobTitle = jobTitle;
     return this;
@@ -147,18 +164,20 @@ public class NewUserRequestAccountProperties {
 
   /**
    * Get jobTitle.
-   *
    * @return jobTitle
-   */
-  @ApiModelProperty(value = "")
+   **/
+  @Schema(description = "")
   public String getJobTitle() {
     return jobTitle;
   }
 
-  /** setJobTitle. */
+  /**
+   * setJobTitle.
+   **/
   public void setJobTitle(String jobTitle) {
     this.jobTitle = jobTitle;
   }
+
 
   /**
    * Compares objects.
@@ -173,27 +192,31 @@ public class NewUserRequestAccountProperties {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    NewUserRequestAccountProperties newUserRequestAccountProperties =
-        (NewUserRequestAccountProperties) o;
-    return Objects.equals(this.id, newUserRequestAccountProperties.id)
-        && Objects.equals(this.permissionProfile, newUserRequestAccountProperties.permissionProfile)
-        && Objects.equals(this.groups, newUserRequestAccountProperties.groups)
-        && Objects.equals(this.companyName, newUserRequestAccountProperties.companyName)
-        && Objects.equals(this.jobTitle, newUserRequestAccountProperties.jobTitle);
+    NewUserRequestAccountProperties newUserRequestAccountProperties = (NewUserRequestAccountProperties) o;
+    return Objects.equals(this.id, newUserRequestAccountProperties.id) &&
+        Objects.equals(this.permissionProfile, newUserRequestAccountProperties.permissionProfile) &&
+        Objects.equals(this.groups, newUserRequestAccountProperties.groups) &&
+        Objects.equals(this.companyName, newUserRequestAccountProperties.companyName) &&
+        Objects.equals(this.jobTitle, newUserRequestAccountProperties.jobTitle);
   }
 
-  /** Returns the HashCode. */
+  /**
+   * Returns the HashCode.
+   */
   @Override
   public int hashCode() {
     return Objects.hash(id, permissionProfile, groups, companyName, jobTitle);
   }
 
-  /** Converts the given object to string. */
+
+  /**
+   * Converts the given object to string.
+   */
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class NewUserRequestAccountProperties {\n");
-
+    
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    permissionProfile: ").append(toIndentedString(permissionProfile)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
@@ -204,7 +227,8 @@ public class NewUserRequestAccountProperties {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -212,4 +236,6 @@ public class NewUserRequestAccountProperties {
     }
     return o.toString().replace("\n", "\n    ");
   }
+
 }
+
