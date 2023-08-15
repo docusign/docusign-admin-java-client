@@ -5,7 +5,7 @@
     <artifactId>docusign-admin-java</artifactId>
     <packaging>jar</packaging>
     <name>docusign-admin-java</name>
-    <version>1.2.0</version>
+    <version>1.3.0</version>
     <url>https://developers.docusign.com</url>
     <description>The DocuSign Admin API enables you to automate user management with your existing systems while ensuring governance and compliance.</description>
 
@@ -170,7 +170,7 @@
                 </executions>
                 <configuration>
                 </configuration>
-            </plugin>        
+            </plugin>
 
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -329,6 +329,7 @@
             <artifactId>jersey-media-json-jackson</artifactId>
             <version>${jersey-version}</version>
         </dependency>
+        <!-- Pinned because other libraries rely on this lib and jersey is not backwards compatible now -->
         <dependency>
             <groupId>org.glassfish.jersey.inject</groupId>
             <artifactId>jersey-hk2</artifactId>
