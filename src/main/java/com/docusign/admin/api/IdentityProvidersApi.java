@@ -107,7 +107,7 @@ public class IdentityProvidersApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<IdentityProvidersResponse> localVarReturnType = new GenericType<IdentityProvidersResponse>() {};
     IdentityProvidersResponse localVarResponse = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);

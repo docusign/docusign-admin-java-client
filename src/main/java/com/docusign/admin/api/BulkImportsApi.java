@@ -111,7 +111,7 @@ public class BulkImportsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<OrganizationAccountSettingsImportResponse> localVarReturnType = new GenericType<OrganizationAccountSettingsImportResponse>() {};
     OrganizationAccountSettingsImportResponse localVarResponse = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -175,7 +175,7 @@ public class BulkImportsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<OrganizationImportResponse> localVarReturnType = new GenericType<OrganizationImportResponse>() {};
     OrganizationImportResponse localVarResponse = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -239,7 +239,7 @@ public class BulkImportsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<OrganizationImportResponse> localVarReturnType = new GenericType<OrganizationImportResponse>() {};
     OrganizationImportResponse localVarResponse = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -299,7 +299,7 @@ public class BulkImportsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<OrganizationImportResponse> localVarReturnType = new GenericType<OrganizationImportResponse>() {};
     OrganizationImportResponse localVarResponse = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -371,7 +371,7 @@ public class BulkImportsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<OrganizationImportResponse> localVarReturnType = new GenericType<OrganizationImportResponse>() {};
     OrganizationImportResponse localVarResponse = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -443,7 +443,7 @@ public class BulkImportsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<OrganizationImportResponse> localVarReturnType = new GenericType<OrganizationImportResponse>() {};
     OrganizationImportResponse localVarResponse = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -507,7 +507,7 @@ public class BulkImportsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<OrganizationImportResponse> localVarReturnType = new GenericType<OrganizationImportResponse>() {};
     OrganizationImportResponse localVarResponse = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -575,7 +575,7 @@ public class BulkImportsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<Object> localVarReturnType = new GenericType<Object>() {};
     Object localVarResponse = apiClient.invokeAPI(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -643,7 +643,7 @@ public class BulkImportsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<Object> localVarReturnType = new GenericType<Object>() {};
     Object localVarResponse = apiClient.invokeAPI(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -711,7 +711,7 @@ public class BulkImportsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<OrganizationAccountSettingsImportResponse> localVarReturnType = new GenericType<OrganizationAccountSettingsImportResponse>() {};
     OrganizationAccountSettingsImportResponse localVarResponse = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -722,7 +722,7 @@ public class BulkImportsApi {
    * Returns the details/metadata for Bulk Account Settings Import requests in the organization.
    * Required scopes: account_read
    * @param organizationId The organization ID Guid (required)
-   * @return java.util.List&lt;OrganizationAccountSettingsImportResponse&gt;
+   * @return java.util.List<OrganizationAccountSettingsImportResponse>
    * @throws ApiException if fails to make API call
    */
   public java.util.List<OrganizationAccountSettingsImportResponse> getBulkAccountSettingsImports(java.util.UUID organizationId) throws ApiException {
@@ -734,7 +734,7 @@ public class BulkImportsApi {
    * Returns the details/metadata for Bulk Account Settings Import requests in the organization
    * Required scopes: account_read
    * @param organizationId The organization ID Guid (required)
-   * @return java.util.List&lt;OrganizationAccountSettingsImportResponse&gt;
+   * @return java.util.List<OrganizationAccountSettingsImportResponse>
    * @throws ApiException if fails to make API call
    */
   public ApiResponse<java.util.List<OrganizationAccountSettingsImportResponse> > getBulkAccountSettingsImportsWithHttpInfo(java.util.UUID organizationId) throws ApiException {
@@ -771,7 +771,7 @@ public class BulkImportsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<java.util.List<OrganizationAccountSettingsImportResponse>> localVarReturnType = new GenericType<java.util.List<OrganizationAccountSettingsImportResponse>>() {};
     java.util.List<OrganizationAccountSettingsImportResponse> localVarResponse = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -839,7 +839,7 @@ public class BulkImportsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<Object> localVarReturnType = new GenericType<Object>() {};
     Object localVarResponse = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -907,7 +907,7 @@ public class BulkImportsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<OrganizationImportResponse> localVarReturnType = new GenericType<OrganizationImportResponse>() {};
     OrganizationImportResponse localVarResponse = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -967,7 +967,7 @@ public class BulkImportsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<OrganizationImportsResponse> localVarReturnType = new GenericType<OrganizationImportsResponse>() {};
     OrganizationImportsResponse localVarResponse = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);

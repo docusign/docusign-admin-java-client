@@ -6,13 +6,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.media.Schema;
+import java.io.Serializable;
 
 /**
  * DSGroupRequest.
  *
  */
 
-public class DSGroupRequest {
+public class DSGroupRequest implements Serializable {
+  private static final long serialVersionUID = 1L;
+
   @JsonProperty("ds_group_id")
   private java.util.UUID dsGroupId = null;
 

@@ -4,19 +4,22 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.docusign.admin.model.AssetGroupAccountCloneSourceAccount;
 import com.docusign.admin.model.AssetGroupAccountCloneTargetAccount;
-import com.docusign.admin.model.CloneErrorDetails;
+import com.docusign.admin.model.SubAccountErrorDetails;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.time.OffsetDateTime;
+import java.io.Serializable;
 
 /**
  * AssetGroupAccountClone.
  *
  */
 
-public class AssetGroupAccountClone {
+public class AssetGroupAccountClone implements Serializable {
+  private static final long serialVersionUID = 1L;
+
   @JsonProperty("sourceAccount")
   private AssetGroupAccountCloneSourceAccount sourceAccount = null;
 
@@ -41,7 +44,9 @@ public class AssetGroupAccountClone {
     
     ACCOUNTASSETCLONE("AccountAssetClone"),
     
-    ACCOUNTASSETCREATE("AccountAssetCreate");
+    ACCOUNTASSETCREATE("AccountAssetCreate"),
+    
+    SUBSCRIPTIONSYNC("SubscriptionSync");
 
     private String value;
 
@@ -82,6 +87,8 @@ public class AssetGroupAccountClone {
     PENDING("Pending"),
     
     PROCESSING("Processing"),
+    
+    PROCESSINGONHOLD("ProcessingOnHold"),
     
     PENDINGERROR("PendingError"),
     
@@ -145,7 +152,7 @@ public class AssetGroupAccountClone {
   private String message = null;
 
   @JsonProperty("cloneProcessingFailureDetails")
-  private CloneErrorDetails cloneProcessingFailureDetails = null;
+  private SubAccountErrorDetails cloneProcessingFailureDetails = null;
 
 
   /**
@@ -305,7 +312,7 @@ public class AssetGroupAccountClone {
    * @return cloneProcessingFailureDetails
    **/
   @Schema(description = "The processing failures if the work is in PendingError/ProcessingError status.")
-  public CloneErrorDetails getCloneProcessingFailureDetails() {
+  public SubAccountErrorDetails getCloneProcessingFailureDetails() {
     return cloneProcessingFailureDetails;
   }
 

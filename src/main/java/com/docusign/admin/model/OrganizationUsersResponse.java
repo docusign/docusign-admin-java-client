@@ -8,13 +8,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.media.Schema;
+import java.io.Serializable;
 
 /**
  * OrganizationUsersResponse.
  *
  */
 
-public class OrganizationUsersResponse {
+public class OrganizationUsersResponse implements Serializable {
+  private static final long serialVersionUID = 1L;
+
   @JsonProperty("users")
   private java.util.List<OrganizationUserResponse> users = null;
 

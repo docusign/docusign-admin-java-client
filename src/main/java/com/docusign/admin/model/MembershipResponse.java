@@ -9,13 +9,16 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.time.OffsetDateTime;
+import java.io.Serializable;
 
 /**
  * MembershipResponse.
  *
  */
 
-public class MembershipResponse {
+public class MembershipResponse implements Serializable {
+  private static final long serialVersionUID = 1L;
+
   @JsonProperty("email")
   private String email = null;
 

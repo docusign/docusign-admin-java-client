@@ -7,13 +7,16 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.time.OffsetDateTime;
+import java.io.Serializable;
 
 /**
  * DSGroupResponse.
  *
  */
 
-public class DSGroupResponse {
+public class DSGroupResponse implements Serializable {
+  private static final long serialVersionUID = 1L;
+
   @JsonProperty("ds_group_id")
   private java.util.UUID dsGroupId = null;
 
