@@ -11,13 +11,16 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.time.OffsetDateTime;
+import java.io.Serializable;
 
 /**
  * OrganizationExportResponse.
  *
  */
 
-public class OrganizationExportResponse {
+public class OrganizationExportResponse implements Serializable {
+  private static final long serialVersionUID = 1L;
+
   @JsonProperty("id")
   private java.util.UUID id = null;
 

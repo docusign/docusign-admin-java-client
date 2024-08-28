@@ -130,7 +130,7 @@ public class UsersApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<UpdateResponse> localVarReturnType = new GenericType<UpdateResponse>() {};
     UpdateResponse localVarResponse = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -205,7 +205,7 @@ public class UsersApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<AddUserResponse> localVarReturnType = new GenericType<AddUserResponse>() {};
     AddUserResponse localVarResponse = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -280,7 +280,7 @@ public class UsersApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<NewUserResponse> localVarReturnType = new GenericType<NewUserResponse>() {};
     NewUserResponse localVarResponse = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -355,7 +355,7 @@ public class UsersApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<DeleteMembershipsResponse> localVarReturnType = new GenericType<DeleteMembershipsResponse>() {};
     DeleteMembershipsResponse localVarResponse = apiClient.invokeAPI(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -422,7 +422,7 @@ public class UsersApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<NewUserResponse> localVarReturnType = new GenericType<NewUserResponse>() {};
     NewUserResponse localVarResponse = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -497,7 +497,7 @@ public class UsersApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<DeleteResponse> localVarReturnType = new GenericType<DeleteResponse>() {};
     DeleteResponse localVarResponse = apiClient.invokeAPI(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -608,7 +608,7 @@ public class UsersApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<UsersDrilldownResponse> localVarReturnType = new GenericType<UsersDrilldownResponse>() {};
     UsersDrilldownResponse localVarResponse = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -729,7 +729,7 @@ public class UsersApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<UsersDrilldownResponse> localVarReturnType = new GenericType<UsersDrilldownResponse>() {};
     UsersDrilldownResponse localVarResponse = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -831,7 +831,7 @@ public class UsersApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<UsersDrilldownResponse> localVarReturnType = new GenericType<UsersDrilldownResponse>() {};
     UsersDrilldownResponse localVarResponse = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -857,6 +857,7 @@ public class UsersApi {
   private java.util.UUID accountId = null;
   private java.util.UUID organizationReservedDomainId = null;
   private String lastModifiedSince = null;
+  private Boolean includeDsGroups = null;
   
  /**
   * setStart method.
@@ -1017,6 +1018,22 @@ public class UsersApi {
   public String getLastModifiedSince() {
     return this.lastModifiedSince;
   }
+  
+ /**
+  * setIncludeDsGroups method.
+  */
+  public void setIncludeDsGroups(Boolean includeDsGroups) {
+    this.includeDsGroups = includeDsGroups;
+  }
+
+ /**
+  * getIncludeDsGroups method.
+  *
+  * @return Boolean
+  */
+  public Boolean getIncludeDsGroups() {
+    return this.includeDsGroups;
+  }
   }
 
    /**
@@ -1088,6 +1105,8 @@ public class UsersApi {
       localVarQueryParams.addAll(apiClient.parameterToPair("organization_reserved_domain_id", options.organizationReservedDomainId));
     }if (options != null) {
       localVarQueryParams.addAll(apiClient.parameterToPair("last_modified_since", options.lastModifiedSince));
+    }if (options != null) {
+      localVarQueryParams.addAll(apiClient.parameterToPair("include_ds_groups", options.includeDsGroups));
     }
 
     
@@ -1104,7 +1123,7 @@ public class UsersApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<OrganizationUsersResponse> localVarReturnType = new GenericType<OrganizationUsersResponse>() {};
     OrganizationUsersResponse localVarResponse = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -1171,7 +1190,7 @@ public class UsersApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<UsersUpdateResponse> localVarReturnType = new GenericType<UsersUpdateResponse>() {};
     UsersUpdateResponse localVarResponse = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -1238,7 +1257,7 @@ public class UsersApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<UsersUpdateResponse> localVarReturnType = new GenericType<UsersUpdateResponse>() {};
     UsersUpdateResponse localVarResponse = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);

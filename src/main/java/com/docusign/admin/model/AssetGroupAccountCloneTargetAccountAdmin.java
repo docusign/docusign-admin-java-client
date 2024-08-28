@@ -6,13 +6,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.media.Schema;
+import java.io.Serializable;
 
 /**
  * AssetGroupAccountCloneTargetAccountAdmin.
  *
  */
 
-public class AssetGroupAccountCloneTargetAccountAdmin {
+public class AssetGroupAccountCloneTargetAccountAdmin implements Serializable {
+  private static final long serialVersionUID = 1L;
+
   @JsonProperty("email")
   private String email = null;
 

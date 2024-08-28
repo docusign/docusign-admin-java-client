@@ -7,13 +7,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.media.Schema;
+import java.io.Serializable;
 
 /**
  * DomainsResponse.
  *
  */
 
-public class DomainsResponse {
+public class DomainsResponse implements Serializable {
+  private static final long serialVersionUID = 1L;
+
   @JsonProperty("reserved_domains")
   private java.util.List<DomainResponse> reservedDomains = null;
 

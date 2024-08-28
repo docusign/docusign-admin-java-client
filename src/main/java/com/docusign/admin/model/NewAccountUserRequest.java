@@ -8,13 +8,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.media.Schema;
+import java.io.Serializable;
 
 /**
  * NewAccountUserRequest.
  *
  */
 
-public class NewAccountUserRequest {
+public class NewAccountUserRequest implements Serializable {
+  private static final long serialVersionUID = 1L;
+
   @JsonProperty("permission_profile")
   private PermissionProfileRequest permissionProfile = null;
 

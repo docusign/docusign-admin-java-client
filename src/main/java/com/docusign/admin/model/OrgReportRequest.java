@@ -7,13 +7,16 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.time.OffsetDateTime;
+import java.io.Serializable;
 
 /**
  * OrgReportRequest.
  *
  */
 
-public class OrgReportRequest {
+public class OrgReportRequest implements Serializable {
+  private static final long serialVersionUID = 1L;
+
   @JsonProperty("report_type")
   private String reportType = null;
 

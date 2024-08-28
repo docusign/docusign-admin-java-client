@@ -9,10 +9,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
-import com.migcomponents.migbase64.Base64;
-import org.apache.oltu.oauth2.client.request.OAuthClientRequest.AuthenticationRequestBuilder;
-import org.apache.oltu.oauth2.client.request.OAuthClientRequest.TokenRequestBuilder;
-import org.apache.oltu.oauth2.common.exception.OAuthSystemException;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.ClientProperties;
 import org.glassfish.jersey.client.HttpUrlConnectorProvider;
@@ -34,6 +30,7 @@ import java.io.UnsupportedEncodingException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.*;
+import java.nio.charset.StandardCharsets;
 
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
@@ -66,7 +63,7 @@ public class ApiClient {
   /** stage base path. */
   public final static String STAGE_REST_BASEPATH = "https://stage.docusign.net/restapi";
 
-  private String basePath = PRODUCTION_REST_BASEPATH;
+  private String basePath = DEMO_REST_BASEPATH;
   private String oAuthBasePath = OAuth.PRODUCTION_OAUTH_BASEPATH;
   protected boolean debugging = false;
   protected int connectionTimeout = 0;
@@ -84,6 +81,8 @@ public class ApiClient {
   protected DateFormat dateFormat;
   private SSLContext sslContext = null;
 
+  private final String HTTPS = "https://";
+
  /**
   * ApiClient constructor.
   *
@@ -96,11 +95,11 @@ public class ApiClient {
     String javaVersion = System.getProperty("java.version");
 
     // Set default User-Agent.
-    setUserAgent("/SDK/1.3.0/Java/");
+    setUserAgent("Swagger-Codegen/v2.1/2.0.0-RC1/Java/" + javaVersion);
 
     // Setup authentications (key: authentication name, value: authentication).
     authentications = new HashMap<String, Authentication>();
-    authentications.put("docusignAccessCode", new OAuth());
+    authentications.put("docusignAccessCode", new OAuth(httpClient));
 
     // Derive the OAuth base path from the Rest API base url
     this.deriveOAuthBasePathFromRestBasePath();
@@ -138,7 +137,7 @@ public class ApiClient {
     for(String authName : authNames) {
       Authentication auth;
       if ("docusignAccessCode".equals(authName)) {
-        auth = new OAuth(httpClient, OAuthFlow.accessCode, oAuthBasePath + "/oauth/auth", oAuthBasePath + "/oauth/token", "all");
+        auth = new OAuth(httpClient, OAuthFlow.accessCode, HTTPS + oAuthBasePath + "/oauth/auth", HTTPS + oAuthBasePath + "/oauth/token", "all");
       } else if ("docusignApiKey".equals(authName)) {
         auth = new ApiKeyAuth("header", "docusignApiKey");
       } else {
@@ -166,9 +165,11 @@ public class ApiClient {
    */
   public ApiClient(String oAuthBasePath, String authName, String clientId, String secret) {
      this(oAuthBasePath, authName);
-     this.getTokenEndPoint()
-            .setClientId(clientId)
-            .setClientSecret(secret);
+      Authentication auth = authentications.get(authName);
+      if (auth instanceof OAuth) {
+          ((OAuth) auth).setClientId(clientId);
+          ((OAuth) auth).setClientSecret(secret);
+      }
   }
 
   /**
@@ -378,7 +379,7 @@ public class ApiClient {
         return;
       }
     }
-    OAuth oAuth = new OAuth(null, null, null);
+    OAuth oAuth = new OAuth();
     oAuth.setAccessToken(accessToken, expiresIn);
     addAuthorization("docusignAccessCode", oAuth);
   }
@@ -524,35 +525,6 @@ public class ApiClient {
   }
 
   /**
-   * Helper method to configure the token endpoint of the first oauth found in the authentications (there should be only one).
-   * @return
-   */
-  public TokenRequestBuilder getTokenEndPoint() {
-    for(Authentication auth : getAuthentications().values()) {
-      if (auth instanceof OAuth) {
-        OAuth oauth = (OAuth) auth;
-        return oauth.getTokenRequestBuilder();
-      }
-    }
-    return null;
-  }
-
-
-  /**
-    * Helper method to configure authorization endpoint of the first oauth found in the authentications (there should be only one).
-    * @return
-    */
-  public AuthenticationRequestBuilder getAuthorizationEndPoint() {
-    for(Authentication auth : authentications.values()) {
-     if (auth instanceof OAuth) {
-        OAuth oauth = (OAuth) auth;
-        return oauth.getAuthenticationRequestBuilder();
-      }
-    }
-    return null;
-  }
-
-  /**
    * Helper method to configure the OAuth accessCode/implicit flow parameters.
    * @param clientId OAuth2 client ID
    * @param clientSecret OAuth2 client secret
@@ -562,20 +534,22 @@ public class ApiClient {
     for(Authentication auth : authentications.values()) {
       if (auth instanceof OAuth) {
         OAuth oauth = (OAuth) auth;
-        oauth.getTokenRequestBuilder()
-              .setClientId(clientId)
-              .setClientSecret(clientSecret)
-              .setRedirectURI(redirectURI);
-        oauth.getAuthenticationRequestBuilder()
-              .setClientId(clientId)
-              .setRedirectURI(redirectURI);
+        ((OAuth) auth).setClientId(clientId);
+        ((OAuth) auth).setClientSecret(clientSecret);
+        ((OAuth) auth).setRedirectURI(redirectURI);
         return;
       }
     }
   }
 
-  public String getAuthorizationUri() throws OAuthSystemException {
-  	return getAuthorizationEndPoint().buildQueryMessage().getLocationUri();
+  public String getAuthorizationUri() {
+    for(Authentication auth : authentications.values()) {
+        if (auth instanceof OAuth) {
+            OAuth oauth = (OAuth) auth;
+            return oauth.getAuthorizationUrl();
+        }
+    }
+    return null;
   }
 
   /**
@@ -630,10 +604,10 @@ public class ApiClient {
 
   private void deriveOAuthBasePathFromRestBasePath() {
     if (this.basePath == null) { // this case should not happen but just in case
-      this.oAuthBasePath = OAuth.PRODUCTION_OAUTH_BASEPATH;
-    } else if (this.basePath.startsWith("https://demo") || this.basePath.startsWith("http://demo")) {
       this.oAuthBasePath = OAuth.DEMO_OAUTH_BASEPATH;
-    } else if (this.basePath.startsWith("https://stage") || this.basePath.startsWith("http://stage")) {
+    } else if (this.basePath.startsWith("https://demo") || this.basePath.startsWith("http://demo") || this.basePath.startsWith("https://apps-d") || this.basePath.startsWith("http://apps-d")) {
+      this.oAuthBasePath = OAuth.DEMO_OAUTH_BASEPATH;
+    } else if (this.basePath.startsWith("https://stage") || this.basePath.startsWith("http://stage") || this.basePath.startsWith("https://apps-s") || this.basePath.startsWith("http://apps-s")) {
       this.oAuthBasePath = OAuth.STAGE_OAUTH_BASEPATH;
     } else {
       this.oAuthBasePath = OAuth.PRODUCTION_OAUTH_BASEPATH;
@@ -659,7 +633,7 @@ public class ApiClient {
    *
    * @param clientId OAuth2 client ID: Identifies the client making the request.
    * Client applications may be scoped to a limited set of system access.
-   * @param clientSecret the secret key you generated when you set up the integration in DocuSign Admin console.
+   * @param clientSecret the secret key you generated when you set up the integration in Docusign Admin console.
    * @param code The authorization code that you received from the <i>getAuthorizationUri</i> callback.
    * @return OAuth.OAuthToken object.
    * @throws ApiException if the HTTP call status is different than 2xx.
@@ -677,7 +651,7 @@ public class ApiClient {
       
       Invocation.Builder invocationBuilder = target.request();
       invocationBuilder = invocationBuilder
-              .header("Authorization", "Basic " + Base64.encodeToString(clientStr.getBytes("UTF-8"), false))
+              .header("Authorization", "Basic " + Base64.getEncoder().encodeToString(clientStr.getBytes(StandardCharsets.UTF_8)))
               .header("Cache-Control", "no-store")
               .header("Pragma", "no-cache");
 
@@ -808,13 +782,13 @@ public class ApiClient {
   }
 
   /**
-   * Configures the current instance of ApiClient with a fresh OAuth JWT access token from DocuSign.
+   * Configures the current instance of ApiClient with a fresh OAuth JWT access token from Docusign.
    * @param publicKeyFilename the filename of the RSA public key
    * @param privateKeyFilename the filename of the RSA private key
-   * @param oAuthBasePath DocuSign OAuth base path (account-d.docusign.com for the developer sandbox
+   * @param oAuthBasePath Docusign OAuth base path (account-d.docusign.com for the developer sandbox
  			and account.docusign.com for the production platform)
-   * @param clientId DocuSign OAuth Client Id (AKA Integrator Key)
-   * @param userId DocuSign user Id to be impersonated (This is a UUID)
+   * @param clientId Docusign OAuth Client Id (AKA Integrator Key)
+   * @param userId Docusign user Id to be impersonated (This is a UUID)
    * @param expiresIn number of seconds remaining before the JWT assertion is considered as invalid
    * @throws ApiException if there is an error while exchanging the JWT with an access token
    * @throws IOException if there is an issue with either the public or private file
@@ -878,9 +852,9 @@ public class ApiClient {
   }
 
   /**
-   * Configures the current instance of ApiClient with a fresh OAuth JWT access token from DocuSign.
-   * @param clientId DocuSign OAuth Client Id (AKA Integrator Key)
-   * @param userId DocuSign user Id to be impersonated (This is a UUID)
+   * Configures the current instance of ApiClient with a fresh OAuth JWT access token from Docusign.
+   * @param clientId Docusign OAuth Client Id (AKA Integrator Key)
+   * @param userId Docusign user Id to be impersonated (This is a UUID)
    * @param scopes the list of requested scopes. Values include {@link OAuth#Scope_SIGNATURE}, {@link OAuth#Scope_EXTENDED}, {@link OAuth#Scope_IMPERSONATION}. You can also pass any advanced scope.
    * @param rsaPrivateKey the byte contents of the RSA private key
    * @param expiresIn number of seconds remaining before the JWT assertion is considered as invalid
@@ -952,8 +926,8 @@ public class ApiClient {
 
   /**
    * <b>RESERVED FOR PARTNERS</b> Request JWT Application Token.
-   * Configures the current instance of ApiClient with a fresh OAuth JWT access token from DocuSign
-   * @param clientId DocuSign OAuth Client Id (AKA Integrator Key)
+   * Configures the current instance of ApiClient with a fresh OAuth JWT access token from Docusign
+   * @param clientId Docusign OAuth Client Id (AKA Integrator Key)
    * @param scopes the list of requested scopes. Values include {@link OAuth#Scope_SIGNATURE}, {@link OAuth#Scope_EXTENDED}, {@link OAuth#Scope_IMPERSONATION}. You can also pass any advanced scope.
    * @param rsaPrivateKey the byte contents of the RSA private key
    * @param expiresIn number of seconds remaining before the JWT assertion is considered as invalid
@@ -1449,7 +1423,7 @@ public class ApiClient {
       }	
     }
 
-    // Add DocuSign Tracking Header
+    // Add Docusign Tracking Header
     invocationBuilder = invocationBuilder.header("X-DocuSign-SDK", "Java");
 
     if (body == null && formParams.isEmpty()) {
@@ -1656,7 +1630,6 @@ public class ApiClient {
 	    } catch (final Exception ex) {
 	      System.err.println("failed to initialize SSL context");
 	    }
-	    HttpsURLConnection.setDefaultSSLSocketFactory(sslContext.getSocketFactory());
     }
 
     clientConfig.connectorProvider(new ConnectorProvider() {

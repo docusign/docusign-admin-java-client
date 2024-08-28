@@ -114,7 +114,7 @@ public class OrganizationsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "docusignAccessCode" };
     
     GenericType<IndividualUserDataRedactionResponse> localVarReturnType = new GenericType<IndividualUserDataRedactionResponse>() {};
     IndividualUserDataRedactionResponse localVarResponse = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);

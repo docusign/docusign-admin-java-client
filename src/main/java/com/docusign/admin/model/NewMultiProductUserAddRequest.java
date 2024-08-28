@@ -8,13 +8,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.media.Schema;
+import java.io.Serializable;
 
 /**
  * NewMultiProductUserAddRequest.
  *
  */
 
-public class NewMultiProductUserAddRequest {
+public class NewMultiProductUserAddRequest implements Serializable {
+  private static final long serialVersionUID = 1L;
+
   @JsonProperty("product_permission_profiles")
   private java.util.List<ProductPermissionProfileRequest> productPermissionProfiles = new java.util.ArrayList<>();
 
