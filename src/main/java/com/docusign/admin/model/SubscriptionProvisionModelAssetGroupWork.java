@@ -186,29 +186,29 @@ public class SubscriptionProvisionModelAssetGroupWork implements Serializable {
   private String createdBy = null;
 
   /**
-   * Gets or Sets createdByType
+   * 0 stands for Application, 1 stands for User, 2 stands for Generic, 3 stands for RestAPIAuth, 4 stands for Resource, 5 stands for Restricted
    */
   public enum CreatedByTypeEnum {
-    APPLICATION("Application"),
+    NUMBER_0(0),
     
-    USER("User"),
+    NUMBER_1(1),
     
-    GENERIC("Generic"),
+    NUMBER_2(2),
     
-    RESTAPIAUTH("RestAPIAuth"),
+    NUMBER_3(3),
     
-    RESOURCE("Resource"),
+    NUMBER_4(4),
     
-    RESTRICTED("Restricted");
+    NUMBER_5(5);
 
-    private String value;
+    private Integer value;
 
-    CreatedByTypeEnum(String value) {
+    CreatedByTypeEnum(Integer value) {
       this.value = value;
     }
 
     @JsonValue
-    public String getValue() {
+    public Integer getValue() {
       return value;
     }
 
@@ -218,7 +218,7 @@ public class SubscriptionProvisionModelAssetGroupWork implements Serializable {
     }
 
     @JsonCreator
-    public static CreatedByTypeEnum fromValue(String value) {
+    public static CreatedByTypeEnum fromValue(Integer value) {
       for (CreatedByTypeEnum b : CreatedByTypeEnum.values()) {
         if (b.value.equals(value)) {
           return b;
@@ -238,29 +238,29 @@ public class SubscriptionProvisionModelAssetGroupWork implements Serializable {
   private String updatedBy = null;
 
   /**
-   * Gets or Sets updatedByType
+   * 0 stands for Application, 1 stands for User, 2 stands for Generic, 3 stands for RestAPIAuth, 4 stands for Resource, 5 stands for Restricted
    */
   public enum UpdatedByTypeEnum {
-    APPLICATION("Application"),
+    NUMBER_0(0),
     
-    USER("User"),
+    NUMBER_1(1),
     
-    GENERIC("Generic"),
+    NUMBER_2(2),
     
-    RESTAPIAUTH("RestAPIAuth"),
+    NUMBER_3(3),
     
-    RESOURCE("Resource"),
+    NUMBER_4(4),
     
-    RESTRICTED("Restricted");
+    NUMBER_5(5);
 
-    private String value;
+    private Integer value;
 
-    UpdatedByTypeEnum(String value) {
+    UpdatedByTypeEnum(Integer value) {
       this.value = value;
     }
 
     @JsonValue
-    public String getValue() {
+    public Integer getValue() {
       return value;
     }
 
@@ -270,7 +270,7 @@ public class SubscriptionProvisionModelAssetGroupWork implements Serializable {
     }
 
     @JsonCreator
-    public static UpdatedByTypeEnum fromValue(String value) {
+    public static UpdatedByTypeEnum fromValue(Integer value) {
       for (UpdatedByTypeEnum b : UpdatedByTypeEnum.values()) {
         if (b.value.equals(value)) {
           return b;
@@ -949,10 +949,10 @@ public class SubscriptionProvisionModelAssetGroupWork implements Serializable {
   }
 
   /**
-   * Get createdByType.
+   * 0 stands for Application, 1 stands for User, 2 stands for Generic, 3 stands for RestAPIAuth, 4 stands for Resource, 5 stands for Restricted.
    * @return createdByType
    **/
-  @Schema(description = "")
+  @Schema(description = "0 stands for Application, 1 stands for User, 2 stands for Generic, 3 stands for RestAPIAuth, 4 stands for Resource, 5 stands for Restricted")
   public CreatedByTypeEnum getCreatedByType() {
     return createdByType;
   }
@@ -1030,10 +1030,10 @@ public class SubscriptionProvisionModelAssetGroupWork implements Serializable {
   }
 
   /**
-   * Get updatedByType.
+   * 0 stands for Application, 1 stands for User, 2 stands for Generic, 3 stands for RestAPIAuth, 4 stands for Resource, 5 stands for Restricted.
    * @return updatedByType
    **/
-  @Schema(description = "")
+  @Schema(description = "0 stands for Application, 1 stands for User, 2 stands for Generic, 3 stands for RestAPIAuth, 4 stands for Resource, 5 stands for Restricted")
   public UpdatedByTypeEnum getUpdatedByType() {
     return updatedByType;
   }

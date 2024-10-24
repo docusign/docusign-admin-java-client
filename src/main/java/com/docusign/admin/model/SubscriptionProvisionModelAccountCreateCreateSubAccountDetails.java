@@ -41,21 +41,21 @@ public class SubscriptionProvisionModelAccountCreateCreateSubAccountDetails impl
   private SubscriptionProvisionModelAccountCreateAccountAdmin adminUser = null;
 
   /**
-   * Gets or Sets billingProfileType
+   * 0 stands for Web, 1 stands for Direct
    */
   public enum BillingProfileTypeEnum {
-    WEB("Web"),
+    NUMBER_0(0),
     
-    DIRECT("Direct");
+    NUMBER_1(1);
 
-    private String value;
+    private Integer value;
 
-    BillingProfileTypeEnum(String value) {
+    BillingProfileTypeEnum(Integer value) {
       this.value = value;
     }
 
     @JsonValue
-    public String getValue() {
+    public Integer getValue() {
       return value;
     }
 
@@ -65,7 +65,7 @@ public class SubscriptionProvisionModelAccountCreateCreateSubAccountDetails impl
     }
 
     @JsonCreator
-    public static BillingProfileTypeEnum fromValue(String value) {
+    public static BillingProfileTypeEnum fromValue(Integer value) {
       for (BillingProfileTypeEnum b : BillingProfileTypeEnum.values()) {
         if (b.value.equals(value)) {
           return b;
@@ -279,10 +279,10 @@ public class SubscriptionProvisionModelAccountCreateCreateSubAccountDetails impl
   }
 
   /**
-   * Get billingProfileType.
+   * 0 stands for Web, 1 stands for Direct.
    * @return billingProfileType
    **/
-  @Schema(description = "")
+  @Schema(description = "0 stands for Web, 1 stands for Direct")
   public BillingProfileTypeEnum getBillingProfileType() {
     return billingProfileType;
   }

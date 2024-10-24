@@ -57,7 +57,7 @@ This client SDK is provided as open source, which enables you to customize its f
     <dependency>
       <groupId>com.docusign</groupId>
       <artifactId>docusign-admin-java</artifactId>
-      <version>2.0.0-RC1</version>
+      <version>2.0.0-RC2</version>
     </dependency>
     ```
 8. If your project is still open, restart Eclipse.
