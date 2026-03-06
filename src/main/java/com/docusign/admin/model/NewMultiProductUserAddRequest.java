@@ -51,6 +51,9 @@ public class NewMultiProductUserAddRequest implements Serializable {
   @JsonProperty("auto_activate_memberships")
   private Boolean autoActivateMemberships = null;
 
+  @JsonProperty("license_type")
+  private String licenseType = null;
+
 
   /**
    * productPermissionProfiles.
@@ -373,6 +376,33 @@ public class NewMultiProductUserAddRequest implements Serializable {
 
 
   /**
+   * licenseType.
+   *
+   * @return NewMultiProductUserAddRequest
+   **/
+  public NewMultiProductUserAddRequest licenseType(String licenseType) {
+    this.licenseType = licenseType;
+    return this;
+  }
+
+  /**
+   * Get licenseType.
+   * @return licenseType
+   **/
+  @Schema(description = "")
+  public String getLicenseType() {
+    return licenseType;
+  }
+
+  /**
+   * setLicenseType.
+   **/
+  public void setLicenseType(String licenseType) {
+    this.licenseType = licenseType;
+  }
+
+
+  /**
    * Compares objects.
    *
    * @return true or false depending on comparison result.
@@ -396,7 +426,8 @@ public class NewMultiProductUserAddRequest implements Serializable {
         Objects.equals(this.languageCulture, newMultiProductUserAddRequest.languageCulture) &&
         Objects.equals(this.accessCode, newMultiProductUserAddRequest.accessCode) &&
         Objects.equals(this.federatedStatus, newMultiProductUserAddRequest.federatedStatus) &&
-        Objects.equals(this.autoActivateMemberships, newMultiProductUserAddRequest.autoActivateMemberships);
+        Objects.equals(this.autoActivateMemberships, newMultiProductUserAddRequest.autoActivateMemberships) &&
+        Objects.equals(this.licenseType, newMultiProductUserAddRequest.licenseType);
   }
 
   /**
@@ -404,7 +435,7 @@ public class NewMultiProductUserAddRequest implements Serializable {
    */
   @Override
   public int hashCode() {
-    return Objects.hash(productPermissionProfiles, dsGroups, userName, firstName, lastName, email, defaultAccountId, languageCulture, accessCode, federatedStatus, autoActivateMemberships);
+    return Objects.hash(productPermissionProfiles, dsGroups, userName, firstName, lastName, email, defaultAccountId, languageCulture, accessCode, federatedStatus, autoActivateMemberships, licenseType);
   }
 
 
@@ -427,6 +458,7 @@ public class NewMultiProductUserAddRequest implements Serializable {
     sb.append("    accessCode: ").append(toIndentedString(accessCode)).append("\n");
     sb.append("    federatedStatus: ").append(toIndentedString(federatedStatus)).append("\n");
     sb.append("    autoActivateMemberships: ").append(toIndentedString(autoActivateMemberships)).append("\n");
+    sb.append("    licenseType: ").append(toIndentedString(licenseType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

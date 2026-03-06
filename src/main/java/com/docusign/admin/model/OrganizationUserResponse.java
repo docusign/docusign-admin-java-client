@@ -42,14 +42,35 @@ public class OrganizationUserResponse implements Serializable {
   @JsonProperty("created_on")
   private String createdOn = null;
 
+  @JsonProperty("closed_on")
+  private String closedOn = null;
+
   @JsonProperty("membership_created_on")
   private String membershipCreatedOn = null;
+
+  @JsonProperty("membership_closed_on")
+  private String membershipClosedOn = null;
 
   @JsonProperty("ds_groups")
   private java.util.List<DSGroupResponse> dsGroups = null;
 
   @JsonProperty("membership_id")
   private java.util.UUID membershipId = null;
+
+  @JsonProperty("is_membership_managed_by_scim")
+  private Boolean isMembershipManagedByScim = null;
+
+  @JsonProperty("is_managed_by_scim")
+  private Boolean isManagedByScim = null;
+
+  @JsonProperty("license_type")
+  private String licenseType = null;
+
+  @JsonProperty("subscription_id")
+  private String subscriptionId = null;
+
+  @JsonProperty("plan_name")
+  private String planName = null;
 
 
   /**
@@ -269,6 +290,33 @@ public class OrganizationUserResponse implements Serializable {
 
 
   /**
+   * closedOn.
+   *
+   * @return OrganizationUserResponse
+   **/
+  public OrganizationUserResponse closedOn(String closedOn) {
+    this.closedOn = closedOn;
+    return this;
+  }
+
+  /**
+   * Get closedOn.
+   * @return closedOn
+   **/
+  @Schema(description = "")
+  public String getClosedOn() {
+    return closedOn;
+  }
+
+  /**
+   * setClosedOn.
+   **/
+  public void setClosedOn(String closedOn) {
+    this.closedOn = closedOn;
+  }
+
+
+  /**
    * membershipCreatedOn.
    *
    * @return OrganizationUserResponse
@@ -292,6 +340,33 @@ public class OrganizationUserResponse implements Serializable {
    **/
   public void setMembershipCreatedOn(String membershipCreatedOn) {
     this.membershipCreatedOn = membershipCreatedOn;
+  }
+
+
+  /**
+   * membershipClosedOn.
+   *
+   * @return OrganizationUserResponse
+   **/
+  public OrganizationUserResponse membershipClosedOn(String membershipClosedOn) {
+    this.membershipClosedOn = membershipClosedOn;
+    return this;
+  }
+
+  /**
+   * Get membershipClosedOn.
+   * @return membershipClosedOn
+   **/
+  @Schema(description = "")
+  public String getMembershipClosedOn() {
+    return membershipClosedOn;
+  }
+
+  /**
+   * setMembershipClosedOn.
+   **/
+  public void setMembershipClosedOn(String membershipClosedOn) {
+    this.membershipClosedOn = membershipClosedOn;
   }
 
 
@@ -363,6 +438,141 @@ public class OrganizationUserResponse implements Serializable {
 
 
   /**
+   * isMembershipManagedByScim.
+   *
+   * @return OrganizationUserResponse
+   **/
+  public OrganizationUserResponse isMembershipManagedByScim(Boolean isMembershipManagedByScim) {
+    this.isMembershipManagedByScim = isMembershipManagedByScim;
+    return this;
+  }
+
+  /**
+   * Get isMembershipManagedByScim.
+   * @return isMembershipManagedByScim
+   **/
+  @Schema(description = "")
+  public Boolean isIsMembershipManagedByScim() {
+    return isMembershipManagedByScim;
+  }
+
+  /**
+   * setIsMembershipManagedByScim.
+   **/
+  public void setIsMembershipManagedByScim(Boolean isMembershipManagedByScim) {
+    this.isMembershipManagedByScim = isMembershipManagedByScim;
+  }
+
+
+  /**
+   * isManagedByScim.
+   *
+   * @return OrganizationUserResponse
+   **/
+  public OrganizationUserResponse isManagedByScim(Boolean isManagedByScim) {
+    this.isManagedByScim = isManagedByScim;
+    return this;
+  }
+
+  /**
+   * Get isManagedByScim.
+   * @return isManagedByScim
+   **/
+  @Schema(description = "")
+  public Boolean isIsManagedByScim() {
+    return isManagedByScim;
+  }
+
+  /**
+   * setIsManagedByScim.
+   **/
+  public void setIsManagedByScim(Boolean isManagedByScim) {
+    this.isManagedByScim = isManagedByScim;
+  }
+
+
+  /**
+   * licenseType.
+   *
+   * @return OrganizationUserResponse
+   **/
+  public OrganizationUserResponse licenseType(String licenseType) {
+    this.licenseType = licenseType;
+    return this;
+  }
+
+  /**
+   * Get licenseType.
+   * @return licenseType
+   **/
+  @Schema(description = "")
+  public String getLicenseType() {
+    return licenseType;
+  }
+
+  /**
+   * setLicenseType.
+   **/
+  public void setLicenseType(String licenseType) {
+    this.licenseType = licenseType;
+  }
+
+
+  /**
+   * subscriptionId.
+   *
+   * @return OrganizationUserResponse
+   **/
+  public OrganizationUserResponse subscriptionId(String subscriptionId) {
+    this.subscriptionId = subscriptionId;
+    return this;
+  }
+
+  /**
+   * Get subscriptionId.
+   * @return subscriptionId
+   **/
+  @Schema(description = "")
+  public String getSubscriptionId() {
+    return subscriptionId;
+  }
+
+  /**
+   * setSubscriptionId.
+   **/
+  public void setSubscriptionId(String subscriptionId) {
+    this.subscriptionId = subscriptionId;
+  }
+
+
+  /**
+   * planName.
+   *
+   * @return OrganizationUserResponse
+   **/
+  public OrganizationUserResponse planName(String planName) {
+    this.planName = planName;
+    return this;
+  }
+
+  /**
+   * Get planName.
+   * @return planName
+   **/
+  @Schema(description = "")
+  public String getPlanName() {
+    return planName;
+  }
+
+  /**
+   * setPlanName.
+   **/
+  public void setPlanName(String planName) {
+    this.planName = planName;
+  }
+
+
+  /**
    * Compares objects.
    *
    * @return true or false depending on comparison result.
@@ -384,9 +594,16 @@ public class OrganizationUserResponse implements Serializable {
         Objects.equals(this.membershipStatus, organizationUserResponse.membershipStatus) &&
         Objects.equals(this.email, organizationUserResponse.email) &&
         Objects.equals(this.createdOn, organizationUserResponse.createdOn) &&
+        Objects.equals(this.closedOn, organizationUserResponse.closedOn) &&
         Objects.equals(this.membershipCreatedOn, organizationUserResponse.membershipCreatedOn) &&
+        Objects.equals(this.membershipClosedOn, organizationUserResponse.membershipClosedOn) &&
         Objects.equals(this.dsGroups, organizationUserResponse.dsGroups) &&
-        Objects.equals(this.membershipId, organizationUserResponse.membershipId);
+        Objects.equals(this.membershipId, organizationUserResponse.membershipId) &&
+        Objects.equals(this.isMembershipManagedByScim, organizationUserResponse.isMembershipManagedByScim) &&
+        Objects.equals(this.isManagedByScim, organizationUserResponse.isManagedByScim) &&
+        Objects.equals(this.licenseType, organizationUserResponse.licenseType) &&
+        Objects.equals(this.subscriptionId, organizationUserResponse.subscriptionId) &&
+        Objects.equals(this.planName, organizationUserResponse.planName);
   }
 
   /**
@@ -394,7 +611,7 @@ public class OrganizationUserResponse implements Serializable {
    */
   @Override
   public int hashCode() {
-    return Objects.hash(id, userName, firstName, lastName, userStatus, membershipStatus, email, createdOn, membershipCreatedOn, dsGroups, membershipId);
+    return Objects.hash(id, userName, firstName, lastName, userStatus, membershipStatus, email, createdOn, closedOn, membershipCreatedOn, membershipClosedOn, dsGroups, membershipId, isMembershipManagedByScim, isManagedByScim, licenseType, subscriptionId, planName);
   }
 
 
@@ -414,9 +631,16 @@ public class OrganizationUserResponse implements Serializable {
     sb.append("    membershipStatus: ").append(toIndentedString(membershipStatus)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    createdOn: ").append(toIndentedString(createdOn)).append("\n");
+    sb.append("    closedOn: ").append(toIndentedString(closedOn)).append("\n");
     sb.append("    membershipCreatedOn: ").append(toIndentedString(membershipCreatedOn)).append("\n");
+    sb.append("    membershipClosedOn: ").append(toIndentedString(membershipClosedOn)).append("\n");
     sb.append("    dsGroups: ").append(toIndentedString(dsGroups)).append("\n");
     sb.append("    membershipId: ").append(toIndentedString(membershipId)).append("\n");
+    sb.append("    isMembershipManagedByScim: ").append(toIndentedString(isMembershipManagedByScim)).append("\n");
+    sb.append("    isManagedByScim: ").append(toIndentedString(isManagedByScim)).append("\n");
+    sb.append("    licenseType: ").append(toIndentedString(licenseType)).append("\n");
+    sb.append("    subscriptionId: ").append(toIndentedString(subscriptionId)).append("\n");
+    sb.append("    planName: ").append(toIndentedString(planName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

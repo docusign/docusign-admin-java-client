@@ -73,6 +73,18 @@ public class UserDrilldownResponse implements Serializable {
   @JsonProperty("device_verification_enabled")
   private Boolean deviceVerificationEnabled = null;
 
+  @JsonProperty("require_two_step_verification")
+  private Boolean requireTwoStepVerification = null;
+
+  @JsonProperty("allow_two_step_verification_snooze")
+  private Boolean allowTwoStepVerificationSnooze = null;
+
+  @JsonProperty("allow_extend_org_admin_rights_to_self")
+  private Boolean allowExtendOrgAdminRightsToSelf = null;
+
+  @JsonProperty("is_managed_by_scim")
+  private Boolean isManagedByScim = null;
+
 
   /**
    * id.
@@ -587,6 +599,114 @@ public class UserDrilldownResponse implements Serializable {
 
 
   /**
+   * requireTwoStepVerification.
+   *
+   * @return UserDrilldownResponse
+   **/
+  public UserDrilldownResponse requireTwoStepVerification(Boolean requireTwoStepVerification) {
+    this.requireTwoStepVerification = requireTwoStepVerification;
+    return this;
+  }
+
+  /**
+   * Get requireTwoStepVerification.
+   * @return requireTwoStepVerification
+   **/
+  @Schema(description = "")
+  public Boolean isRequireTwoStepVerification() {
+    return requireTwoStepVerification;
+  }
+
+  /**
+   * setRequireTwoStepVerification.
+   **/
+  public void setRequireTwoStepVerification(Boolean requireTwoStepVerification) {
+    this.requireTwoStepVerification = requireTwoStepVerification;
+  }
+
+
+  /**
+   * allowTwoStepVerificationSnooze.
+   *
+   * @return UserDrilldownResponse
+   **/
+  public UserDrilldownResponse allowTwoStepVerificationSnooze(Boolean allowTwoStepVerificationSnooze) {
+    this.allowTwoStepVerificationSnooze = allowTwoStepVerificationSnooze;
+    return this;
+  }
+
+  /**
+   * Get allowTwoStepVerificationSnooze.
+   * @return allowTwoStepVerificationSnooze
+   **/
+  @Schema(description = "")
+  public Boolean isAllowTwoStepVerificationSnooze() {
+    return allowTwoStepVerificationSnooze;
+  }
+
+  /**
+   * setAllowTwoStepVerificationSnooze.
+   **/
+  public void setAllowTwoStepVerificationSnooze(Boolean allowTwoStepVerificationSnooze) {
+    this.allowTwoStepVerificationSnooze = allowTwoStepVerificationSnooze;
+  }
+
+
+  /**
+   * allowExtendOrgAdminRightsToSelf.
+   *
+   * @return UserDrilldownResponse
+   **/
+  public UserDrilldownResponse allowExtendOrgAdminRightsToSelf(Boolean allowExtendOrgAdminRightsToSelf) {
+    this.allowExtendOrgAdminRightsToSelf = allowExtendOrgAdminRightsToSelf;
+    return this;
+  }
+
+  /**
+   * Get allowExtendOrgAdminRightsToSelf.
+   * @return allowExtendOrgAdminRightsToSelf
+   **/
+  @Schema(description = "")
+  public Boolean isAllowExtendOrgAdminRightsToSelf() {
+    return allowExtendOrgAdminRightsToSelf;
+  }
+
+  /**
+   * setAllowExtendOrgAdminRightsToSelf.
+   **/
+  public void setAllowExtendOrgAdminRightsToSelf(Boolean allowExtendOrgAdminRightsToSelf) {
+    this.allowExtendOrgAdminRightsToSelf = allowExtendOrgAdminRightsToSelf;
+  }
+
+
+  /**
+   * isManagedByScim.
+   *
+   * @return UserDrilldownResponse
+   **/
+  public UserDrilldownResponse isManagedByScim(Boolean isManagedByScim) {
+    this.isManagedByScim = isManagedByScim;
+    return this;
+  }
+
+  /**
+   * Get isManagedByScim.
+   * @return isManagedByScim
+   **/
+  @Schema(description = "")
+  public Boolean isIsManagedByScim() {
+    return isManagedByScim;
+  }
+
+  /**
+   * setIsManagedByScim.
+   **/
+  public void setIsManagedByScim(Boolean isManagedByScim) {
+    this.isManagedByScim = isManagedByScim;
+  }
+
+
+  /**
    * Compares objects.
    *
    * @return true or false depending on comparison result.
@@ -617,7 +737,11 @@ public class UserDrilldownResponse implements Serializable {
         Objects.equals(this.lastLogin, userDrilldownResponse.lastLogin) &&
         Objects.equals(this.memberships, userDrilldownResponse.memberships) &&
         Objects.equals(this.identities, userDrilldownResponse.identities) &&
-        Objects.equals(this.deviceVerificationEnabled, userDrilldownResponse.deviceVerificationEnabled);
+        Objects.equals(this.deviceVerificationEnabled, userDrilldownResponse.deviceVerificationEnabled) &&
+        Objects.equals(this.requireTwoStepVerification, userDrilldownResponse.requireTwoStepVerification) &&
+        Objects.equals(this.allowTwoStepVerificationSnooze, userDrilldownResponse.allowTwoStepVerificationSnooze) &&
+        Objects.equals(this.allowExtendOrgAdminRightsToSelf, userDrilldownResponse.allowExtendOrgAdminRightsToSelf) &&
+        Objects.equals(this.isManagedByScim, userDrilldownResponse.isManagedByScim);
   }
 
   /**
@@ -625,7 +749,7 @@ public class UserDrilldownResponse implements Serializable {
    */
   @Override
   public int hashCode() {
-    return Objects.hash(id, siteId, siteName, userName, firstName, lastName, userStatus, defaultAccountId, defaultAccountName, languageCulture, selectedLanguages, federatedStatus, isOrganizationAdmin, createdOn, lastLogin, memberships, identities, deviceVerificationEnabled);
+    return Objects.hash(id, siteId, siteName, userName, firstName, lastName, userStatus, defaultAccountId, defaultAccountName, languageCulture, selectedLanguages, federatedStatus, isOrganizationAdmin, createdOn, lastLogin, memberships, identities, deviceVerificationEnabled, requireTwoStepVerification, allowTwoStepVerificationSnooze, allowExtendOrgAdminRightsToSelf, isManagedByScim);
   }
 
 
@@ -655,6 +779,10 @@ public class UserDrilldownResponse implements Serializable {
     sb.append("    memberships: ").append(toIndentedString(memberships)).append("\n");
     sb.append("    identities: ").append(toIndentedString(identities)).append("\n");
     sb.append("    deviceVerificationEnabled: ").append(toIndentedString(deviceVerificationEnabled)).append("\n");
+    sb.append("    requireTwoStepVerification: ").append(toIndentedString(requireTwoStepVerification)).append("\n");
+    sb.append("    allowTwoStepVerificationSnooze: ").append(toIndentedString(allowTwoStepVerificationSnooze)).append("\n");
+    sb.append("    allowExtendOrgAdminRightsToSelf: ").append(toIndentedString(allowExtendOrgAdminRightsToSelf)).append("\n");
+    sb.append("    isManagedByScim: ").append(toIndentedString(isManagedByScim)).append("\n");
     sb.append("}");
     return sb.toString();
   }

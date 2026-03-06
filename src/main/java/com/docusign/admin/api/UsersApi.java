@@ -514,6 +514,7 @@ public class UsersApi {
   public class GetUserDSProfileOptions
   {
   private Boolean sort = null;
+  private Boolean includeLicense = null;
   
  /**
   * setSort method.
@@ -529,6 +530,22 @@ public class UsersApi {
   */
   public Boolean getSort() {
     return this.sort;
+  }
+  
+ /**
+  * setIncludeLicense method.
+  */
+  public void setIncludeLicense(Boolean includeLicense) {
+    this.includeLicense = includeLicense;
+  }
+
+ /**
+  * getIncludeLicense method.
+  *
+  * @return Boolean
+  */
+  public Boolean getIncludeLicense() {
+    return this.includeLicense;
   }
   }
 
@@ -592,6 +609,8 @@ public class UsersApi {
 
     if (options != null) {
       localVarQueryParams.addAll(apiClient.parameterToPair("sort", options.sort));
+    }if (options != null) {
+      localVarQueryParams.addAll(apiClient.parameterToPair("include_license", options.includeLicense));
     }
 
     
@@ -626,6 +645,7 @@ public class UsersApi {
   {
   private String email = null;
   private Boolean sort = null;
+  private Boolean includeLicense = null;
   
  /**
   * setEmail method.
@@ -657,6 +677,22 @@ public class UsersApi {
   */
   public Boolean getSort() {
     return this.sort;
+  }
+  
+ /**
+  * setIncludeLicense method.
+  */
+  public void setIncludeLicense(Boolean includeLicense) {
+    this.includeLicense = includeLicense;
+  }
+
+ /**
+  * getIncludeLicense method.
+  *
+  * @return Boolean
+  */
+  public Boolean getIncludeLicense() {
+    return this.includeLicense;
   }
   }
 
@@ -713,6 +749,8 @@ public class UsersApi {
       localVarQueryParams.addAll(apiClient.parameterToPair("email", options.email));
     }if (options != null) {
       localVarQueryParams.addAll(apiClient.parameterToPair("sort", options.sort));
+    }if (options != null) {
+      localVarQueryParams.addAll(apiClient.parameterToPair("include_license", options.includeLicense));
     }
 
     
@@ -746,6 +784,7 @@ public class UsersApi {
   public class GetUserProfilesOptions
   {
   private String email = null;
+  private Boolean includeLicense = null;
   
  /**
   * setEmail method.
@@ -761,6 +800,22 @@ public class UsersApi {
   */
   public String getEmail() {
     return this.email;
+  }
+  
+ /**
+  * setIncludeLicense method.
+  */
+  public void setIncludeLicense(Boolean includeLicense) {
+    this.includeLicense = includeLicense;
+  }
+
+ /**
+  * getIncludeLicense method.
+  *
+  * @return Boolean
+  */
+  public Boolean getIncludeLicense() {
+    return this.includeLicense;
   }
   }
 
@@ -815,6 +870,8 @@ public class UsersApi {
 
     if (options != null) {
       localVarQueryParams.addAll(apiClient.parameterToPair("email", options.email));
+    }if (options != null) {
+      localVarQueryParams.addAll(apiClient.parameterToPair("include_license", options.includeLicense));
     }
 
     
@@ -858,6 +915,7 @@ public class UsersApi {
   private java.util.UUID organizationReservedDomainId = null;
   private String lastModifiedSince = null;
   private Boolean includeDsGroups = null;
+  private Boolean includeLicense = null;
   
  /**
   * setStart method.
@@ -1034,6 +1092,22 @@ public class UsersApi {
   public Boolean getIncludeDsGroups() {
     return this.includeDsGroups;
   }
+  
+ /**
+  * setIncludeLicense method.
+  */
+  public void setIncludeLicense(Boolean includeLicense) {
+    this.includeLicense = includeLicense;
+  }
+
+ /**
+  * getIncludeLicense method.
+  *
+  * @return Boolean
+  */
+  public Boolean getIncludeLicense() {
+    return this.includeLicense;
+  }
   }
 
    /**
@@ -1107,6 +1181,8 @@ public class UsersApi {
       localVarQueryParams.addAll(apiClient.parameterToPair("last_modified_since", options.lastModifiedSince));
     }if (options != null) {
       localVarQueryParams.addAll(apiClient.parameterToPair("include_ds_groups", options.includeDsGroups));
+    }if (options != null) {
+      localVarQueryParams.addAll(apiClient.parameterToPair("include_license", options.includeLicense));
     }
 
     
@@ -1196,17 +1272,57 @@ public class UsersApi {
     UsersUpdateResponse localVarResponse = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
     return new ApiResponse<UsersUpdateResponse>(apiClient.getStatusCode(), apiClient.getResponseHeaders(), localVarResponse);
   }
+  /// <summary>
+  /// Updates a user. Required scopes: user_write
+  /// </summary>
+
+ /**
+  * UpdateUserOptions Class.
+  *
+  **/
+  public class UpdateUserOptions
+  {
+  private Boolean applyLicenseOverride = null;
+  
+ /**
+  * setApplyLicenseOverride method.
+  */
+  public void setApplyLicenseOverride(Boolean applyLicenseOverride) {
+    this.applyLicenseOverride = applyLicenseOverride;
+  }
+
+ /**
+  * getApplyLicenseOverride method.
+  *
+  * @return Boolean
+  */
+  public Boolean getApplyLicenseOverride() {
+    return this.applyLicenseOverride;
+  }
+  }
+
+   /**
+   * Updates a user..
+   * Required scopes: user_write
+   * @param organizationId The organization ID Guid (required)
+   * @param request The user details to update (required)
+   * @return UsersUpdateResponse
+   */ 
+  public UsersUpdateResponse updateUser(java.util.UUID organizationId, UpdateUsersRequest request) throws ApiException {
+    return updateUser(organizationId, request, null);
+  }
 
   /**
    * Updates a user..
    * Required scopes: user_write
    * @param organizationId The organization ID Guid (required)
    * @param request The user details to update (required)
+   * @param options for modifying the method behavior.
    * @return UsersUpdateResponse
    * @throws ApiException if fails to make API call
    */
-  public UsersUpdateResponse updateUser(java.util.UUID organizationId, UpdateUsersRequest request) throws ApiException {
-    ApiResponse<UsersUpdateResponse> localVarResponse = updateUserWithHttpInfo(organizationId, request);
+  public UsersUpdateResponse updateUser(java.util.UUID organizationId, UpdateUsersRequest request, UsersApi.UpdateUserOptions options) throws ApiException {
+    ApiResponse<UsersUpdateResponse> localVarResponse = updateUserWithHttpInfo(organizationId, request, options);
     return localVarResponse.getData();
   }
 
@@ -1215,10 +1331,11 @@ public class UsersApi {
    * Required scopes: user_write
    * @param organizationId The organization ID Guid (required)
    * @param request The user details to update (required)
+   * @param options for modifying the method behavior.
    * @return UsersUpdateResponse
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<UsersUpdateResponse > updateUserWithHttpInfo(java.util.UUID organizationId, UpdateUsersRequest request) throws ApiException {
+  public ApiResponse<UsersUpdateResponse > updateUserWithHttpInfo(java.util.UUID organizationId, UpdateUsersRequest request, UsersApi.UpdateUserOptions options) throws ApiException {
     Object localVarPostBody = request;
     
     // verify the required parameter 'organizationId' is set
@@ -1241,7 +1358,9 @@ public class UsersApi {
     java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
     java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
 
-    
+    if (options != null) {
+      localVarQueryParams.addAll(apiClient.parameterToPair("apply_license_override", options.applyLicenseOverride));
+    }
 
     
 

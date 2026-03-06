@@ -36,6 +36,18 @@ public class NewUserResponseAccountProperties implements Serializable {
   @JsonProperty("job_title")
   private String jobTitle = null;
 
+  @JsonProperty("license_type")
+  private String licenseType = null;
+
+  @JsonProperty("subscription_id")
+  private String subscriptionId = null;
+
+  @JsonProperty("plan_name")
+  private String planName = null;
+
+  @JsonProperty("license_status")
+  private String licenseStatus = null;
+
 
   /**
    * id.
@@ -213,6 +225,114 @@ public class NewUserResponseAccountProperties implements Serializable {
 
 
   /**
+   * licenseType.
+   *
+   * @return NewUserResponseAccountProperties
+   **/
+  public NewUserResponseAccountProperties licenseType(String licenseType) {
+    this.licenseType = licenseType;
+    return this;
+  }
+
+  /**
+   * Get licenseType.
+   * @return licenseType
+   **/
+  @Schema(description = "")
+  public String getLicenseType() {
+    return licenseType;
+  }
+
+  /**
+   * setLicenseType.
+   **/
+  public void setLicenseType(String licenseType) {
+    this.licenseType = licenseType;
+  }
+
+
+  /**
+   * subscriptionId.
+   *
+   * @return NewUserResponseAccountProperties
+   **/
+  public NewUserResponseAccountProperties subscriptionId(String subscriptionId) {
+    this.subscriptionId = subscriptionId;
+    return this;
+  }
+
+  /**
+   * Get subscriptionId.
+   * @return subscriptionId
+   **/
+  @Schema(description = "")
+  public String getSubscriptionId() {
+    return subscriptionId;
+  }
+
+  /**
+   * setSubscriptionId.
+   **/
+  public void setSubscriptionId(String subscriptionId) {
+    this.subscriptionId = subscriptionId;
+  }
+
+
+  /**
+   * planName.
+   *
+   * @return NewUserResponseAccountProperties
+   **/
+  public NewUserResponseAccountProperties planName(String planName) {
+    this.planName = planName;
+    return this;
+  }
+
+  /**
+   * Get planName.
+   * @return planName
+   **/
+  @Schema(description = "")
+  public String getPlanName() {
+    return planName;
+  }
+
+  /**
+   * setPlanName.
+   **/
+  public void setPlanName(String planName) {
+    this.planName = planName;
+  }
+
+
+  /**
+   * licenseStatus.
+   *
+   * @return NewUserResponseAccountProperties
+   **/
+  public NewUserResponseAccountProperties licenseStatus(String licenseStatus) {
+    this.licenseStatus = licenseStatus;
+    return this;
+  }
+
+  /**
+   * Get licenseStatus.
+   * @return licenseStatus
+   **/
+  @Schema(description = "")
+  public String getLicenseStatus() {
+    return licenseStatus;
+  }
+
+  /**
+   * setLicenseStatus.
+   **/
+  public void setLicenseStatus(String licenseStatus) {
+    this.licenseStatus = licenseStatus;
+  }
+
+
+  /**
    * Compares objects.
    *
    * @return true or false depending on comparison result.
@@ -231,7 +351,11 @@ public class NewUserResponseAccountProperties implements Serializable {
         Objects.equals(this.permissionProfile, newUserResponseAccountProperties.permissionProfile) &&
         Objects.equals(this.groups, newUserResponseAccountProperties.groups) &&
         Objects.equals(this.companyName, newUserResponseAccountProperties.companyName) &&
-        Objects.equals(this.jobTitle, newUserResponseAccountProperties.jobTitle);
+        Objects.equals(this.jobTitle, newUserResponseAccountProperties.jobTitle) &&
+        Objects.equals(this.licenseType, newUserResponseAccountProperties.licenseType) &&
+        Objects.equals(this.subscriptionId, newUserResponseAccountProperties.subscriptionId) &&
+        Objects.equals(this.planName, newUserResponseAccountProperties.planName) &&
+        Objects.equals(this.licenseStatus, newUserResponseAccountProperties.licenseStatus);
   }
 
   /**
@@ -239,7 +363,7 @@ public class NewUserResponseAccountProperties implements Serializable {
    */
   @Override
   public int hashCode() {
-    return Objects.hash(id, siteId, permissionProfile, groups, companyName, jobTitle);
+    return Objects.hash(id, siteId, permissionProfile, groups, companyName, jobTitle, licenseType, subscriptionId, planName, licenseStatus);
   }
 
 
@@ -257,6 +381,10 @@ public class NewUserResponseAccountProperties implements Serializable {
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("    companyName: ").append(toIndentedString(companyName)).append("\n");
     sb.append("    jobTitle: ").append(toIndentedString(jobTitle)).append("\n");
+    sb.append("    licenseType: ").append(toIndentedString(licenseType)).append("\n");
+    sb.append("    subscriptionId: ").append(toIndentedString(subscriptionId)).append("\n");
+    sb.append("    planName: ").append(toIndentedString(planName)).append("\n");
+    sb.append("    licenseStatus: ").append(toIndentedString(licenseStatus)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -19,6 +19,9 @@ import java.io.Serializable;
 public class MembershipResponse implements Serializable {
   private static final long serialVersionUID = 1L;
 
+  @JsonProperty("id")
+  private java.util.UUID id = null;
+
   @JsonProperty("email")
   private String email = null;
 
@@ -48,6 +51,42 @@ public class MembershipResponse implements Serializable {
 
   @JsonProperty("is_admin")
   private Boolean isAdmin = null;
+
+  @JsonProperty("license_type")
+  private String licenseType = null;
+
+  @JsonProperty("subscription_id")
+  private String subscriptionId = null;
+
+  @JsonProperty("plan_name")
+  private String planName = null;
+
+
+  /**
+   * id.
+   *
+   * @return MembershipResponse
+   **/
+  public MembershipResponse id(java.util.UUID id) {
+    this.id = id;
+    return this;
+  }
+
+  /**
+   * Get id.
+   * @return id
+   **/
+  @Schema(example = "00000000-0000-0000-0000-000000000000", description = "")
+  public java.util.UUID getId() {
+    return id;
+  }
+
+  /**
+   * setId.
+   **/
+  public void setId(java.util.UUID id) {
+    this.id = id;
+  }
 
 
   /**
@@ -334,6 +373,87 @@ public class MembershipResponse implements Serializable {
 
 
   /**
+   * licenseType.
+   *
+   * @return MembershipResponse
+   **/
+  public MembershipResponse licenseType(String licenseType) {
+    this.licenseType = licenseType;
+    return this;
+  }
+
+  /**
+   * Get licenseType.
+   * @return licenseType
+   **/
+  @Schema(description = "")
+  public String getLicenseType() {
+    return licenseType;
+  }
+
+  /**
+   * setLicenseType.
+   **/
+  public void setLicenseType(String licenseType) {
+    this.licenseType = licenseType;
+  }
+
+
+  /**
+   * subscriptionId.
+   *
+   * @return MembershipResponse
+   **/
+  public MembershipResponse subscriptionId(String subscriptionId) {
+    this.subscriptionId = subscriptionId;
+    return this;
+  }
+
+  /**
+   * Get subscriptionId.
+   * @return subscriptionId
+   **/
+  @Schema(description = "")
+  public String getSubscriptionId() {
+    return subscriptionId;
+  }
+
+  /**
+   * setSubscriptionId.
+   **/
+  public void setSubscriptionId(String subscriptionId) {
+    this.subscriptionId = subscriptionId;
+  }
+
+
+  /**
+   * planName.
+   *
+   * @return MembershipResponse
+   **/
+  public MembershipResponse planName(String planName) {
+    this.planName = planName;
+    return this;
+  }
+
+  /**
+   * Get planName.
+   * @return planName
+   **/
+  @Schema(description = "")
+  public String getPlanName() {
+    return planName;
+  }
+
+  /**
+   * setPlanName.
+   **/
+  public void setPlanName(String planName) {
+    this.planName = planName;
+  }
+
+
+  /**
    * Compares objects.
    *
    * @return true or false depending on comparison result.
@@ -347,7 +467,8 @@ public class MembershipResponse implements Serializable {
       return false;
     }
     MembershipResponse membershipResponse = (MembershipResponse) o;
-    return Objects.equals(this.email, membershipResponse.email) &&
+    return Objects.equals(this.id, membershipResponse.id) &&
+        Objects.equals(this.email, membershipResponse.email) &&
         Objects.equals(this.accountId, membershipResponse.accountId) &&
         Objects.equals(this.externalAccountId, membershipResponse.externalAccountId) &&
         Objects.equals(this.accountName, membershipResponse.accountName) &&
@@ -356,7 +477,10 @@ public class MembershipResponse implements Serializable {
         Objects.equals(this.permissionProfile, membershipResponse.permissionProfile) &&
         Objects.equals(this.createdOn, membershipResponse.createdOn) &&
         Objects.equals(this.groups, membershipResponse.groups) &&
-        Objects.equals(this.isAdmin, membershipResponse.isAdmin);
+        Objects.equals(this.isAdmin, membershipResponse.isAdmin) &&
+        Objects.equals(this.licenseType, membershipResponse.licenseType) &&
+        Objects.equals(this.subscriptionId, membershipResponse.subscriptionId) &&
+        Objects.equals(this.planName, membershipResponse.planName);
   }
 
   /**
@@ -364,7 +488,7 @@ public class MembershipResponse implements Serializable {
    */
   @Override
   public int hashCode() {
-    return Objects.hash(email, accountId, externalAccountId, accountName, isExternalAccount, status, permissionProfile, createdOn, groups, isAdmin);
+    return Objects.hash(id, email, accountId, externalAccountId, accountName, isExternalAccount, status, permissionProfile, createdOn, groups, isAdmin, licenseType, subscriptionId, planName);
   }
 
 
@@ -376,6 +500,7 @@ public class MembershipResponse implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class MembershipResponse {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    externalAccountId: ").append(toIndentedString(externalAccountId)).append("\n");
@@ -386,6 +511,9 @@ public class MembershipResponse implements Serializable {
     sb.append("    createdOn: ").append(toIndentedString(createdOn)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("    isAdmin: ").append(toIndentedString(isAdmin)).append("\n");
+    sb.append("    licenseType: ").append(toIndentedString(licenseType)).append("\n");
+    sb.append("    subscriptionId: ").append(toIndentedString(subscriptionId)).append("\n");
+    sb.append("    planName: ").append(toIndentedString(planName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
