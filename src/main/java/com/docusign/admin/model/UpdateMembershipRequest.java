@@ -39,6 +39,9 @@ public class UpdateMembershipRequest implements Serializable {
   @JsonProperty("access_code")
   private String accessCode = null;
 
+  @JsonProperty("license_type")
+  private String licenseType = null;
+
 
   /**
    * accountId.
@@ -243,6 +246,33 @@ public class UpdateMembershipRequest implements Serializable {
 
 
   /**
+   * licenseType.
+   *
+   * @return UpdateMembershipRequest
+   **/
+  public UpdateMembershipRequest licenseType(String licenseType) {
+    this.licenseType = licenseType;
+    return this;
+  }
+
+  /**
+   * Get licenseType.
+   * @return licenseType
+   **/
+  @Schema(description = "")
+  public String getLicenseType() {
+    return licenseType;
+  }
+
+  /**
+   * setLicenseType.
+   **/
+  public void setLicenseType(String licenseType) {
+    this.licenseType = licenseType;
+  }
+
+
+  /**
    * Compares objects.
    *
    * @return true or false depending on comparison result.
@@ -262,7 +292,8 @@ public class UpdateMembershipRequest implements Serializable {
         Objects.equals(this.companyName, updateMembershipRequest.companyName) &&
         Objects.equals(this.jobTitle, updateMembershipRequest.jobTitle) &&
         Objects.equals(this.sendActivation, updateMembershipRequest.sendActivation) &&
-        Objects.equals(this.accessCode, updateMembershipRequest.accessCode);
+        Objects.equals(this.accessCode, updateMembershipRequest.accessCode) &&
+        Objects.equals(this.licenseType, updateMembershipRequest.licenseType);
   }
 
   /**
@@ -270,7 +301,7 @@ public class UpdateMembershipRequest implements Serializable {
    */
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, permissionProfile, groups, companyName, jobTitle, sendActivation, accessCode);
+    return Objects.hash(accountId, permissionProfile, groups, companyName, jobTitle, sendActivation, accessCode, licenseType);
   }
 
 
@@ -289,6 +320,7 @@ public class UpdateMembershipRequest implements Serializable {
     sb.append("    jobTitle: ").append(toIndentedString(jobTitle)).append("\n");
     sb.append("    sendActivation: ").append(toIndentedString(sendActivation)).append("\n");
     sb.append("    accessCode: ").append(toIndentedString(accessCode)).append("\n");
+    sb.append("    licenseType: ").append(toIndentedString(licenseType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

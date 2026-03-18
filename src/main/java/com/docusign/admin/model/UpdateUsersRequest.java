@@ -20,6 +20,9 @@ public class UpdateUsersRequest implements Serializable {
   @JsonProperty("users")
   private java.util.List<UpdateUserRequest> users = null;
 
+  @JsonProperty("auto_activate_memberships_on_reactivation")
+  private Boolean autoActivateMembershipsOnReactivation = null;
+
 
   /**
    * users.
@@ -62,6 +65,33 @@ public class UpdateUsersRequest implements Serializable {
 
 
   /**
+   * autoActivateMembershipsOnReactivation.
+   *
+   * @return UpdateUsersRequest
+   **/
+  public UpdateUsersRequest autoActivateMembershipsOnReactivation(Boolean autoActivateMembershipsOnReactivation) {
+    this.autoActivateMembershipsOnReactivation = autoActivateMembershipsOnReactivation;
+    return this;
+  }
+
+  /**
+   * When set to **true**, the user's memberships will be automatically activated on reactivation..
+   * @return autoActivateMembershipsOnReactivation
+   **/
+  @Schema(description = "When set to **true**, the user's memberships will be automatically activated on reactivation.")
+  public Boolean isAutoActivateMembershipsOnReactivation() {
+    return autoActivateMembershipsOnReactivation;
+  }
+
+  /**
+   * setAutoActivateMembershipsOnReactivation.
+   **/
+  public void setAutoActivateMembershipsOnReactivation(Boolean autoActivateMembershipsOnReactivation) {
+    this.autoActivateMembershipsOnReactivation = autoActivateMembershipsOnReactivation;
+  }
+
+
+  /**
    * Compares objects.
    *
    * @return true or false depending on comparison result.
@@ -75,7 +105,8 @@ public class UpdateUsersRequest implements Serializable {
       return false;
     }
     UpdateUsersRequest updateUsersRequest = (UpdateUsersRequest) o;
-    return Objects.equals(this.users, updateUsersRequest.users);
+    return Objects.equals(this.users, updateUsersRequest.users) &&
+        Objects.equals(this.autoActivateMembershipsOnReactivation, updateUsersRequest.autoActivateMembershipsOnReactivation);
   }
 
   /**
@@ -83,7 +114,7 @@ public class UpdateUsersRequest implements Serializable {
    */
   @Override
   public int hashCode() {
-    return Objects.hash(users);
+    return Objects.hash(users, autoActivateMembershipsOnReactivation);
   }
 
 
@@ -96,6 +127,7 @@ public class UpdateUsersRequest implements Serializable {
     sb.append("class UpdateUsersRequest {\n");
     
     sb.append("    users: ").append(toIndentedString(users)).append("\n");
+    sb.append("    autoActivateMembershipsOnReactivation: ").append(toIndentedString(autoActivateMembershipsOnReactivation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -55,7 +55,7 @@ public class BulkExportsApi {
 
 
   /**
-   * Creates a  new Account Setting Export request..
+   * Creates a new Account Setting Export request..
    * Required scopes: account_read
    * @param organizationId The organization ID Guid (required)
    * @param request Request body containing details about the accounts be compared (required)
@@ -68,7 +68,7 @@ public class BulkExportsApi {
   }
 
   /**
-   * Creates a  new Account Setting Export request.
+   * Creates a new Account Setting Export request.
    * Required scopes: account_read
    * @param organizationId The organization ID Guid (required)
    * @param request Request body containing details about the accounts be compared (required)
