@@ -50,6 +50,9 @@ public class DSGroupResponse implements Serializable {
   @JsonProperty("account_name")
   private String accountName = null;
 
+  @JsonProperty("is_managed_by_scim")
+  private Boolean isManagedByScim = null;
+
 
   /**
    * dsGroupId.
@@ -349,6 +352,33 @@ public class DSGroupResponse implements Serializable {
 
 
   /**
+   * isManagedByScim.
+   *
+   * @return DSGroupResponse
+   **/
+  public DSGroupResponse isManagedByScim(Boolean isManagedByScim) {
+    this.isManagedByScim = isManagedByScim;
+    return this;
+  }
+
+  /**
+   * Get isManagedByScim.
+   * @return isManagedByScim
+   **/
+  @Schema(description = "")
+  public Boolean isIsManagedByScim() {
+    return isManagedByScim;
+  }
+
+  /**
+   * setIsManagedByScim.
+   **/
+  public void setIsManagedByScim(Boolean isManagedByScim) {
+    this.isManagedByScim = isManagedByScim;
+  }
+
+
+  /**
    * Compares objects.
    *
    * @return true or false depending on comparison result.
@@ -372,7 +402,8 @@ public class DSGroupResponse implements Serializable {
         Objects.equals(this.lastModifiedOn, dsGroupResponse.lastModifiedOn) &&
         Objects.equals(this.userCount, dsGroupResponse.userCount) &&
         Objects.equals(this.externalAccountId, dsGroupResponse.externalAccountId) &&
-        Objects.equals(this.accountName, dsGroupResponse.accountName);
+        Objects.equals(this.accountName, dsGroupResponse.accountName) &&
+        Objects.equals(this.isManagedByScim, dsGroupResponse.isManagedByScim);
   }
 
   /**
@@ -380,7 +411,7 @@ public class DSGroupResponse implements Serializable {
    */
   @Override
   public int hashCode() {
-    return Objects.hash(dsGroupId, accountId, sourceProductName, groupId, groupName, description, isAdmin, lastModifiedOn, userCount, externalAccountId, accountName);
+    return Objects.hash(dsGroupId, accountId, sourceProductName, groupId, groupName, description, isAdmin, lastModifiedOn, userCount, externalAccountId, accountName, isManagedByScim);
   }
 
 
@@ -403,6 +434,7 @@ public class DSGroupResponse implements Serializable {
     sb.append("    userCount: ").append(toIndentedString(userCount)).append("\n");
     sb.append("    externalAccountId: ").append(toIndentedString(externalAccountId)).append("\n");
     sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
+    sb.append("    isManagedByScim: ").append(toIndentedString(isManagedByScim)).append("\n");
     sb.append("}");
     return sb.toString();
   }

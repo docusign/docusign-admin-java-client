@@ -54,6 +54,9 @@ public class NewAccountUserRequest implements Serializable {
   @JsonProperty("auto_activate_memberships")
   private Boolean autoActivateMemberships = null;
 
+  @JsonProperty("license_type")
+  private String licenseType = null;
+
 
   /**
    * permissionProfile.
@@ -393,6 +396,33 @@ public class NewAccountUserRequest implements Serializable {
 
 
   /**
+   * licenseType.
+   *
+   * @return NewAccountUserRequest
+   **/
+  public NewAccountUserRequest licenseType(String licenseType) {
+    this.licenseType = licenseType;
+    return this;
+  }
+
+  /**
+   * Get licenseType.
+   * @return licenseType
+   **/
+  @Schema(description = "")
+  public String getLicenseType() {
+    return licenseType;
+  }
+
+  /**
+   * setLicenseType.
+   **/
+  public void setLicenseType(String licenseType) {
+    this.licenseType = licenseType;
+  }
+
+
+  /**
    * Compares objects.
    *
    * @return true or false depending on comparison result.
@@ -417,7 +447,8 @@ public class NewAccountUserRequest implements Serializable {
         Objects.equals(this.selectedLanguages, newAccountUserRequest.selectedLanguages) &&
         Objects.equals(this.accessCode, newAccountUserRequest.accessCode) &&
         Objects.equals(this.federatedStatus, newAccountUserRequest.federatedStatus) &&
-        Objects.equals(this.autoActivateMemberships, newAccountUserRequest.autoActivateMemberships);
+        Objects.equals(this.autoActivateMemberships, newAccountUserRequest.autoActivateMemberships) &&
+        Objects.equals(this.licenseType, newAccountUserRequest.licenseType);
   }
 
   /**
@@ -425,7 +456,7 @@ public class NewAccountUserRequest implements Serializable {
    */
   @Override
   public int hashCode() {
-    return Objects.hash(permissionProfile, groups, userName, firstName, lastName, email, defaultAccountId, languageCulture, selectedLanguages, accessCode, federatedStatus, autoActivateMemberships);
+    return Objects.hash(permissionProfile, groups, userName, firstName, lastName, email, defaultAccountId, languageCulture, selectedLanguages, accessCode, federatedStatus, autoActivateMemberships, licenseType);
   }
 
 
@@ -449,6 +480,7 @@ public class NewAccountUserRequest implements Serializable {
     sb.append("    accessCode: ").append(toIndentedString(accessCode)).append("\n");
     sb.append("    federatedStatus: ").append(toIndentedString(federatedStatus)).append("\n");
     sb.append("    autoActivateMemberships: ").append(toIndentedString(autoActivateMemberships)).append("\n");
+    sb.append("    licenseType: ").append(toIndentedString(licenseType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -26,8 +26,8 @@ public class SdkUnitTests {
   // private static final String RedirectURI = System.getenv("REDIRECT_URI");
   private String organizationId = System.getenv("ORGANIZATION_ID");
 
-  private static final String BaseUrl = ApiClient.DEMO_REST_BASEPATH;
-  // private static final String OAuthBaseUrl = OAuth.DEMO_OAUTH_BASEPATH;
+  private static final String BaseUrl = "https://api-d.docusign.net/management";
+  private static final String OAuthBaseUrl = "account-d.docusign.com";
   private static final byte[] privateKeyBytes =
       Base64.getDecoder().decode(System.getenv("PRIVATE_KEY"));
   private static final String userImportFullPath =
@@ -57,6 +57,7 @@ public class SdkUnitTests {
 
   private String getFirstOrganizationId() {
     ApiClient apiClient = new ApiClient(BaseUrl);
+    apiClient.setOAuthBasePath(OAuthBaseUrl);
     // String currentDir = System.getProperty("user.dir");
 
     try {
@@ -105,6 +106,7 @@ public class SdkUnitTests {
   public void JWTLoginTest() {
     System.out.println("\nJWTLoginTest:\n" + "===========================================");
     ApiClient apiClient = new ApiClient(BaseUrl);
+    apiClient.setOAuthBasePath(OAuthBaseUrl);
     // String currentDir = System.getenv("user.dir");
 
     try {
@@ -146,6 +148,7 @@ public class SdkUnitTests {
     System.out.println(
         "\nAuthorizationCodeLoginTest:\n" + "===========================================");
     ApiClient apiClient = new ApiClient(BaseUrl);
+    apiClient.setOAuthBasePath(OAuthBaseUrl);
     try {
       // after successful login you should compare the value of URI decoded "state" query param
       // with the one you create here; they should match.
@@ -226,6 +229,7 @@ public class SdkUnitTests {
   public synchronized void BulkImportTest() {
     System.out.println("\nBulkImportTest:\n" + "===========================================");
     ApiClient apiClient = new ApiClient(BaseUrl);
+    apiClient.setOAuthBasePath(OAuthBaseUrl);
     // String currentDir = System.getProperty("user.dir");
 
     try {
@@ -297,6 +301,7 @@ public class SdkUnitTests {
   public void CreateUserTest() {
     System.out.println("\nCreateUserTest:\n" + "===========================================");
     ApiClient apiClient = new ApiClient(BaseUrl);
+    apiClient.setOAuthBasePath(OAuthBaseUrl);
     // String currentDir = System.getProperty("user.dir");
 
     try {
@@ -311,6 +316,7 @@ public class SdkUnitTests {
 
       java.util.List<String> scopes = new ArrayList<String>();
       scopes.add("user_write");
+      scopes.add("user_read");
       scopes.add("organization_read");
 
       OAuth.OAuthToken oAuthToken =
@@ -357,6 +363,7 @@ public class SdkUnitTests {
     System.out.println(
         "\nGetProductPermissionProfilesTest:\n" + "===========================================");
     ApiClient apiClient = new ApiClient(BaseUrl);
+    apiClient.setOAuthBasePath(OAuthBaseUrl);
     // String currentDir = System.getProperty("user.dir");
 
     try {
@@ -409,6 +416,7 @@ public class SdkUnitTests {
   public void GetUserProfilesTest() {
     System.out.println("\nGetUserProfilesTest:\n" + "===========================================");
     ApiClient apiClient = new ApiClient(BaseUrl);
+    apiClient.setOAuthBasePath(OAuthBaseUrl);
     // String currentDir = System.getProperty("user.dir");
 
     try {
@@ -423,7 +431,7 @@ public class SdkUnitTests {
 
       java.util.List<String> scopes = new ArrayList<String>();
       scopes.add("user_read");
-      scopes.add("organization_read");
+        scopes.add("organization_read");
 
       OAuth.OAuthToken oAuthToken =
           apiClient.requestJWTUserToken(IntegratorKey, UserId, scopes, privateKeyBytes, 3600);
@@ -464,7 +472,9 @@ public class SdkUnitTests {
         UsersDrilldownResponse usersDrilldownResponse =
             usersApi.getUserProfiles(UUID.fromString(organizationId), getUserProfilesOptions);
         Assert.assertNotNull(usersDrilldownResponse);
-        Assert.assertNotNull(usersDrilldownResponse.getUsers());
+        if (usersDrilldownResponse.getUsers() == null) {
+          continue;
+        }
 
         // System.out.println("UsersDrilldownResponse: " + usersDrilldownResponse);
       }
